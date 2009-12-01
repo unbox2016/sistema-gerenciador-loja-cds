@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,8 +38,8 @@ public class AdministradorDAO {
             stm.setString(8, adm.getTelefone());
             stm.setString(9, adm.getLogin());
             stm.setBoolean(10, adm.isIsAdm());
-        }catch(SQLException e){
-            
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
         }
 
     }
