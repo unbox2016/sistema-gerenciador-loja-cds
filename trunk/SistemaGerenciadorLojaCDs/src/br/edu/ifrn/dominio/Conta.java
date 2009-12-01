@@ -5,6 +5,8 @@
 
 package br.edu.ifrn.dominio;
 
+import java.util.Date;
+
 /**
  *
  * @author Cliente
@@ -16,13 +18,14 @@ public class Conta {
     private float saldoTotal;
     private String cdComprado;
     private float preco;
+    private Date data;
 
-    public Conta(CD cd, int cod){
+    public Conta(CD cd, Date data ){
         this.cd = cd;
         this.cdComprado = cd.getTitulo();
         this.preco = cd.getPreco();
         this.saldoTotal++;
-        this.codigo = cod;
+        this.data = data;
     }
 
     public float getSaldoTotal() {
