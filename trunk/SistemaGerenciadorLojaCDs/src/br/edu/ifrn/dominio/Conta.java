@@ -12,22 +12,25 @@ package br.edu.ifrn.dominio;
 public class Conta {
     private CD cd;
 
+    private int codigo;
     private float saldoTotal;
     private String cdComprado;
     private float preco;
 
-    public Conta(CD cd){
+    public Conta(CD cd, int cod){
         this.cd = cd;
         this.cdComprado = cd.getTitulo();
         this.preco = cd.getPreco();
         this.saldoTotal++;
+        this.codigo = cod;
     }
 
     public float getSaldoTotal() {
-        return saldoTotal;
+        return this.saldoTotal;
     }
-    
 
-
+    public int getCodigo(){
+        return this.codigo;
+    }
 
 }

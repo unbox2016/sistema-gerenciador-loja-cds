@@ -23,11 +23,11 @@ public class AdministradorDAO {
     }
 
     public void addAdministrador(Administrador adm) {
-
-        Connection conexao = ConnectionFactory.getConnection();
-        String instrucao = "INSERT INTO administrador VALUES(?,?,?,?,?,?,?,?,?,?);";
         try{
-            PreparedStatement stm = conexao.prepareStatement(instrucao);
+            Connection conexao = ConnectionFactory.getConnection();
+            String ins = "INSERT INTO administrador VALUES(?,?,?,?,?,?,?,?,?,?);";
+            PreparedStatement stm = conexao.prepareStatement(ins);
+
             stm.setString(1, adm.getLogin());
             stm.setString(2, adm.getNome());
             stm.setString(3, adm.getSenha());
@@ -38,6 +38,7 @@ public class AdministradorDAO {
             stm.setString(8, adm.getTelefone());
             stm.setString(9, adm.getLogin());
             stm.setBoolean(10, adm.isIsAdm());
+            
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
         }
