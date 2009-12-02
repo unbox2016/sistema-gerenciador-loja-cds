@@ -17,7 +17,7 @@ public class Conta {
     private int codigo;
     private float saldoTotal;
     private String cdComprado;
-    private float preco;
+    private double preco;
     private Date data;
 
     public Conta(CD cd, Date data ){
