@@ -20,6 +20,9 @@ import javax.swing.JOptionPane;
  */
 public class FuncionarioDAO {
 
+    public FuncionarioDAO(){
+    }
+
     public void addFuncionario(Funcionario f){
         try {
             Connection conexao = ConnectionFactory.getConnection();
