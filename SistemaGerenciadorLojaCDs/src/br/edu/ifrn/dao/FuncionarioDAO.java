@@ -81,7 +81,7 @@ public class FuncionarioDAO {
     public void deleteFuncionario(Funcionario f){
         try {
             Connection conexao = ConnectionFactory.getConnection();
-            String ins = "DELETE FROM funcionario WHERE login='?'";
+            String ins = "DELETE FROM funcionario WHERE login='?';";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
             stm.setString(1, f.getLogin());
@@ -101,7 +101,7 @@ public class FuncionarioDAO {
         LinkedList<Funcionario> listaFunc = new LinkedList();
         try {
             Connection conexao = ConnectionFactory.getConnection();
-            String ins = "SELECT * FROM funcionario";
+            String ins = "SELECT * FROM funcionario;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
             ResultSet rs = (ResultSet) stm.executeQuery();

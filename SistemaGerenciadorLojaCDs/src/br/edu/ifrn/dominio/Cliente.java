@@ -21,6 +21,8 @@ public class Cliente {
     private String estCivil;
     private Date dataNasc;
     private Conta conta;
+   
+    
 
     public Cliente(String cpf, Funcionario func, String rg, String nome, String sexo, String telefone, String estCivil, Date dataNasc, Conta conta) {
         this.cpf = cpf;
