@@ -1,3 +1,11 @@
+/* */
+
+CREATE TABLE Conta (
+  codigo INTEGER UNSIGNED NOT NULL,
+  saldoTotal BIGINT NOT NULL,
+  PRIMARY KEY(codigo)
+);
+
 CREATE TABLE Funcionario (
   Login VARCHAR(20) NOT NULL,
   Senha VARCHAR(20) NOT NULL,
@@ -11,7 +19,7 @@ CREATE TABLE Funcionario (
   PRIMARY KEY(Login)
 );
 
-CREATE TABLE Gênero (
+CREATE TABLE Gï¿½nero (
   Nome VARCHAR(20) NOT NULL,
   PRIMARY KEY(Nome)
 );
@@ -19,22 +27,6 @@ CREATE TABLE Gênero (
 CREATE TABLE Administrador (
   Funcionario_Login VARCHAR(20) NOT NULL,
   PRIMARY KEY(Funcionario_Login),
-  FOREIGN KEY(Funcionario_Login)
-    REFERENCES Funcionario(Login)
-      ON DELETE NO ACTION
-      ON UPDATE NO ACTION
-);
-
-CREATE TABLE Cliente (
-  CPF VARCHAR(20) NOT NULL,
-  Funcionario_Login VARCHAR(20) NOT NULL,
-  RG VARCHAR(20) NOT NULL,
-  Nome VARCHAR(45) NOT NULL,
-  Sexo VARCHAR(20) NOT NULL,
-  Telefone VARCHAR(20) NOT NULL,
-  Estado_civil VARCHAR(20) NOT NULL,
-  DNascimento DATE NOT NULL,
-  PRIMARY KEY(CPF),
   FOREIGN KEY(Funcionario_Login)
     REFERENCES Funcionario(Login)
       ON DELETE NO ACTION
@@ -58,7 +50,7 @@ CREATE TABLE Vendedor (
 CREATE TABLE CD (
   ID INTEGER UNSIGNED NOT NULL,
   Funcionario_Login VARCHAR(20) NOT NULL,
-  Gênero_Nome VARCHAR(20) NOT NULL,
+  Gï¿½nero_Nome VARCHAR(20) NOT NULL,
   Titulo VARCHAR(45) NOT NULL,
   Ano DATE NOT NULL,
   Artista VARCHAR(45) NOT NULL,
@@ -66,15 +58,36 @@ CREATE TABLE CD (
   NFaixas INTEGER UNSIGNED NOT NULL,
   Quantidade INTEGER UNSIGNED NOT NULL,
   Disponibilidade BOOL NOT NULL,
-  Lançamento BOOL NOT NULL,
+  Lanï¿½amento BOOL NOT NULL,
   Preco FLOAT NOT NULL,
   PRIMARY KEY(ID),
-  FOREIGN KEY(Gênero_Nome)
-    REFERENCES Gênero(Nome)
+  FOREIGN KEY(Gï¿½nero_Nome)
+    REFERENCES Gï¿½nero(Nome)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION,
   FOREIGN KEY(Funcionario_Login)
     REFERENCES Funcionario(Login)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+
+CREATE TABLE Cliente (
+  CPF VARCHAR(20) NOT NULL,
+  Conta_codigo INTEGER UNSIGNED NOT NULL,
+  Funcionario_Login VARCHAR(20) NOT NULL,
+  RG VARCHAR(20) NOT NULL,
+  Nome VARCHAR(45) NOT NULL,
+  Sexo VARCHAR(20) NOT NULL,
+  Telefone VARCHAR(20) NOT NULL,
+  Estado_civil VARCHAR(20) NOT NULL,
+  DNascimento DATE NOT NULL,
+  PRIMARY KEY(CPF),
+  FOREIGN KEY(Funcionario_Login)
+    REFERENCES Funcionario(Login)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(Conta_codigo)
+    REFERENCES Conta(codigo)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION
 );
@@ -121,16 +134,6 @@ CREATE TABLE Reclamacoes (
       ON UPDATE NO ACTION
 );
 
-CREATE TABLE Conta (
-  Cliente_CPF VARCHAR(20) NOT NULL,
-  saldoTotal BIGINT NOT NULL,
-  PRIMARY KEY(Cliente_CPF),
-  FOREIGN KEY(Cliente_CPF)
-    REFERENCES Cliente(CPF)
-      ON DELETE NO ACTION
-      ON UPDATE NO ACTION
-);
-
 CREATE TABLE Faturamento (
   ID INTEGER UNSIGNED NOT NULL,
   Venda_CD_ID INTEGER UNSIGNED NOT NULL,
@@ -162,5 +165,4 @@ CREATE TABLE Relatorio (
       ON DELETE NO ACTION
       ON UPDATE NO ACTION
 );
-
 
