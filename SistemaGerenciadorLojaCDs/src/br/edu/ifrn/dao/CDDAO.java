@@ -6,6 +6,9 @@
 package br.edu.ifrn.dao;
 
 import br.edu.ifrn.dominio.CD;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  *
@@ -17,13 +20,16 @@ public class CDDAO {
 
     }
 
-    public void addCD(CD c){
+    public void addCD(CD c) {
         try{
             Connection conexao = ConnectionFactory.getConnection();
             String ins = "INSERT INTO cd VALUES(?,?,?,?,?,?,?,?,?,?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
             
          
+    } catch(SQLException ex){
+        
     }
 
+    }
 }
