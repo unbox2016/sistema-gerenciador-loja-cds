@@ -31,6 +31,10 @@ public class ReclamacoesDAO {
             stm.setString(3, rec.getCli());
 
             stm.executeUpdate();
+            stm.close();
+
+            conexao.close();
+            
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
         }
