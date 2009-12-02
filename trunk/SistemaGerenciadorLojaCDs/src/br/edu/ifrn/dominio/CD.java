@@ -5,8 +5,6 @@
 
 package br.edu.ifrn.dominio;
 
-import java.util.Date;
-
 /**
  *
  * @author 2007134010475
@@ -21,9 +19,25 @@ public class CD {
     private int duracao;
     private int numFaixas;
     private int quantidade;
-    private boolean isDisponivel;
-    private boolean isLancamento;
-    private float preco;
+    private boolean disponivel;
+    private boolean lancamento;
+    private double preco;
+
+    public CD(int id, int ano, Genero gen, Funcionario func, String titulo, String artista, int duracao, int numFaixas, int quantidade, boolean disponivel, boolean lancamento, double preco) {
+        this.id = id;
+        this.ano = ano;
+        this.gen = gen;
+        this.func = func;
+        this.titulo = titulo;
+        this.artista = artista;
+        this.duracao = duracao;
+        this.numFaixas = numFaixas;
+        this.quantidade = quantidade;
+        this.disponivel = disponivel;
+        this.lancamento = lancamento;
+        this.preco = preco;
+    }
+    
     
     public int getAno() {
         return ano;
@@ -69,20 +83,20 @@ public class CD {
         this.id = id;
     }
 
-    public boolean isIsDisponivel() {
-        return isDisponivel;
+    public boolean isDisponivel() {
+        return disponivel;
     }
 
-    public void setIsDisponivel(boolean isDisponivel) {
-        this.isDisponivel = isDisponivel;
+    public void setDisponivel(boolean isDisponivel) {
+        this.disponivel = isDisponivel;
     }
 
-    public boolean isIsLancamento() {
-        return isLancamento;
+    public boolean isLancamento() {
+        return lancamento;
     }
 
-    public void setIsLancamento(boolean isLancamento) {
-        this.isLancamento = isLancamento;
+    public void setLancamento(boolean isLancamento) {
+        this.lancamento = isLancamento;
     }
 
     public int getNumFaixas() {
@@ -93,11 +107,11 @@ public class CD {
         this.numFaixas = numFaixas;
     }
 
-    public float getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(float preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 
@@ -118,20 +132,6 @@ public class CD {
     }
     
     
-    public CD(int id, int ano, Genero gen, Funcionario func, String titulo, String artista, int duracao, int numFaixas, int quantidade, boolean isDisponivel, boolean isLancamento, float preco) {
-        this.id = id;
-        this.ano = ano;
-        this.gen = gen;
-        this.func = func;
-        this.titulo = titulo;
-        this.artista = artista;
-        this.duracao = duracao;
-        this.numFaixas = numFaixas;
-        this.quantidade = quantidade;
-        this.isDisponivel = isDisponivel;
-        this.isLancamento = isLancamento;
-        this.preco = preco;
-    }
     
 
 }
