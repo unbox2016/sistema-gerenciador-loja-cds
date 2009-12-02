@@ -5,6 +5,7 @@
 
 package br.edu.ifrn.dao;
 
+import br.edu.ifrn.dominio.Cliente;
 import br.edu.ifrn.dominio.Pedidos;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -86,12 +87,21 @@ public class PedidosDAO {
             PreparedStatement stm = conexao.prepareStatement(ins);
 
             ResultSet rs = (ResultSet) stm.executeQuery();
+            
+            ClienteDAO cdao = new ClienteDAO();
+            LinkedList<Cliente> listaCli = cdao.selectCliente();
+
 
             while(rs.next()){
-                Pedidos p = new Pedidos();
-                p.setCodigo(rs.getInt(1));
-                // CONTINUE AQUI
+                for(Cliente cli: listaCli){
+                    if(cli.getCpf().equals(rs.getString(2))){
+                        Pedidos p = new Pedidos(rs.getInt(1), cli, rs.getString(2));
+                        listaPedidos.add(p);
+                        break; // sai do loop
+                    }
+                }
             }
+            
 
         } catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
