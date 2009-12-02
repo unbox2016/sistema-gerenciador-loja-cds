@@ -6,12 +6,10 @@
 /*
  * Venda.java
  *
- * Created on 12/11/2009, 13:17:27
+ * Created on 02/12/2009, 10:53:36
  */
 
 package br.edu.ifrn.gui;
-
-import java.awt.Image;
 
 /**
  *
@@ -24,10 +22,6 @@ public class Venda extends javax.swing.JFrame {
         initComponents();
     }
 
-    private Image icone() {
-            return new javax.swing.ImageIcon(getClass().getResource("/br/edu/ifrn/imagens/icone.png")).getImage();
-       }
-
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -37,48 +31,41 @@ public class Venda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        modoPagamento = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         separador2 = new javax.swing.JSeparator();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        codigoCliente = new javax.swing.JTextField();
-        precoTotal = new javax.swing.JTextField();
-        precoPago = new javax.swing.JTextField();
         separador = new javax.swing.JSeparator();
-        pesquisarCliente = new javax.swing.JButton();
-        adicionar = new javax.swing.JButton();
+        confirmar = new javax.swing.JButton();
         limpar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
-        troco = new javax.swing.JTextField();
-        confirmar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        codigoCliente = new javax.swing.JTextField();
+        pesquisarCliente = new javax.swing.JButton();
+        adicionar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        aVista = new javax.swing.JRadioButton();
+        fiado = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Registro de venda");
-        setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Preencha todos os campos abaixo para efetuar a venda:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
-        jLabel3.setText("Troco(R$):");
+        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        confirmar.setForeground(new java.awt.Color(0, 102, 0));
+        confirmar.setText("Confirmar");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12));
-        jLabel4.setText("Preço pago(R$):");
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        limpar.setText("Limpar");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12));
-        jLabel5.setText("Preço total(R$):");
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cancelar.setForeground(new java.awt.Color(255, 0, 0));
+        cancelar.setText("Cancelar");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel6.setText("Cliente(código):");
 
         codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
-
-        precoTotal.setEditable(false);
-        precoTotal.setFont(new java.awt.Font("Tahoma", 0, 12));
-
-        precoPago.setFont(new java.awt.Font("Tahoma", 0, 12));
 
         pesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
         pesquisarCliente.setText("Pesquisar cliente...");
@@ -92,19 +79,14 @@ public class Venda extends javax.swing.JFrame {
             }
         });
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        limpar.setText("Limpar");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("Modo de pagamento");
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cancelar.setForeground(new java.awt.Color(255, 0, 0));
-        cancelar.setText("Cancelar");
+        aVista.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        aVista.setText("À vista");
 
-        troco.setEditable(false);
-        troco.setFont(new java.awt.Font("Tahoma", 0, 12));
-
-        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
-        confirmar.setForeground(new java.awt.Color(0, 102, 0));
-        confirmar.setText("Confirmar");
+        fiado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        fiado.setText("Fiado");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,43 +96,41 @@ public class Venda extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(fiado)
+                        .addContainerGap())
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(aVista)
+                            .addContainerGap())
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(separador2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel5)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(separador2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(separador, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                                .addGap(177, 177, 177))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(confirmar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(precoTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addComponent(limpar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(precoPago, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(cancelar)
+                                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(troco, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(separador, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
-                        .addGap(177, 177, 177))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(confirmar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(limpar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cancelar)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(codigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pesquisarCliente)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(adicionar)
-                        .addContainerGap(209, Short.MAX_VALUE))))
+                                .addComponent(codigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(pesquisarCliente)
+                                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(adicionar)
+                                .addContainerGap(209, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addContainerGap(262, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,18 +149,12 @@ public class Venda extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(separador, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(precoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(precoPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(troco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(aVista)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(fiado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelar)
                     .addComponent(limpar)
@@ -198,24 +172,29 @@ public class Venda extends javax.swing.JFrame {
     /**
     * @param args the command line arguments
     */
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Venda().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton aVista;
     private javax.swing.JButton adicionar;
     private javax.swing.JButton cancelar;
     private javax.swing.JTextField codigoCliente;
     private javax.swing.JButton confirmar;
+    private javax.swing.JRadioButton fiado;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JButton limpar;
+    private javax.swing.ButtonGroup modoPagamento;
     private javax.swing.JButton pesquisarCliente;
-    private javax.swing.JTextField precoPago;
-    private javax.swing.JTextField precoTotal;
     private javax.swing.JSeparator separador;
     private javax.swing.JSeparator separador2;
-    private javax.swing.JTextField troco;
     // End of variables declaration//GEN-END:variables
 
 }
