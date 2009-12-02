@@ -8,7 +8,9 @@ package br.edu.ifrn.dao;
 import br.edu.ifrn.dominio.Genero;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
 /**
@@ -37,6 +39,29 @@ public class GeneroDAO {
             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
         }
 
+    }
+
+    public LinkedList<Genero> selectGenero(){
+        LinkedList<Genero> listaGen = new LinkedList();
+        try {
+            Connection conexao = ConnectionFactory.getConnection();
+            String ins = "SELECT * FROM genero;";
+            PreparedStatement stm = conexao.prepareStatement(ins);
+
+            ResultSet rs = (ResultSet) stm.executeQuery();
+
+            while(rs.next()){
+                Genero g = new Genero(rs.getString(1));
+                listaGen.add(g);
+            }
+
+            stm.close();
+            conexao.close();
+        
+        } catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
+        }
+        return listaGen;
     }
 }
 

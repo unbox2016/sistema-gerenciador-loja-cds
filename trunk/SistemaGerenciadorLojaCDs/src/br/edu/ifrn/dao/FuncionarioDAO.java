@@ -111,6 +111,7 @@ public class FuncionarioDAO {
                 listaFunc.add(f);
             }
 
+            stm.close();
             conexao.close();
 
         } catch(SQLException ex){
