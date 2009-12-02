@@ -54,7 +54,6 @@ public class CadastroCD extends javax.swing.JFrame {
         precoCD = new javax.swing.JTextField();
         artista = new javax.swing.JTextField();
         genero = new javax.swing.JComboBox();
-        mes = new javax.swing.JComboBox();
         jLabel11 = new javax.swing.JLabel();
         ano = new javax.swing.JComboBox();
         duracao = new javax.swing.JTextField();
@@ -73,31 +72,31 @@ public class CadastroCD extends javax.swing.JFrame {
         setTitle("Cadastro de CD");
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Código:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Título:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Data de lançamento:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Gênero:");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Preço(R$):");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Duração:");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Artista:");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel8.setText("Nº de faixas:");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setText("Lançamento:");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12));
@@ -123,11 +122,6 @@ public class CadastroCD extends javax.swing.JFrame {
 
         genero.setFont(new java.awt.Font("Tahoma", 0, 12));
         genero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Axé", "Samba", "Pagode", "Forró", "Funk", "Sertanejo", "MPB", "Blues", "Jazz", "Rock nacional", "Rock internacional", "Heavy Metal", "Eletrônica", "Gospel", "Clássica", " ", " " }));
-
-        mes.setFont(new java.awt.Font("Tahoma", 0, 12));
-        mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
-
-        jLabel11.setText("/");
 
         ano.setFont(new java.awt.Font("Tahoma", 0, 12));
         ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1900", "1901", "1902", "1903", "1904", "1905", "1906", "1907", "1908", "1909", "1910", "1911", "1912", "1913", "1914", "1915", "1916", "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009" }));
@@ -163,10 +157,10 @@ public class CadastroCD extends javax.swing.JFrame {
         cadastrar.setForeground(new java.awt.Color(0, 102, 0));
         cadastrar.setText("Cadastrar");
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Limpar");
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
 
@@ -217,15 +211,11 @@ public class CadastroCD extends javax.swing.JFrame {
                                                     .addComponent(jLabel7)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                     .addComponent(artista))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addGroup(layout.createSequentialGroup()
-                                                            .addComponent(jLabel5)
-                                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                            .addComponent(precoCD))
-                                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel5)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addComponent(precoCD))
+                                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jLabel11)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -272,7 +262,6 @@ public class CadastroCD extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
                     .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -357,7 +346,6 @@ public class CadastroCD extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.ButtonGroup lançamento;
     private javax.swing.JButton limpar;
-    private javax.swing.JComboBox mes;
     private javax.swing.JTextField nFaixas;
     private javax.swing.JRadioButton nao;
     private javax.swing.JRadioButton naoDisponivel;
