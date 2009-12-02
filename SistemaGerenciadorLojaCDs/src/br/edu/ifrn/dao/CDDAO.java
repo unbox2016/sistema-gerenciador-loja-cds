@@ -18,6 +18,11 @@ public class CDDAO {
     }
 
     public void addCD(CD c){
+        try{
+            Connection conexao = ConnectionFactory.getConnection();
+            String ins = "INSERT INTO cd VALUES(?,?,?,?,?,?,?,?,?,?);";
+            PreparedStatement stm = conexao.prepareStatement(ins);
+            
          
     }
 
