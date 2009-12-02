@@ -6,6 +6,7 @@
 package br.edu.ifrn.dao;
 
 import br.edu.ifrn.dominio.Cliente;
+import br.edu.ifrn.dominio.Conta;
 import br.edu.ifrn.dominio.Funcionario;
 import java.sql.Connection;
 import java.sql.Date;
@@ -28,7 +29,7 @@ public class ClienteDAO {
     public void addCliente(Cliente c){
         try{
             Connection conexao = ConnectionFactory.getConnection();
-            String ins = "INSERT INTO cliente VALUES(?,?,?,?,?,?,?,?,?,?);";
+            String ins = "INSERT INTO cliente VALUES(?,?,?,?,?,?,?,?,?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
             
             stm.setString(1, c.getCpf());
@@ -40,13 +41,98 @@ public class ClienteDAO {
             stm.setString(7, c.getTelefone());
             stm.setString(8, c.getEstCivil());
             stm.setDate(9,(Date) c.getDataNasc());
+
             stm.executeUpdate();
             stm.close();
+            conexao.close();
 
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
         }
+    }
 
-    } 
+    public void updateCliente(Cliente c){
+        try {
+            Connection conexao = ConnectionFactory.getConnection();
+            String ins = "UPDATE cliente SET cpf='?', conta_codigo=?, funcionario_login='?', rg='?', nome='?', sexo='?', telefone='?', estado_civil='?', dnascimento=? WHERE cpf='?';";
+            PreparedStatement stm = conexao.prepareStatement(ins);
+
+            stm.setString(1, c.getCpf());
+            stm.setInt(2, c.getConta().getCodigo());
+            stm.setString(3, c.getFunc().getLogin());
+            stm.setString(4, c.getRg());
+            stm.setString(5, c.getNome());
+            stm.setString(6, c.getSexo());
+            stm.setString(7, c.getTelefone());
+            stm.setString(8, c.getEstCivil());
+            stm.setDate(9,(Date) c.getDataNasc());
+            stm.setString(10, c.getCpf());
+
+            stm.executeUpdate();
+            stm.close();
+            conexao.close();
+
+        } catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
+        }
+    }
+
+    public void deleteCliente(Cliente c){
+        try {
+            Connection conexao = ConnectionFactory.getConnection();
+            String ins = "DELETE FROM cliente WHERE cpf='?';";
+            PreparedStatement stm = conexao.prepareStatement(ins);
+
+            stm.setString(1, c.getCpf());
+
+            stm.executeUpdate();
+            stm.close();
+            conexao.close();
+
+        } catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
+        }
+    }
+
+    public LinkedList<Cliente> selectCliente(){
+        LinkedList<Cliente> listaCli = new LinkedList();
+        try {
+            Connection conexao = ConnectionFactory.getConnection();
+            String ins = "SELECT * FROM cliente;";
+            PreparedStatement stm = conexao.prepareStatement(ins);
+
+            ResultSet rs = (ResultSet) stm.executeQuery();
+
+            FuncionarioDAO fdao = new FuncionarioDAO();
+            LinkedList<Funcionario> listaFunc = fdao.selectFuncionario();
+
+            ContaDAO cdao = new ContaDAO();
+            LinkedList<Conta> listaConta = cdao.selectConta();         
+                      
+            Conta conta = null;
+
+            while(rs.next()){
+                for(Conta cont: listaConta){
+                    if(cont.getCodigo() == rs.getInt(2)){
+                        conta = cont;
+                        break; // sai do loop
+                    }
+                }
+
+                for(Funcionario f: listaFunc){
+                    if(f.getCpf().equals(rs.getString(3))){
+                        Cliente c = new Cliente(rs.getString(1), f, rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getDate(9), conta);
+                        listaCli.add(c);
+                        break;
+                    }
+                }
+            }
+
+        } catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
+        }
+
+        return listaCli;
+    }
 
 }

@@ -31,6 +31,8 @@ public class Pedidos {
     }
 
 
+    public Pedidos(){
+    }
 
     public Pedidos(int codigo, Cliente cli, String conteudo) {
         this.codigo = codigo;
@@ -41,5 +43,7 @@ public class Pedidos {
     public String getCli() {
         return cli.getCpf();
     }
+
+    
     
 }
