@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class CD {
     private int id;
-    private Date ano;
+    private int ano;
     private Genero gen;
     private Funcionario func;
     private String titulo;
@@ -25,11 +25,11 @@ public class CD {
     private boolean isLancamento;
     private float preco;
     
-    public Date getAno() {
+    public int getAno() {
         return ano;
     }
 
-    public void setAno(Date ano) {
+    public void setAno(int ano) {
         this.ano = ano;
     }
 
@@ -41,7 +41,7 @@ public class CD {
         this.artista = artista;
     }
 
-    public float getDuracao() {
+    public int getDuracao() {
         return duracao;
     }
 
@@ -118,7 +118,7 @@ public class CD {
     }
     
     
-    public CD(int id, int ano, Genero gen, Funcionario func, String titulo, String artista, float duracao, int numFaixas, int quantidade, boolean isDisponivel, boolean isLancamento, float preco) {
+    public CD(int id, int ano, Genero gen, Funcionario func, String titulo, String artista, int duracao, int numFaixas, int quantidade, boolean isDisponivel, boolean isLancamento, float preco) {
         this.id = id;
         this.ano = ano;
         this.gen = gen;
