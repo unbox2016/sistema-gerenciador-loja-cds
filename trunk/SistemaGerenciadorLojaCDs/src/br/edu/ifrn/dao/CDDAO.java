@@ -5,10 +5,20 @@
 
 package br.edu.ifrn.dao;
 
+import br.edu.ifrn.dominio.CD;
+
 /**
  *
  * @author 2007134010467
  */
 public class CDDAO {
+
+    public CDDAO(){
+
+    }
+
+    public void addCD(CD c){
+         
+    }
 
 }
