@@ -20,11 +20,11 @@ import javax.swing.JOptionPane;
  */
 public class AdministradorDAO {
 
-    public AdministradorDAO(){
+    private FuncionarioDAO fdao = new FuncionarioDAO();
+
+     public AdministradorDAO(){
 
     }
-
-    private FuncionarioDAO fdao = new FuncionarioDAO();
 
     public void addAdministrador(Administrador adm) {
         
@@ -70,7 +70,7 @@ public class AdministradorDAO {
         }
     }
 
-    public LinkedList<Administrador> selectAdministrador(Administrador adm){
+    public LinkedList<Administrador> selectAdministrador(){
         LinkedList<Administrador> listaAdm = new LinkedList();
          try {
             Connection conexao = ConnectionFactory.getConnection();
