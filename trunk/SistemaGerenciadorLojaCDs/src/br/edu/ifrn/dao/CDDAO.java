@@ -32,9 +32,9 @@ public class CDDAO {
             stm.setString(2, c.getFunc());
             stm.setString(3, c.getGen());
             stm.setString(4, c.getTitulo());
-            stm.setDate(5,(Date) c.getAno());
+            stm.setInt(5, c.getAno());
             stm.setString(6, c.getArtista());
-            stm.setTime(7, c.getId());
+            stm.setInt(7, c.getDuracao());
             stm.setInt(8, c.getId());
             stm.setInt(9, c.getId());
             stm.setInt(10, c.getId());
