@@ -5,29 +5,31 @@
 
 package br.edu.ifrn.dominio;
 
+import java.util.Date;
+
 /**
  *
  * @author 2007134010475
  */
 public class CD {
     private int id;
-    private int ano;
+    private Date ano;
     private Genero gen;
     private Funcionario func;
     private String titulo;
     private String artista;
-    private float duracao;
+    private Time duracao;
     private int numFaixas;
     private int quantidade;
     private boolean isDisponivel;
     private boolean isLancamento;
     private float preco;
     
-    public int getAno() {
+    public Date getAno() {
         return ano;
     }
 
-    public void setAno(int ano) {
+    public void setAno(Date ano) {
         this.ano = ano;
     }
 
