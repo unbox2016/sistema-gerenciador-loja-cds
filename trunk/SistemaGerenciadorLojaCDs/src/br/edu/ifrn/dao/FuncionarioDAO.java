@@ -96,8 +96,9 @@ public class FuncionarioDAO {
         }
     }
 
-    LinkedList<Funcionario> listaFunc = new LinkedList();
+    
     public LinkedList<Funcionario> selectFuncionario(){
+        LinkedList<Funcionario> listaFunc = new LinkedList();
         try {
             Connection conexao = ConnectionFactory.getConnection();
             String ins = "SELECT * FROM funcionario";
@@ -106,7 +107,7 @@ public class FuncionarioDAO {
             ResultSet rs = (ResultSet) stm.executeQuery();
 
             while(rs.next()){
-                Funcionario f = new Funcionario(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getDate(9),true);
+                Funcionario f = new Funcionario(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getDate(9),false);
                 listaFunc.add(f);
             }
 
