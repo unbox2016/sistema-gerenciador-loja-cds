@@ -1,3 +1,0 @@
-12-01 13:56:52 jdbc[2]: SQLException
-org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * CD[*] FROM ADMINISTRADOR"; SQL statement:
-SELECT * CD FROM ADMINISTRADOR [42000-124]
