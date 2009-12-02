@@ -26,7 +26,7 @@ public class GeneroDAO {
     public void addGenero(Genero gen){
         try{
             Connection conexao = ConnectionFactory.getConnection();
-            String ins = "INSERT INTO GENERO VALUES(?);";
+            String ins = "INSERT INTO genero VALUES(?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
         
             stm.setString(1,gen.getNome());
@@ -40,6 +40,9 @@ public class GeneroDAO {
         }
 
     }
+
+
+
 
     public LinkedList<Genero> selectGenero(){
         LinkedList<Genero> listaGen = new LinkedList();
@@ -63,5 +66,6 @@ public class GeneroDAO {
         }
         return listaGen;
     }
+
 }
 
