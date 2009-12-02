@@ -9,7 +9,7 @@ import br.edu.ifrn.dominio.Cliente;
 import br.edu.ifrn.dominio.Funcionario;
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
+import java.sql.PreparedStatement ;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -44,7 +44,7 @@ public class ClienteDAO {
             stm.close();
 
         }catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
         }
 
     } 
