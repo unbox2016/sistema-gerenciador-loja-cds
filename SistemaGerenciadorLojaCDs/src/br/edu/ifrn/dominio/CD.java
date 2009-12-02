@@ -18,7 +18,7 @@ public class CD {
     private Funcionario func;
     private String titulo;
     private String artista;
-    private Time duracao;
+    private int duracao;
     private int numFaixas;
     private int quantidade;
     private boolean isDisponivel;
@@ -45,7 +45,7 @@ public class CD {
         return duracao;
     }
 
-    public void setDuracao(float duracao) {
+    public void setDuracao(int duracao) {
         this.duracao = duracao;
     }
 

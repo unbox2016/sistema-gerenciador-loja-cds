@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author 2007134010475
  */
-public abstract class Funcionario {
+public class Funcionario {
 
     protected String login;
     protected String senha;
