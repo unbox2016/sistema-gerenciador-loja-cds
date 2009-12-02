@@ -67,9 +67,11 @@ public class CDDAO {
             stm.setString(6, c.getArtista());
             stm.setInt(7, c.getDuracao());
             stm.setInt(8, c.getNumFaixas());
-            stm.setBoolean(9, c.isDisponivel());
-            stm.setBoolean(10, c.isLancamento());
-            stm.setDouble(11, c.getPreco());
+            stm.setInt(9, c.getQuantidade());
+            stm.setBoolean(10, c.isDisponivel());
+            stm.setBoolean(11, c.isLancamento());
+            stm.setDouble(12, c.getPreco());
+            stm.setInt(13, c.getId());
 
             stm.executeUpdate();
             stm.close();
