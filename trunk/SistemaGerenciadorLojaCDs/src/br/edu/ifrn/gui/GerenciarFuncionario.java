@@ -4,9 +4,9 @@
  */
 
 /*
- * UpdateCliente.java
+ * UpdateFuncionario.java
  *
- * Created on 02/12/2009, 11:08:40
+ * Created on 02/12/2009, 11:29:03
  */
 
 package br.edu.ifrn.gui;
@@ -15,10 +15,10 @@ package br.edu.ifrn.gui;
  *
  * @author 2007134010475
  */
-public class UpdateCliente extends javax.swing.JFrame {
+public class GerenciarFuncionario extends javax.swing.JFrame {
 
-    /** Creates new form UpdateCliente */
-    public UpdateCliente() {
+    /** Creates new form UpdateFuncionario */
+    public GerenciarFuncionario() {
         initComponents();
     }
 
@@ -31,57 +31,50 @@ public class UpdateCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        editarFuncionarios = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         codigoCliente = new javax.swing.JTextField();
         pesquisarCliente = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        editarCliente = new javax.swing.JTable();
         confirmar = new javax.swing.JButton();
         limpar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Edição de clientes");
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel6.setText("Cliente(código):");
-
-        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
-
-        pesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        pesquisarCliente.setText("Pesquisar cliente...");
-
-        editarCliente.setModel(new javax.swing.table.DefaultTableModel(
+        editarFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "CPF", "RG", "Nome", "Sexo", "Telefone", "Estado civil", "Data de nascimento", "Conta", "Cadastrado por:"
+                "Login", "Senha", "Nome", "Sexo", "CPF", "RG", "Telefone", "Estado Civil", "Data de nascimento", "Disponível", "Administrador"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                true, true, true, true, true, true, true, true, false
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Float.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Boolean.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
         });
-        jScrollPane1.setViewportView(editarCliente);
+        jScrollPane1.setViewportView(editarFuncionarios);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Edição de funcionários");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setText("Funcionário(login):");
+
+        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        pesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        pesquisarCliente.setText("Pesquisar funcionário...");
 
         confirmar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
@@ -98,10 +91,12 @@ public class UpdateCliente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 689, Short.MAX_VALUE)
+            .addGap(0, 689, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
@@ -120,6 +115,8 @@ public class UpdateCliente extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 397, Short.MAX_VALUE)
+            .addGap(0, 397, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
@@ -132,7 +129,7 @@ public class UpdateCliente extends javax.swing.JFrame {
                     .addComponent(pesquisarCliente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelar)
                     .addComponent(limpar)
@@ -152,7 +149,7 @@ public class UpdateCliente extends javax.swing.JFrame {
     private javax.swing.JButton cancelar;
     private javax.swing.JTextField codigoCliente;
     private javax.swing.JButton confirmar;
-    private javax.swing.JTable editarCliente;
+    private javax.swing.JTable editarFuncionarios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;

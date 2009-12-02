@@ -15,10 +15,10 @@ package br.edu.ifrn.gui;
  *
  * @author 2007134010475
  */
-public class UpdateCD extends javax.swing.JFrame {
+public class GerenciarCD extends javax.swing.JFrame {
 
     /** Creates new form UpdateCD */
-    public UpdateCD() {
+    public GerenciarCD() {
         initComponents();
     }
 
