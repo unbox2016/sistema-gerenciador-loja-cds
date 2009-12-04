@@ -94,9 +94,15 @@ public class ContaDAO {
                     if(cd.getId() == rs.getInt(3)){
                         Conta c = new Conta(cd, new Date());
                         listaCon.add(c);
+                        break;
                     }
                 }
             }
+
+
+            rs.close();
+            stm.close();
+            conexao.close();
 
         } catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());

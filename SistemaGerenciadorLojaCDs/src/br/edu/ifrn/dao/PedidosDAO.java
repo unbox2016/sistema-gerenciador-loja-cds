@@ -102,6 +102,7 @@ public class PedidosDAO {
                 }
             }
             
+             rs.close();
             stm.close();
             conexao.close();
 

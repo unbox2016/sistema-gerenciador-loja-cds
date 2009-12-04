@@ -12,6 +12,7 @@ package br.edu.ifrn.dominio;
 public class Faturamento {
 
     int id;
+    int quantCDs;
     CD cd;
     Cliente cli;
     Funcionario func;
@@ -23,6 +24,10 @@ public class Faturamento {
 
     public int getCd() {
         return cd.getId();
+    }
+
+    public int getQuantCDs() {
+        return quantCDs;
     }
 
     public String getCli() {
@@ -42,6 +47,7 @@ public class Faturamento {
         this.cd = cd;
         this.cli = cli;
         this.func = func;
+        this.quantCDs++;
     }
     
 }
