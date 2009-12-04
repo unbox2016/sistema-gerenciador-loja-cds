@@ -19,13 +19,15 @@ import javax.swing.JOptionPane;
  */
 public class GeneroDAO {
     
+    Connection conexao;
+
     public GeneroDAO(){
-        
+        conexao = ConnectionFactory.getConnection();
     }
 
     public void addGenero(Genero gen){
         try{
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "INSERT INTO genero VALUES(?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
         
@@ -47,7 +49,7 @@ public class GeneroDAO {
     public LinkedList<Genero> selectGenero(){
         LinkedList<Genero> listaGen = new LinkedList();
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+           
             String ins = "SELECT * FROM genero;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 

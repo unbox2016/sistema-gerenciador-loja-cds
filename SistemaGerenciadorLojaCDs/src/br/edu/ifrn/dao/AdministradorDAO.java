@@ -21,16 +21,17 @@ import javax.swing.JOptionPane;
 public class AdministradorDAO {
 
     private FuncionarioDAO fdao = new FuncionarioDAO();
+    Connection conexao;
 
      public AdministradorDAO(){
-
+        conexao = ConnectionFactory.getConnection();
     }
 
     public void addAdministrador(Administrador adm) {
         
         try{
 
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "INSERT INTO administrador VALUES(?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
             stm.setString(1, adm.getLogin());
@@ -53,7 +54,7 @@ public class AdministradorDAO {
 
     public void deleteAdministrador(Administrador adm){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "DELETE FROM administrador WHERE funcionario_login='?'";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -73,7 +74,7 @@ public class AdministradorDAO {
     public LinkedList<Administrador> selectAdministrador(){
         LinkedList<Administrador> listaAdm = new LinkedList();
          try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "SELECT * FROM funcionario;";
             PreparedStatement stm = conexao.prepareStatement(ins);
             ResultSet rs = stm.executeQuery();

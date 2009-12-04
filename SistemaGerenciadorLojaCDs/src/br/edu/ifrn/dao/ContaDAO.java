@@ -21,9 +21,15 @@ import javax.swing.JOptionPane;
  */
 public class ContaDAO {
 
+    Connection conexao;
+
+    public ContaDAO(){
+        conexao = ConnectionFactory.getConnection();
+    }
+
     public void addConta(Conta cont){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "INSERT INTO conta VALUES(?,?,?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -42,7 +48,7 @@ public class ContaDAO {
 
     public void updateConta(Conta cont){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "UPDATE conta SET codigo=?, saldototal=?, cd_id=? WHERE codigo=?;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -62,7 +68,7 @@ public class ContaDAO {
 
     public void deleteConta(Conta cont){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "DELETE FROM conta WHERE codigo=?;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -80,7 +86,7 @@ public class ContaDAO {
     LinkedList<Conta> listaCon = new LinkedList();
     public LinkedList<Conta> selectConta() {
          try {
-            Connection conexao = ConnectionFactory.getConnection();
+        
             String ins = "SELECT * FROM conta;";
             PreparedStatement stm = conexao.prepareStatement(ins);
             ResultSet rs = (ResultSet) stm.executeQuery();

@@ -22,12 +22,15 @@ import javax.swing.JOptionPane;
  */
 public class FaturamentoDAO {
     
+    Connection conexao;
+    
     public FaturamentoDAO(){
+        conexao = ConnectionFactory.getConnection();
     }
 
     public void addFaturamento(Faturamento ft){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "INSERT INTO faturamento VALUES(?,?,?,?,?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -49,7 +52,7 @@ public class FaturamentoDAO {
 
     public void updateFaturamento(Faturamento ft){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+           
             String ins = "UPDATE faturamento SET id=?, venda_cd_id=?, venda_cliente_cpf='?', venda_vendedor_funcionario_login='?', quantidadecds=? WHERE id=?;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -71,7 +74,7 @@ public class FaturamentoDAO {
 
     public void deleteFaturamento(Faturamento ft){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+        
             String ins = "DELETE FROM faturamento WHERE id=?;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -89,7 +92,7 @@ public class FaturamentoDAO {
     LinkedList<Faturamento> listaFatu = new LinkedList();
     public LinkedList<Faturamento> selectFaturamento(Faturamento ft){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+         
             String ins = "SELECT * FROM faturamento;";
             PreparedStatement stm = conexao.prepareStatement(ins);
             ResultSet rs = (ResultSet) stm.executeQuery();

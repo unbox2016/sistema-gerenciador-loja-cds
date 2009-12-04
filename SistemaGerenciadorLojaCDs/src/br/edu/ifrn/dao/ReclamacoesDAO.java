@@ -17,12 +17,15 @@ import javax.swing.JOptionPane;
  */
 public class ReclamacoesDAO {
 
+    Connection conexao;
+
     public ReclamacoesDAO(){
+        conexao = ConnectionFactory.getConnection();
     }
 
     public void addReclamacoes(Reclamacoes rec){
         try{
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "INSERT INTO RECLAMACOES VALUES(?,?,?)";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
