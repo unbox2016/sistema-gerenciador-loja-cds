@@ -58,6 +58,7 @@ public class GeneroDAO {
                 listaGen.add(g);
             }
 
+            rs.close();
             stm.close();
             conexao.close();
         

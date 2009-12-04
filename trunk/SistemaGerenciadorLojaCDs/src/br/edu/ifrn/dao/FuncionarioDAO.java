@@ -111,6 +111,7 @@ public class FuncionarioDAO {
                 listaFunc.add(f);
             }
 
+            rs.close();
             stm.close();
             conexao.close();
 

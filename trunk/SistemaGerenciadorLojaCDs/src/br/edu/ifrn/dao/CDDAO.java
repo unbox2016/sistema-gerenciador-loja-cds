@@ -132,6 +132,8 @@ public class CDDAO {
                 listaCD.add(cd);
             }
 
+            rs.close();
+            stm.close();
             conexao.close();
 
         } catch(SQLException ex){
