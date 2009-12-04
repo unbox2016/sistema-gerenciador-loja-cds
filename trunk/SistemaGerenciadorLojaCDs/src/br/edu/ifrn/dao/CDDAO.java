@@ -21,13 +21,15 @@ import javax.swing.JOptionPane;
  */
 public class CDDAO {
 
-    public CDDAO(){
+    Connection conexao;
 
+    public CDDAO(){
+        conexao = ConnectionFactory.getConnection();
     }
 
     public void addCD(CD c) {
         try{
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "INSERT INTO cd VALUES(?,?,?,?,?,?,?,?,?,?,?,?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -55,7 +57,7 @@ public class CDDAO {
 
     public void updateCD(CD c){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "UPDATE cd SET id=?, funcionario_login='?', genero_nome='?', titulo='?', ano=?, artista=?, duracao=?, nfaixas=?, disponibilidade=?, lancamento=?, preco=? WHERE id=?;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -85,7 +87,7 @@ public class CDDAO {
 
     public void deleteCD(CD c){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "DELETE FROM cd WHERE id=?";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -105,7 +107,7 @@ public class CDDAO {
     public LinkedList<CD> selectCD(){
         LinkedList<CD> listaCD = new LinkedList();
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+        
             String ins = "SELECT * FROM cd;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 

@@ -22,13 +22,15 @@ import javax.swing.JOptionPane;
  */
 public class ClienteDAO {
 
-    public ClienteDAO(){
+    Connection conexao;
 
+    public ClienteDAO(){
+        conexao = ConnectionFactory.getConnection();
     }
 
     public void addCliente(Cliente c){
         try{
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "INSERT INTO cliente VALUES(?,?,?,?,?,?,?,?,?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
             
@@ -53,7 +55,7 @@ public class ClienteDAO {
 
     public void updateCliente(Cliente c){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "UPDATE cliente SET cpf='?', conta_codigo=?, funcionario_login='?', rg='?', nome='?', sexo='?', telefone='?', estado_civil='?', dnascimento=? WHERE cpf='?';";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -79,7 +81,7 @@ public class ClienteDAO {
 
     public void deleteCliente(Cliente c){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "DELETE FROM cliente WHERE cpf='?';";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -97,7 +99,7 @@ public class ClienteDAO {
     public LinkedList<Cliente> selectCliente(){
         LinkedList<Cliente> listaCli = new LinkedList();
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+           
             String ins = "SELECT * FROM cliente;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 

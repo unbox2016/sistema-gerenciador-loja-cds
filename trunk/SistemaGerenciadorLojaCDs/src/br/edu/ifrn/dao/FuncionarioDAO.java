@@ -20,12 +20,15 @@ import javax.swing.JOptionPane;
  */
 public class FuncionarioDAO {
 
+    Connection conexao;
+    
     public FuncionarioDAO(){
+        conexao = ConnectionFactory.getConnection();
     }
 
     public void addFuncionario(Funcionario f){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "INSERT INTO funcionario VALUES(?,?,?,?,?,?,?,?,?,?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
             
@@ -52,7 +55,7 @@ public class FuncionarioDAO {
 
     public void updateFuncionario(Funcionario f){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "UPDATE funcionario SET login='?', senha='?', nome='?', cpf='?', rg='?', dnascimento=?, sexo='?', telefone='?', estado_civil='?', isadm=? WHERE login='?';";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -80,7 +83,7 @@ public class FuncionarioDAO {
 
     public void deleteFuncionario(Funcionario f){
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+            
             String ins = "DELETE FROM funcionario WHERE login='?';";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
@@ -100,7 +103,7 @@ public class FuncionarioDAO {
     public LinkedList<Funcionario> selectFuncionario(){
         LinkedList<Funcionario> listaFunc = new LinkedList();
         try {
-            Connection conexao = ConnectionFactory.getConnection();
+           
             String ins = "SELECT * FROM funcionario;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
