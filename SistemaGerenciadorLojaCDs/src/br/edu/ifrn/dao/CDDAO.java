@@ -102,7 +102,7 @@ public class CDDAO {
 
     }
 
-    public LinkedList<CD> selectCD(CD c){
+    public LinkedList<CD> selectCD(){
         LinkedList<CD> listaCD = new LinkedList();
         try {
             Connection conexao = ConnectionFactory.getConnection();
@@ -129,7 +129,7 @@ public class CDDAO {
                 }
 
                 CD cd = new CD(rs.getInt(1), rs.getInt(5), gen, func, rs.getString(4), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getBoolean(10), rs.getBoolean(11), rs.getDouble(12));
-                listaCD.add(c);
+                listaCD.add(cd);
             }
 
             conexao.close();

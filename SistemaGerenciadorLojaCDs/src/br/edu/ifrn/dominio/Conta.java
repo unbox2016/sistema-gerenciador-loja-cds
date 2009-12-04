@@ -28,6 +28,9 @@ public class Conta {
         this.data = data;
     }
 
+    public Conta(int codigo, float saldoTotal){
+    }
+
     public float getSaldoTotal() {
         return this.saldoTotal;
     }
