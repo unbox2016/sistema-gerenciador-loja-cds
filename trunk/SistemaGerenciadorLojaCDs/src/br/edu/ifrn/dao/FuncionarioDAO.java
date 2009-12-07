@@ -103,7 +103,7 @@ public class FuncionarioDAO {
     public LinkedList<Funcionario> selectFuncionario(){
         LinkedList<Funcionario> listaFunc = new LinkedList();
         try {
-           
+   
             String ins = "SELECT * FROM funcionario;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
