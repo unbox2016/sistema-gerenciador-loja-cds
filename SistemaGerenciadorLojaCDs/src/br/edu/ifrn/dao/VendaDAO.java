@@ -90,10 +90,11 @@ public class VendaDAO {
                         break;
                     }
                 }
-                
-                
-
             }
+
+        rs.close();
+        stm.close();
+        conexao.close();
 
         } catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
