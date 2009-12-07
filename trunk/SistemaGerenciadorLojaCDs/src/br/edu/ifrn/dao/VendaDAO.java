@@ -56,16 +56,26 @@ public class VendaDAO {
             PreparedStatement stm = conexao.prepareStatement(ins);
             ResultSet rs  = stm.executeQuery();
 
-            Cliente cli;
-            CD cd;
-            Vendedor vend;
+            Cliente cli = null;
+            CD cd = null;
+            Vendedor vend = null;
 
             LinkedList<Cliente> listaCli = new LinkedList();
             LinkedList<CD> listaCD = new LinkedList();
             LinkedList<Vendedor> listaVend = new LinkedList();
 
             while(rs.next()){
-                
+                for(Cliente cliente: listaCli){
+                    if(cliente.getCpf().equals(rs.getString(2))){
+                        cli = cliente;
+                    }
+                }
+
+                // Mais dois "fors" aqui: um p/ cd e outro p/ vendedor. O "2" do rs.getString é a posição do campo cliente_cpf na tabela venda (no caso, é o segundo campo)
+
+                // Quando vc terminar de fazer os dois "fors", eh soh tirar dos comentários os codigos abaixo:
+                // Venda v = new Venda(cli,cd,vend,rs.getInt(4));
+                // listaVen.add(v);
 
             }
 
