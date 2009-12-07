@@ -65,20 +65,35 @@ public class VendaDAO {
             LinkedList<Vendedor> listaVend = new LinkedList();
 
             while(rs.next()){
+
                 for(Cliente cliente: listaCli){
                     if(cliente.getCpf().equals(rs.getString(2))){
-                        cli = cliente;
+                        cli =   cliente;
+                        break;
                     }
                 }
 
-                // Mais dois "fors" aqui: um p/ cd e outro p/ vendedor. O "2" do rs.getString é a posição do campo cliente_cpf na tabela venda (no caso, é o segundo campo)
+                for(CD disk: listaCD){
+                    if(cd.getId() == rs.getInt(3)){
+                        cd = disk;
+                        break;
+                    }
+                }
 
-                // Quando vc terminar de fazer os dois "fors", eh soh tirar dos comentários os codigos abaixo:
-                // Venda v = new Venda(cli,cd,vend,rs.getInt(4));
-                // listaVen.add(v);
+                for(Vendedor v: listaVend){
+                    if(vend.getLogin().equals(rs.getString(1))){
+                        vend = v;
+
+                        Venda venda = new Venda(cli,cd,vend,rs.getInt(4));
+                        listaVen.add(venda);
+                        
+                        break;
+                    }
+                }
+                
+                
 
             }
-
 
         } catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
