@@ -89,8 +89,9 @@ public class FaturamentoDAO {
         }
     }
 
-    LinkedList<Faturamento> listaFatu = new LinkedList();
-    public LinkedList<Faturamento> selectFaturamento(Faturamento ft){
+    
+    public LinkedList<Faturamento> selectFaturamento(){
+        LinkedList<Faturamento> listaFatu = new LinkedList();
         try {
          
             String ins = "SELECT * FROM faturamento;";

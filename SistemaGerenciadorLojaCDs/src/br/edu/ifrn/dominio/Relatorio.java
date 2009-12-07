@@ -19,36 +19,44 @@ public class Relatorio {
     Cliente cli;
     Administrador adm;
     Vendedor ven;
-    int id;
+    Faturamento fat;
 
-    public Relatorio(Date data, Time hora, CD cd, Cliente cli, Administrador adm, Vendedor ven, int id) {
+    public Relatorio(Date data, Time hora, CD cd, Cliente cli, Administrador adm, Vendedor ven, Faturamento fat) {
         this.data = data;
         this.hora = hora;
         this.cd = cd;
         this.cli = cli;
         this.adm = adm;
         this.ven = ven;
-        this.id = id;
+        this.fat = fat;
     }
 
-    public Administrador getAdm() {
-        return adm;
+    public int getFat() {
+        return fat.getId();
+    }
+
+    public void setFat(Faturamento fat) {
+        this.fat = fat;
+    }
+
+    public String getAdm() {
+        return adm.getLogin();
     }
 
     public void setAdm(Administrador adm) {
         this.adm = adm;
     }
 
-    public CD getCd() {
-        return cd;
+    public int getCd() {
+        return cd.getId();
     }
 
     public void setCd(CD cd) {
         this.cd = cd;
     }
 
-    public Cliente getCli() {
-        return cli;
+    public String getCli() {
+        return cli.getCpf();
     }
 
     public void setCli(Cliente cli) {
@@ -71,16 +79,8 @@ public class Relatorio {
         this.hora = hora;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Vendedor getVen() {
-        return ven;
+    public String getVen() {
+        return ven.getLogin();
     }
 
     public void setVen(Vendedor ven) {

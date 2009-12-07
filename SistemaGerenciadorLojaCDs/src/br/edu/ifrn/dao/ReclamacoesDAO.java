@@ -76,12 +76,12 @@ public class ReclamacoesDAO {
                 LinkedList<Cliente> listaCli = cdao.selectCliente();
                 Cliente cli = null;
                 for(Cliente c:listaCli){
-                    if(rs.getString(2).equals(c.getCpf())){
+                    if(rs.getString(2).equals(c.getCpf()))
                         cli = c;
-                    }
                 }
 
                 Reclamacoes r = new Reclamacoes(rs.getInt(1), cli, rs.getString(3));
+                listaReclam.add(r);
 
             }
 
