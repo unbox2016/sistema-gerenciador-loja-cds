@@ -33,7 +33,7 @@ public class ConnectionFactory { // Método que retorna a conexão ao banco de d
                 conexao = ds.getConnection(); // Criação da conexão;
 
             }catch(SQLException ex){
-                JOptionPane.showMessageDialog(null, "Erro ao tentar conectar no banco de dados. \n" + ex.getMessage()); 
+                JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
             }
 
          }

@@ -81,7 +81,7 @@ public class CDDAO {
             conexao.close();
 
         } catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
         }
     }
 
@@ -99,7 +99,7 @@ public class CDDAO {
             conexao.close();
 
         } catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
+             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
         }
 
     }
@@ -139,7 +139,7 @@ public class CDDAO {
             conexao.close();
 
         } catch(SQLException ex){
-            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados." + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
         } finally{
             return listaCD;
         }
