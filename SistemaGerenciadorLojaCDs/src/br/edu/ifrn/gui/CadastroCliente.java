@@ -49,8 +49,8 @@ public class CadastroCliente extends javax.swing.JFrame {
         ano = new javax.swing.JComboBox();
         solteiro = new javax.swing.JRadioButton();
         casado = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        masculino = new javax.swing.JRadioButton();
+        feminino = new javax.swing.JRadioButton();
         cadastrar = new javax.swing.JButton();
         limpar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
@@ -61,10 +61,10 @@ public class CadastroCliente extends javax.swing.JFrame {
         setTitle("Cadastro de Cliente");
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel1.setText("Nome:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel2.setText("CPF:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
@@ -79,43 +79,43 @@ public class CadastroCliente extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel6.setText("Telefone:");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Estado Civil:");
 
         nome.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        cpf.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cpf.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        rg.setFont(new java.awt.Font("Tahoma", 0, 12));
+        rg.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        telefone.setFont(new java.awt.Font("Tahoma", 0, 12));
+        telefone.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        dia.setFont(new java.awt.Font("Tahoma", 0, 12));
+        dia.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        mes.setFont(new java.awt.Font("Tahoma", 0, 12));
+        mes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
 
-        ano.setFont(new java.awt.Font("Tahoma", 0, 12));
+        ano.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1900", "1901", "1902", "1903", "1904", "1905", "1906", "1907", "1908", "1909", "1910", "1911", "1912", "1913", "1914", "1915", "1916", "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009" }));
 
         estadocivil.add(solteiro);
-        solteiro.setFont(new java.awt.Font("Tahoma", 0, 12));
+        solteiro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         solteiro.setSelected(true);
         solteiro.setText("Solteiro(a)");
 
         estadocivil.add(casado);
-        casado.setFont(new java.awt.Font("Tahoma", 0, 12));
+        casado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         casado.setText("Casado(a)");
 
-        sexo.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 12));
-        jRadioButton1.setSelected(true);
-        jRadioButton1.setText("Masculino");
+        sexo.add(masculino);
+        masculino.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        masculino.setSelected(true);
+        masculino.setText("Masculino");
 
-        sexo.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 12));
-        jRadioButton2.setText("Feminino");
+        sexo.add(feminino);
+        feminino.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        feminino.setText("Feminino");
 
         cadastrar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cadastrar.setForeground(new java.awt.Color(0, 102, 0));
@@ -130,10 +130,15 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setText("Preencha todos os campos abaixo:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -177,9 +182,9 @@ public class CadastroCliente extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton1)
+                                .addComponent(masculino)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton2)))
+                                .addComponent(feminino)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -220,8 +225,8 @@ public class CadastroCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(masculino)
+                    .addComponent(feminino))
                 .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -243,8 +248,21 @@ public class CadastroCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
-        // TODO add your handling code here:
+        nome.setText("");
+        cpf.setText("");
+        rg.setText("");
+        telefone.setText("");
+        solteiro.setSelected(true);
+        casado.setSelected(false);
+        masculino.setSelected(true);
+        feminino.setSelected(false);
+
+        //Ficam faltando aqui as comboBox
 }//GEN-LAST:event_limparActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_cancelarActionPerformed
 
     /**
     * @param args the command line arguments
@@ -259,6 +277,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JTextField cpf;
     private javax.swing.JComboBox dia;
     private javax.swing.ButtonGroup estadocivil;
+    private javax.swing.JRadioButton feminino;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -267,10 +286,9 @@ public class CadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton limpar;
+    private javax.swing.JRadioButton masculino;
     private javax.swing.JComboBox mes;
     private javax.swing.JTextField nome;
     private javax.swing.JTextField rg;
