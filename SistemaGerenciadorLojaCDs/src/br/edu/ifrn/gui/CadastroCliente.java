@@ -256,8 +256,9 @@ public class CadastroCliente extends javax.swing.JFrame {
         casado.setSelected(false);
         masculino.setSelected(true);
         feminino.setSelected(false);
-
-        //Ficam faltando aqui as comboBox
+        dia.setSelectedItem("1");
+        mes.setSelectedItem("Janeiro");
+        ano.setSelectedItem("1900");
 }//GEN-LAST:event_limparActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
