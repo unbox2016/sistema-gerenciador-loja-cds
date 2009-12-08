@@ -79,42 +79,48 @@ public class RelatorioDAO {
 
             ResultSet rs = stm.executeQuery();
 
+            ClienteDAO cdao = new ClienteDAO();
+            LinkedList<Cliente> listaCli  = cdao.selectCliente();
+
+            VendedorDAO vdao = new VendedorDAO();
+            LinkedList<Vendedor> listaVend  = vdao.selectVendedor();
+
+            AdministradorDAO adao = new AdministradorDAO();
+            LinkedList<Administrador> listaAdm = adao.selectAdministrador();
+
+            CDDAO cddao = new CDDAO();
+            LinkedList<CD> listaCD = cddao.selectCD();
+
+            FaturamentoDAO fdao = new FaturamentoDAO();
+            LinkedList<Faturamento> listaFatu = fdao.selectFaturamento();
+
             while(rs.next()){
-                ClienteDAO cdao = new ClienteDAO();
-                LinkedList<Cliente> listaCli  = cdao.selectCliente();
+                
                 Cliente cli = null;
                 for(Cliente c: listaCli){
                     if(rs.getString(5).equals(c.getCpf()))
                         cli = c;
                 }
 
-                VendedorDAO vdao = new VendedorDAO();
-                LinkedList<Vendedor> listaVend  = vdao.selectVendedor();
                 Vendedor vend = null;
                 for(Vendedor v: listaVend){
                     if(rs.getString(4).equals(v.getLogin()))
                         vend = v;
                 }
-
-                AdministradorDAO adao = new AdministradorDAO();
-                LinkedList<Administrador> listaAdm = adao.selectAdministrador();
+               
                 Administrador adm = null;
                 for(Administrador a: listaAdm){
                     if(rs.getString(3).equals(a.getLogin()))
                         adm = a;
 
                 }
-
-                CDDAO cddao = new CDDAO();
-                LinkedList<CD> listaCD = cddao.selectCD();
+                
                 CD cd = null;
                 for(CD c: listaCD){
                     if(rs.getInt(6) == c.getId())
                         cd = c;
                 }
-
-                FaturamentoDAO fdao = new FaturamentoDAO();
-                LinkedList<Faturamento> listaFatu = fdao.selectFaturamento();
+               
                 Faturamento fat = null;
                 for(Faturamento f: listaFatu){
                     if(rs.getInt(7) == f.getId())

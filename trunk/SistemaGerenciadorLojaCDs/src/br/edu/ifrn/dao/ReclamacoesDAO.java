@@ -71,9 +71,11 @@ public class ReclamacoesDAO {
 
             ResultSet rs = stm.executeQuery();
 
+            ClienteDAO cdao = new ClienteDAO();
+            LinkedList<Cliente> listaCli = cdao.selectCliente();
+
             while(rs.next()){
-                ClienteDAO cdao = new ClienteDAO();
-                LinkedList<Cliente> listaCli = cdao.selectCliente();
+                
                 Cliente cli = null;
                 for(Cliente c:listaCli){
                     if(rs.getString(2).equals(c.getCpf()))
