@@ -11,7 +11,11 @@
 
 package br.edu.ifrn.gui;
 
+import br.edu.ifrn.dao.FuncionarioDAO;
+import br.edu.ifrn.dominio.Funcionario;
 import java.awt.Image;
+import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -62,9 +66,14 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel3.setText("Senha:");
 
-        efeturarLogin.setFont(new java.awt.Font("Tahoma", 0, 12));
+        efeturarLogin.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         efeturarLogin.setForeground(new java.awt.Color(0, 102, 0));
         efeturarLogin.setText("Efetuar Login");
+        efeturarLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                efeturarLoginActionPerformed(evt);
+            }
+        });
 
         limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Limpar");
@@ -124,6 +133,32 @@ public class TelaLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void efeturarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_efeturarLoginActionPerformed
+        LinkedList<Funcionario> list;
+        FuncionarioDAO funcdao = new FuncionarioDAO();
+
+        list = funcdao.selectFuncionario();
+        String log = login.getText();
+        String sen = senha.getText();
+
+       for(Funcionario f: list){
+           if ((f.getLogin().equals(log))&&(f.getSenha().equals(sen))){
+               if(f.isIsAdm()){
+                    TelaPrincipalAdministrador tpa = new TelaPrincipalAdministrador();
+                    tpa.setVisible(true);
+                    break;
+               }
+               else{
+                    TelaPrincipalFuncionario tpf = new TelaPrincipalFuncionario();
+                    tpf.setVisible(true);
+               }
+           }
+           else{
+               JOptionPane.showMessageDialog(null, "Senha e/ou login inexistentes ou incorretos");
+           }
+        }
+    }//GEN-LAST:event_efeturarLoginActionPerformed
 
     /**
     * @param args the command line arguments
