@@ -61,7 +61,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel2.setText("Login:");
 
-        login.setFont(new java.awt.Font("Tahoma", 0, 12));
+        login.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel3.setText("Senha:");
@@ -75,12 +75,22 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         limpar.setText("Limpar");
+        limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparActionPerformed(evt);
+            }
+        });
 
         cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,6 +169,15 @@ public class TelaLogin extends javax.swing.JFrame {
            }
         }
     }//GEN-LAST:event_efeturarLoginActionPerformed
+
+    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
+       senha.setText("");
+       login.setText("");
+    }//GEN-LAST:event_limparActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_cancelarActionPerformed
 
     /**
     * @param args the command line arguments
