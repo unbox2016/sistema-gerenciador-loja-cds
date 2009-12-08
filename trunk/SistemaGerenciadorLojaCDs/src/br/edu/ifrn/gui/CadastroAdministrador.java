@@ -28,10 +28,6 @@ public class CadastroAdministrador extends javax.swing.JFrame {
         initComponents();
     }
 
-
-
-
-
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -363,8 +359,7 @@ public class CadastroAdministrador extends javax.swing.JFrame {
         String cp = null;
         String r = null;
         String telef = null;
-
-        
+     
         try{
             cp = cpf.getText();
             r = rg.getText();
@@ -382,13 +377,6 @@ public class CadastroAdministrador extends javax.swing.JFrame {
         } else{
             JOptionPane.showMessageDialog(null, "As senhas não correspondem. Por favor, digite-as novamente.");
         }
-
-
-
-
-
-
-
     }//GEN-LAST:event_cadastrarActionPerformed
 
     private Image icone() {
