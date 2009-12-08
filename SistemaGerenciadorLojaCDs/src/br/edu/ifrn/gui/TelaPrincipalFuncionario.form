@@ -13,11 +13,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Trocar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoTrocarActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="opcaoFinalizar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Finalizar programa"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoFinalizarActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -30,11 +36,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoClienteActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="opcaoCD">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CD"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoCDActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -47,11 +59,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Realizar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoRealizarActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="opcaoConsultar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consultar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoConsultarActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -64,6 +82,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ler mensagens"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoLerActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -76,6 +97,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ler anteriores"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoLerRelActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -88,6 +112,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sobre"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcaoSobreActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -228,6 +255,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Realizar Venda"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="realizarvendaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pesquisarcd">
           <Properties>
@@ -236,6 +266,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Pesquisar CD"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pesquisarcdActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="pesquisacliente">
           <Properties>
@@ -244,6 +277,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Pesquisar Cliente"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pesquisaclienteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="cadastrarcd">
           <Properties>
@@ -252,6 +288,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastrar CD"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarcdActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="cadastrarcliente">
           <Properties>
@@ -260,6 +299,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastrar Cliente"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarclienteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="sac">
           <Properties>
@@ -268,6 +310,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="SAC"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sacActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
