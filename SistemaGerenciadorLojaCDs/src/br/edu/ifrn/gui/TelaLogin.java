@@ -145,6 +145,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void efeturarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_efeturarLoginActionPerformed
+        boolean aux = false; // variavel auxiliar p/ verificar se o login e a senha não correspondem a nenhum funcionario
         LinkedList<Funcionario> list;
         FuncionarioDAO funcdao = new FuncionarioDAO();
 
@@ -165,10 +166,16 @@ public class TelaLogin extends javax.swing.JFrame {
                     break;
                }
            }
-           else{
-               JOptionPane.showMessageDialog(null, "Senha e/ou login inexistentes ou incorretos");
+
+           else {
+               aux = true;
            }
         }
+
+       if(aux){ // Se o login e a senha digitados não correspondem a algum funcionário
+          JOptionPane.showMessageDialog(null,"O login ou a senha estão incorretos. Tente novamente");
+       }
+
     }//GEN-LAST:event_efeturarLoginActionPerformed
 
     private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
