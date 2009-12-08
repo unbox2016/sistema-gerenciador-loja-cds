@@ -13,7 +13,7 @@ import java.util.Date;
  */
 // Um administrador é um funcionário, logo herda de tal classe
 public class Administrador extends Funcionario {
-   public Administrador(String log, String sen, String nom, String sex, String tel, String estciv, String cpf, String rg, Date nasc, boolean isAdm){
+   public Administrador(String log, String sen, String nom, String sex, String tel, String estciv, String cpf, String rg, Date nasc){
         super(log,sen,nom,sex,tel,estciv,cpf,rg,nasc, true);
    }
 }
