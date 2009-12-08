@@ -33,6 +33,9 @@ public class ClienteDAO {
             
             String ins = "INSERT INTO cliente VALUES(?,?,?,?,?,?,?,?,?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
+
+            java.util.Date data = c.getDataNasc();
+            java.sql.Date datasql = new java.sql.Date(data.getTime());
             
             stm.setString(1, c.getCpf());
             stm.setInt(2, c.getConta().getCodigo());
@@ -42,7 +45,7 @@ public class ClienteDAO {
             stm.setString(6, c.getSexo());
             stm.setString(7, c.getTelefone());
             stm.setString(8, c.getEstCivil());
-            stm.setDate(9,(Date) c.getDataNasc());
+            stm.setDate(9, datasql);
 
             stm.executeUpdate();
             stm.close();
