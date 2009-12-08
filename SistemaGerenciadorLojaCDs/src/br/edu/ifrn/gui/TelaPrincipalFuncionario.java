@@ -402,7 +402,7 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         saclist.setVisible(true);
     }//GEN-LAST:event_opcaoLerActionPerformed
 
-    Relatorio r = new Relatorio();
+    RelatorioPedido r = new RelatorioPedido();
     private void opcaoLerRelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoLerRelActionPerformed
         r.setVisible(true);
     }//GEN-LAST:event_opcaoLerRelActionPerformed
