@@ -36,7 +36,10 @@ public class RelatorioDAO {
             String ins = "INSERT INTO relatorio VALUES(?,?,?,?,?,?,?)";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
-            stm.setDate(1,(Date) r.getData());
+            java.util.Date data = r.getData();
+            java.sql.Date datasql = new java.sql.Date(data.getTime());
+
+            stm.setDate(1, datasql);
             stm.setTime(2, r.getHora());
             stm.setString(3, r.getAdm());
             stm.setString(4, r.getVen());
