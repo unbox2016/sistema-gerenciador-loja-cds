@@ -31,13 +31,16 @@ public class FuncionarioDAO {
             
             String ins = "INSERT INTO funcionario VALUES(?,?,?,?,?,?,?,?,?,?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
+
+            java.util.Date data = f.getDNascimento();
+            java.sql.Date datasql = new java.sql.Date(data.getTime());
             
             stm.setString(1, f.getLogin());
             stm.setString(2, f.getSenha());
             stm.setString(3, f.getNome());
             stm.setString(4, f.getCpf());
             stm.setString(5, f.getRg());
-            stm.setDate(6, (Date) f.getDNascimento());
+            stm.setDate(6, datasql);
             stm.setString(7, f.getSexo());
             stm.setString(8, f.getTelefone());
             stm.setString(9, f.getEstCivil());
