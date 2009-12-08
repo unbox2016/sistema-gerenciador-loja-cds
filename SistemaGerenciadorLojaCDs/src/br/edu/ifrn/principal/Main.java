@@ -5,8 +5,10 @@
 
 package br.edu.ifrn.principal;
 
+import br.edu.ifrn.gui.TelaLogin;
 
-import br.edu.ifrn.gui.TelaPrincipalAdministrador;
+
+
 
 /**
  *
@@ -14,14 +16,12 @@ import br.edu.ifrn.gui.TelaPrincipalAdministrador;
  */
 public class Main {
     
-    public static void main(String args[]){
-                    
+    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipalAdministrador().setVisible(true);
+                new TelaLogin().setVisible(true);
             }
         });
-
     }
 
 }
