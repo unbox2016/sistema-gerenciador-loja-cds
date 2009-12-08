@@ -91,21 +91,51 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
 
         realizarvenda.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         realizarvenda.setText("Realizar Venda");
+        realizarvenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                realizarvendaActionPerformed(evt);
+            }
+        });
 
         pesquisarcd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         pesquisarcd.setText("Pesquisar CD");
+        pesquisarcd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarcdActionPerformed(evt);
+            }
+        });
 
         pesquisacliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         pesquisacliente.setText("Pesquisar Cliente");
+        pesquisacliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisaclienteActionPerformed(evt);
+            }
+        });
 
         cadastrarcd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cadastrarcd.setText("Cadastrar CD");
+        cadastrarcd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarcdActionPerformed(evt);
+            }
+        });
 
         cadastrarcliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cadastrarcliente.setText("Cadastrar Cliente");
+        cadastrarcliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarclienteActionPerformed(evt);
+            }
+        });
 
         sac.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         sac.setText("SAC");
+        sac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sacActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout menurapidoLayout = new javax.swing.GroupLayout(menurapido);
         menurapido.setLayout(menurapidoLayout);
@@ -179,9 +209,19 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         menuUsuario.setText("Usuário");
 
         opcaoTrocar.setText("Trocar");
+        opcaoTrocar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoTrocarActionPerformed(evt);
+            }
+        });
         menuUsuario.add(opcaoTrocar);
 
         opcaoFinalizar.setText("Finalizar programa");
+        opcaoFinalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoFinalizarActionPerformed(evt);
+            }
+        });
         menuUsuario.add(opcaoFinalizar);
 
         menu.add(menuUsuario);
@@ -189,9 +229,19 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         menuCadastrar.setText("Cadastro");
 
         opcaoCliente.setText("Cliente");
+        opcaoCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoClienteActionPerformed(evt);
+            }
+        });
         menuCadastrar.add(opcaoCliente);
 
         opcaoCD.setText("CD");
+        opcaoCD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoCDActionPerformed(evt);
+            }
+        });
         menuCadastrar.add(opcaoCD);
 
         menu.add(menuCadastrar);
@@ -199,9 +249,19 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         menuVenda.setText("Venda");
 
         opcaoRealizar.setText("Realizar");
+        opcaoRealizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoRealizarActionPerformed(evt);
+            }
+        });
         menuVenda.add(opcaoRealizar);
 
         opcaoConsultar.setText("Consultar");
+        opcaoConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoConsultarActionPerformed(evt);
+            }
+        });
         menuVenda.add(opcaoConsultar);
 
         menu.add(menuVenda);
@@ -209,6 +269,11 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         menuSAC.setText("SAC");
 
         opcaoLer.setText("Ler mensagens");
+        opcaoLer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoLerActionPerformed(evt);
+            }
+        });
         menuSAC.add(opcaoLer);
 
         menu.add(menuSAC);
@@ -216,6 +281,11 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         menuRelatorio.setText("Relatório");
 
         opcaoLerRel.setText("Ler anteriores");
+        opcaoLerRel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoLerRelActionPerformed(evt);
+            }
+        });
         menuRelatorio.add(opcaoLerRel);
 
         menu.add(menuRelatorio);
@@ -223,6 +293,11 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         menuAjuda.setText("Ajuda");
 
         opcaoSobre.setText("Sobre");
+        opcaoSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcaoSobreActionPerformed(evt);
+            }
+        });
         menuAjuda.add(opcaoSobre);
 
         menu.add(menuAjuda);
@@ -266,6 +341,77 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    Venda v = new Venda();
+    private void realizarvendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realizarvendaActionPerformed
+        v.setVisible(true);
+    }//GEN-LAST:event_realizarvendaActionPerformed
+
+    PesquisaCD pcd = new PesquisaCD();
+    private void pesquisarcdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarcdActionPerformed
+        pcd.setVisible(true);
+    }//GEN-LAST:event_pesquisarcdActionPerformed
+    
+    PesquisaCliente pcli = new PesquisaCliente();
+    private void pesquisaclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisaclienteActionPerformed
+        pcli.setVisible(true);
+    }//GEN-LAST:event_pesquisaclienteActionPerformed
+    
+    CadastroCD cadcd = new CadastroCD();
+    private void cadastrarcdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarcdActionPerformed
+        cadcd.setVisible(true);
+    }//GEN-LAST:event_cadastrarcdActionPerformed
+
+    CadastroCliente cadcli = new CadastroCliente();
+    private void cadastrarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarclienteActionPerformed
+        cadcli.setVisible(true);
+    }//GEN-LAST:event_cadastrarclienteActionPerformed
+    
+    SACListaMensagens saclist = new SACListaMensagens();
+    private void sacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sacActionPerformed
+        saclist.setVisible(true);
+    }//GEN-LAST:event_sacActionPerformed
+
+    TelaLogin tl = new TelaLogin();
+    private void opcaoTrocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoTrocarActionPerformed
+        this.setDefaultCloseOperation(1);
+        tl.setVisible(true);
+    }//GEN-LAST:event_opcaoTrocarActionPerformed
+
+    private void opcaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoFinalizarActionPerformed
+        this.setDefaultCloseOperation(1);
+    }//GEN-LAST:event_opcaoFinalizarActionPerformed
+
+    private void opcaoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoClienteActionPerformed
+        cadcli.setVisible(true);
+    }//GEN-LAST:event_opcaoClienteActionPerformed
+
+    private void opcaoCDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoCDActionPerformed
+        cadcd.setVisible(true);
+    }//GEN-LAST:event_opcaoCDActionPerformed
+
+    private void opcaoRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoRealizarActionPerformed
+        v.setVisible(true);
+    }//GEN-LAST:event_opcaoRealizarActionPerformed
+
+    ListaVendas lv = new ListaVendas();
+    private void opcaoConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoConsultarActionPerformed
+        lv.setVisible(true);
+    }//GEN-LAST:event_opcaoConsultarActionPerformed
+
+    private void opcaoLerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoLerActionPerformed
+        saclist.setVisible(true);
+    }//GEN-LAST:event_opcaoLerActionPerformed
+
+    Relatorio r = new Relatorio();
+    private void opcaoLerRelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoLerRelActionPerformed
+        r.setVisible(true);
+    }//GEN-LAST:event_opcaoLerRelActionPerformed
+
+    Sobre s = new Sobre();
+    private void opcaoSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoSobreActionPerformed
+        s.setVisible(true);
+    }//GEN-LAST:event_opcaoSobreActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -274,15 +420,6 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
     String formato = "dd/MM/yyyy";
     SimpleDateFormat formatter = new SimpleDateFormat(formato);
     
-
-   
-    
-     
-
-
-    
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastrarcd;
     private javax.swing.JButton cadastrarcliente;
