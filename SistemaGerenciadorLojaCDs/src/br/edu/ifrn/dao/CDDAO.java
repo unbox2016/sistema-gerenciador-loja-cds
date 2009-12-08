@@ -113,17 +113,20 @@ public class CDDAO {
 
             ResultSet rs = (ResultSet) stm.executeQuery();
 
+            FuncionarioDAO fdao = new FuncionarioDAO();
+            LinkedList<Funcionario> listaFunc = fdao.selectFuncionario();
+
+            GeneroDAO gdao = new GeneroDAO();
+            LinkedList<Genero> listaGen = gdao.selectGenero();
+
             while(rs.next()){
-                FuncionarioDAO fdao = new FuncionarioDAO();
-                LinkedList<Funcionario> listaFunc = fdao.selectFuncionario();
+               
                 Funcionario func = null;
                 for (Funcionario f:listaFunc){
                     if(rs.getString(2).equals(f.getLogin()))
                         func = f;
                 }
 
-                GeneroDAO gdao = new GeneroDAO();
-                LinkedList<Genero> listaGen = gdao.selectGenero();
                 Genero gen = null;
                 for (Genero g:listaGen){
                     if(rs.getString(3).equals(g.getNome()))

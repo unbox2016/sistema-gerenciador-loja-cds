@@ -78,9 +78,12 @@ public class VendedorDAO {
             String ins = "SELECT * FROM funcionario, vendedor WHERE funcionario.login = vendedor.funcionario_login;";
             PreparedStatement stm = conexao.prepareStatement(ins);
             ResultSet rs = stm.executeQuery();
+
+            AdministradorDAO adao = new AdministradorDAO();
+            LinkedList<Administrador> listaAdm = adao.selectAdministrador();
+
             while(rs.next()){
-                AdministradorDAO adao = new AdministradorDAO();
-                LinkedList<Administrador> listaAdm = adao.selectAdministrador();
+                
                 Administrador adm = null;
                 for (Administrador a:listaAdm){
                     if(rs.getString(12).equals(a.getLogin()))
