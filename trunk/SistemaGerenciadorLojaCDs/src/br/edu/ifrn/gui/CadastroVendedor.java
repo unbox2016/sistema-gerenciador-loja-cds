@@ -103,7 +103,7 @@ public class CadastroVendedor extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel10.setText("Estado Civil:");
 
-        login.setFont(new java.awt.Font("Tahoma", 0, 12));
+        login.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
@@ -155,10 +155,20 @@ public class CadastroVendedor extends javax.swing.JFrame {
 
         limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         limpar.setText("Limpar");
+        limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparActionPerformed(evt);
+            }
+        });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel11.setText("Preencha todos os campos abaixo:");
@@ -304,6 +314,27 @@ public class CadastroVendedor extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_loginActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+       this.setVisible(false);
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
+       login.setText("");
+       senha.setText("");
+       senhaConf.setText("");
+       nome.setText("");
+       cpf.setText("");
+       rg.setText("");
+       dia.setSelectedItem("1");
+       mes.setSelectedItem("Janeiro");
+       ano.setSelectedItem("1900");
+       masc.setSelected(true);
+       fem.setSelected(false);
+       telefone.setText("");
+       solteiro.setSelected(true);
+       casado.setSelected(false);
+    }//GEN-LAST:event_limparActionPerformed
 
     /**
     * @param args the command line arguments
