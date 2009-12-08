@@ -20,7 +20,7 @@ public class Executor {
     
     AdministradorDAO admdao = new AdministradorDAO();
     LinkedList<Administrador> list;
-    boolean test;
+    private boolean test;
 
     public Executor() {
         list = admdao.selectAdministrador();
