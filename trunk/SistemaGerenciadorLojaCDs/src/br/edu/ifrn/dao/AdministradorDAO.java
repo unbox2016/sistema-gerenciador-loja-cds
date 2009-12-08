@@ -79,7 +79,7 @@ public class AdministradorDAO {
             PreparedStatement stm = conexao.prepareStatement(ins);
             ResultSet rs = stm.executeQuery();
             while(rs.next()){
-                Administrador a = new Administrador(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(4), rs.getString(5), rs.getDate(6), rs.getBoolean(10));
+                Administrador a = new Administrador(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(4), rs.getString(5), rs.getDate(6));
                 listaAdm.add(a);
             }
 

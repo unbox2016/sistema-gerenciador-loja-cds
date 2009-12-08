@@ -11,7 +11,11 @@
 
 package br.edu.ifrn.gui;
 
+import br.edu.ifrn.dao.AdministradorDAO;
+import br.edu.ifrn.dominio.Administrador;
 import java.awt.Image;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,6 +27,10 @@ public class CadastroAdministrador extends javax.swing.JFrame {
     public CadastroAdministrador() {
         initComponents();
     }
+
+
+
+
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -116,15 +124,15 @@ public class CadastroAdministrador extends javax.swing.JFrame {
 
         senha.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        senhaConf.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        senhaConf.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        dia.setFont(new java.awt.Font("Tahoma", 0, 12));
+        dia.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
 
-        mes.setFont(new java.awt.Font("Tahoma", 0, 12));
+        mes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março ", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
 
-        ano.setFont(new java.awt.Font("Tahoma", 0, 12));
+        ano.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1900", "1901", "1902", "1903", "1904", "1905", "1906", "1907", "1908", "1909", "1910", "1911", "1912", "1913", "1914", "1915", "1916", "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009" }));
 
         sexo.add(masculino);
@@ -145,16 +153,31 @@ public class CadastroAdministrador extends javax.swing.JFrame {
         solteiro.setSelected(true);
         solteiro.setText("Solteiro(a)");
 
-        cadastrar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cadastrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cadastrar.setForeground(new java.awt.Color(0, 102, 0));
         cadastrar.setText("Cadastrar");
+        cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarActionPerformed(evt);
+            }
+        });
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         limpar.setText("Limpar");
+        limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparActionPerformed(evt);
+            }
+        });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel11.setText("Preencha todos os campos abaixo:");
@@ -300,6 +323,73 @@ public class CadastroAdministrador extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_loginActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
+        // TODO add your handling code here:
+        login.setText("");
+        senha.setText("");
+        senhaConf.setText("");
+        nome.setText("");
+        cpf.setText("");
+        rg.setText("");
+        dia.setSelectedIndex(0);
+        mes.setSelectedIndex(0);
+        ano.setSelectedIndex(0);
+        masculino.setSelected(true);
+        telefone.setText("");
+        solteiro.setSelected(true);
+    }//GEN-LAST:event_limparActionPerformed
+
+    private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+        // TODO add your handling code here:
+
+        
+        String log = login.getText();
+        String sen = senha.getText();
+        String senConf = senhaConf.getText();
+        String nom = nome.getText();
+       
+        int di = dia.getSelectedIndex() + 1;
+        int me = mes.getSelectedIndex() + 1;
+        int an = ano.getSelectedIndex() + 1900;
+        Date datan = new Date(an, me, di);
+        String sex = masculino.isSelected()?"Masculino":"Feminino";
+        String estadciv = solteiro.isSelected()?"Solteiro(a)":"Casado(a)";
+        String cp = null;
+        String r = null;
+        String telef = null;
+
+        
+        try{
+            cp = cpf.getText();
+            r = rg.getText();
+            telef = telefone.getText();
+        }catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para CPF, RG ou Telefone.");
+        }
+        
+        
+        if(sen.equals(senConf)){
+            AdministradorDAO adao = new AdministradorDAO();
+            Administrador adm = new Administrador(log, sen, nom, sex, telef, estadciv, cp, r, datan);
+            adao.addAdministrador(adm);
+
+        } else{
+            JOptionPane.showMessageDialog(null, "As senhas não correspondem. Por favor, digite-as novamente.");
+        }
+
+
+
+
+
+
+
+    }//GEN-LAST:event_cadastrarActionPerformed
 
     private Image icone() {
             return new javax.swing.ImageIcon(getClass().getResource("/br/edu/ifrn/imagens/icone.png")).getImage();
