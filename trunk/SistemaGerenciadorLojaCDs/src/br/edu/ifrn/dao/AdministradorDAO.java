@@ -39,6 +39,7 @@ public class AdministradorDAO {
             fdao.addFuncionario(adm);
             
             stm.executeUpdate();
+            stm.close();
             conexao.close();         
             
         }catch(SQLException ex){

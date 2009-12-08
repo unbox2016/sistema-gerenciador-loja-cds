@@ -18,15 +18,16 @@ public class ConnectionFactory { // Método que retorna a conexão ao banco de d
 
     // Abaixo estão os dados referentes a conexão, bem como a declaração dela.
     
-    private static Connection conexao = null;
+    // private static Connection conexao;
     private static String url = "jdbc:h2:basesdedados/pgcds";
     private static String usuario = "user";
     private static String senha = "pgcds777";
+    private static Connection conexao = null;
 
     public static Connection getConnection(){ // Método estático que retorna a conexão, sem que seja necessário a criação de um objeto dessa classe.
-        if(conexao == null){
+
             try{
-                JdbcDataSource ds = new JdbcDataSource(); // Declaração do objeto que fará a conexão.
+                JdbcDataSource ds = new JdbcDataSource(); // Declaração do objeto que fará a conexão
                 ds.setURL(url);
                 ds.setUser(usuario);
                 ds.setPassword(senha);
@@ -36,7 +37,6 @@ public class ConnectionFactory { // Método que retorna a conexão ao banco de d
                 JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
             }
 
-         }
-    return conexao; // Retorno da conexão.
-}
-}
+            return conexao;
+     }
+    }
