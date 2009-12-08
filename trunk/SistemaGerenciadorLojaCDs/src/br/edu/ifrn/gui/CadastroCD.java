@@ -72,31 +72,31 @@ public class CadastroCD extends javax.swing.JFrame {
         setTitle("Cadastro de CD");
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel1.setText("Código:");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel2.setText("Título:");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel3.setText("Data de lançamento:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel4.setText("Gênero:");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel5.setText("Preço(R$):");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel6.setText("Duração:");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel7.setText("Artista:");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel8.setText("Nº de faixas:");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel9.setText("Lançamento:");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12));
@@ -157,12 +157,22 @@ public class CadastroCD extends javax.swing.JFrame {
         cadastrar.setForeground(new java.awt.Color(0, 102, 0));
         cadastrar.setText("Cadastrar");
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         limpar.setText("Limpar");
+        limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparActionPerformed(evt);
+            }
+        });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel12.setText("Preencha todos os campos abaixo:");
@@ -316,6 +326,25 @@ public class CadastroCD extends javax.swing.JFrame {
     private void anoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_anoActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
+        codigoCD.setText("");
+        tituloCD.setText("");
+        precoCD.setText("");
+        artista.setText("");
+        duracao.setText("");
+        nFaixas.setText("");
+        sim.setSelected(true);
+        nao.setSelected(false);
+        disponivel.setSelected(true);
+        naoDisponivel.setSelected(false);
+        genero.setSelectedItem("Axé");
+        ano.setSelectedItem("1900");
+    }//GEN-LAST:event_limparActionPerformed
 
     /**
     * @param args the command line arguments
