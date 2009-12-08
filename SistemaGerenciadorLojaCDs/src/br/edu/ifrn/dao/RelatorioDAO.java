@@ -128,6 +128,7 @@ public class RelatorioDAO {
                 }
 
                 Relatorio rel = new Relatorio(rs.getDate(1), rs.getTime(2), cd, cli, adm, vend,  fat);
+                listaRel.add(rel);
 
             }
 
