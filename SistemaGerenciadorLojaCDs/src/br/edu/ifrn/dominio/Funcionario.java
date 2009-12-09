@@ -24,7 +24,7 @@ public class Funcionario {
     protected Date DNascimento;
     protected boolean isAdm;
 
-    public Funcionario(String login, String senha, String nome, String sexo, String telefone, String estCivil, String cpf, String rg, Date DNascimento, boolean isAdm) {
+    public Funcionario(String login, String senha, String nome, String cpf, String rg, Date DNascimento, String sexo, String telefone, String estCivil,  boolean isAdm) {
         this.login = login;
         this.senha = senha;
         this.nome = nome;
