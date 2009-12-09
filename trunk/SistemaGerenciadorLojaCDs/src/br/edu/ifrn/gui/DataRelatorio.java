@@ -38,7 +38,6 @@ public class DataRelatorio extends javax.swing.JFrame {
         ano = new javax.swing.JComboBox();
         exibirRelatorio = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Exibir relatório");
         setResizable(false);
 

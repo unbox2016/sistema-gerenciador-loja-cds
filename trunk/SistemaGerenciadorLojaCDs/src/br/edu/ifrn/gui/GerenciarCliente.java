@@ -41,18 +41,17 @@ public class GerenciarCliente extends javax.swing.JFrame {
         confirmar = new javax.swing.JButton();
         limpar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
+        deletarCliente = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel1.setText("Edição de clientes");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel6.setText("Cliente(código):");
 
         codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        pesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        pesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
         pesquisarCliente.setText("Pesquisar cliente...");
 
         editarCliente.setModel(new javax.swing.table.DefaultTableModel(
@@ -83,16 +82,20 @@ public class GerenciarCliente extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(editarCliente);
 
-        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
         confirmar.setText("Confirmar alterações");
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Desfazer");
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
+
+        deletarCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
+        deletarCliente.setForeground(new java.awt.Color(255, 0, 0));
+        deletarCliente.setText("Deletar cliente");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +111,9 @@ public class GerenciarCliente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(codigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pesquisarCliente))
+                        .addComponent(pesquisarCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deletarCliente))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 669, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(confirmar)
@@ -129,7 +134,8 @@ public class GerenciarCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(codigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(pesquisarCliente))
+                    .addComponent(pesquisarCliente)
+                    .addComponent(deletarCliente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
@@ -152,6 +158,7 @@ public class GerenciarCliente extends javax.swing.JFrame {
     private javax.swing.JButton cancelar;
     private javax.swing.JTextField codigoCliente;
     private javax.swing.JButton confirmar;
+    private javax.swing.JButton deletarCliente;
     private javax.swing.JTable editarCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;

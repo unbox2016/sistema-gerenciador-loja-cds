@@ -41,7 +41,6 @@ public class SACMensagem extends javax.swing.JFrame {
         proxima = new javax.swing.JButton();
         salvarMensagem = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("[TÍTULO DA MENSAGEM]");
         setResizable(false);
 
@@ -55,10 +54,10 @@ public class SACMensagem extends javax.swing.JFrame {
         mensagem.setRows(5);
         scrollPane.setViewportView(mensagem);
 
-        anterior.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        anterior.setFont(new java.awt.Font("Tahoma", 0, 12));
         anterior.setText("Anterior");
 
-        proxima.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        proxima.setFont(new java.awt.Font("Tahoma", 0, 12));
         proxima.setText("Próxima");
 
         salvarMensagem.setFont(new java.awt.Font("Tahoma", 0, 12));

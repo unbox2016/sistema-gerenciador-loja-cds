@@ -163,6 +163,8 @@ public class TelaLogin extends javax.swing.JFrame {
                else{
                     TelaPrincipalFuncionario tpf = new TelaPrincipalFuncionario();
                     tpf.setVisible(true);
+                    this.setVisible(false);
+                    this.dispose();
                     break;
                }
            }

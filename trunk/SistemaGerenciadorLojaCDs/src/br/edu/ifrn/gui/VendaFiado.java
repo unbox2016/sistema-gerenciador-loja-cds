@@ -41,31 +41,29 @@ public class VendaFiado extends javax.swing.JFrame {
         limpar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel5.setText("Preço total(R$):");
 
         precoTotal.setEditable(false);
-        precoTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        precoTotal.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel1.setText("Efetuar venda em fiado");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel6.setText("Cliente(código):");
 
         codigoCliente.setEditable(false);
-        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
         confirmar.setText("Confirmar débito");
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Limpar");
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
 

@@ -60,7 +60,6 @@ public class RelatorioPedido extends javax.swing.JFrame {
         scrollPane = new javax.swing.JScrollPane();
         relatorios = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Relatorio do dia " + diaPedido);
         setResizable(false);
 

@@ -47,7 +47,6 @@ public class SacolaCDs extends javax.swing.JFrame {
         pesquisarCodigo = new javax.swing.JButton();
         precoTotal1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sacola de CDs");
         setResizable(false);
 

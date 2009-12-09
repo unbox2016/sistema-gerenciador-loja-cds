@@ -90,7 +90,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         menuAjuda = new javax.swing.JMenu();
         opcaoSobre = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Gerenciador de Loja de CDs");
         setIconImage(icone());
         setResizable(false);
@@ -99,7 +99,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
 
         menurapido.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Menu Rápido", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
-        realizarvenda.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        realizarvenda.setFont(new java.awt.Font("Tahoma", 1, 12));
         realizarvenda.setText("Realizar Venda");
         realizarvenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +107,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
             }
         });
 
-        pesquisarcd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pesquisarcd.setFont(new java.awt.Font("Tahoma", 1, 12));
         pesquisarcd.setText("Pesquisar CD");
         pesquisarcd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,7 +115,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
             }
         });
 
-        pesquisacliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pesquisacliente.setFont(new java.awt.Font("Tahoma", 1, 12));
         pesquisacliente.setText("Pesquisar Cliente");
         pesquisacliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,7 +123,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
             }
         });
 
-        cadastrarcd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cadastrarcd.setFont(new java.awt.Font("Tahoma", 1, 12));
         cadastrarcd.setText("Cadastrar CD");
         cadastrarcd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +131,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
             }
         });
 
-        cadastrarcliente.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cadastrarcliente.setFont(new java.awt.Font("Tahoma", 1, 12));
         cadastrarcliente.setText("Cadastrar Cliente");
         cadastrarcliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +139,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
             }
         });
 
-        sac.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        sac.setFont(new java.awt.Font("Tahoma", 1, 12));
         sac.setText("SAC");
         sac.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -455,9 +455,9 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         r.setVisible(true);
     }//GEN-LAST:event_opcaoRelatorioActionPerformed
 
-    RelatorioPedido rp = new RelatorioPedido();
+    DataRelatorio dp = new DataRelatorio();
     private void opcaoLerRelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoLerRelActionPerformed
-        rp.setVisible(true);
+        dp.setVisible(true);
     }//GEN-LAST:event_opcaoLerRelActionPerformed
 
     Sobre s = new Sobre();

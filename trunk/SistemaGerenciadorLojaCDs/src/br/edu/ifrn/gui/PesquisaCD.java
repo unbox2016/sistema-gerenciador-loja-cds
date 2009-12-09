@@ -45,7 +45,6 @@ public class PesquisaCD extends javax.swing.JFrame {
         scrollPane = new javax.swing.JScrollPane();
         resultadoPesquisa = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pesquisa de CDs");
         setResizable(false);
 
