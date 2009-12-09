@@ -11,7 +11,11 @@
 
 package br.edu.ifrn.gui;
 
+import br.edu.ifrn.dao.CDDAO;
+import br.edu.ifrn.dominio.CD;
+import br.edu.ifrn.dominio.Genero;
 import java.awt.Image;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -152,9 +156,14 @@ public class CadastroCD extends javax.swing.JFrame {
         naoDisponivel.setFont(new java.awt.Font("Tahoma", 0, 12));
         naoDisponivel.setText("Não disponível");
 
-        cadastrar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cadastrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cadastrar.setForeground(new java.awt.Color(0, 102, 0));
         cadastrar.setText("Cadastrar");
+        cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarActionPerformed(evt);
+            }
+        });
 
         limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Limpar");
@@ -344,6 +353,35 @@ public class CadastroCD extends javax.swing.JFrame {
         genero.setSelectedItem("Axé");
         ano.setSelectedItem("1900");
     }//GEN-LAST:event_limparActionPerformed
+
+    private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+        String cod = codigoCD.getText();
+        String titulo = tituloCD.getText();
+        int year = ano.getSelectedIndex() + 1900;
+        String gen = (String) genero.getSelectedItem();
+            Genero g = new Genero(gen);
+        int prc = Integer.parseInt(precoCD.getText());
+        String art = artista.getText();
+        int dur = Integer.parseInt(duracao.getText());
+        int faixas = Integer.parseInt(nFaixas.getText());
+        boolean lancamento = sim.isSelected()?true:false;
+        boolean disp = disponivel.isSelected()?true:false;
+        boolean corretos = true;
+
+
+        try{
+            Float.parseFloat(cod);
+        }catch(NumberFormatException ex){
+            corretos = false;
+            JOptionPane.showMessageDialog(null, "O código do cd deve ser composto apenas por números");
+        }
+        if(corretos = true){
+            CDDAO cddao = new CDDAO();
+            CD cd = new CD(cod, year, gen,,titulo,art,dur,faixas,disp,lancamento);//Fica faltando aqui como passar o funcionário e quantidade como parâmetro
+            cddao.addCD(cd);
+        }
+
+    }//GEN-LAST:event_cadastrarActionPerformed
 
     /**
     * @param args the command line arguments
