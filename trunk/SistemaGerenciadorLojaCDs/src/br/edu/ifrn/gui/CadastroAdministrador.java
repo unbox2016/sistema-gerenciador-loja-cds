@@ -356,23 +356,29 @@ public class CadastroAdministrador extends javax.swing.JFrame {
         Date datan = new Date(an, me, di);
         String sex = masculino.isSelected()?"Masculino":"Feminino";
         String estadciv = solteiro.isSelected()?"Solteiro(a)":"Casado(a)";
-        String cp = null;
-        String r = null;
-        String telef = null;
-     
+        String cp = cpf.getText();
+        String r = rg.getText();
+        String telef = telefone.getText();
+
+        boolean corretos = true;
+
         try{
-            cp = cpf.getText();
-            r = rg.getText();
-            telef = telefone.getText();
+            Float.parseFloat(cp);
+            Float.parseFloat(r);
+            Float.parseFloat(telef);
+            
         }catch(NumberFormatException ex){
+            corretos = false;
             JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para CPF, RG ou Telefone.");
         }
         
         
         if(sen.equals(senConf)){
-            AdministradorDAO adao = new AdministradorDAO();
-            Administrador adm = new Administrador(log, sen, nom, sex, telef, estadciv, cp, r, datan);
-            adao.addAdministrador(adm);
+            if(corretos){
+                AdministradorDAO adao = new AdministradorDAO();
+                Administrador adm = new Administrador(log, sen, nom, sex, telef, estadciv, cp, r, datan);
+                adao.addAdministrador(adm);
+            }
 
         } else{
             JOptionPane.showMessageDialog(null, "As senhas não correspondem. Por favor, digite-as novamente.");
