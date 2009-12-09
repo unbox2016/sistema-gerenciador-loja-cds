@@ -37,6 +37,8 @@ public class Funcionario {
         this.isAdm = isAdm;
     }
 
+    
+
     public Date getDNascimento() {
         return DNascimento;
     }
