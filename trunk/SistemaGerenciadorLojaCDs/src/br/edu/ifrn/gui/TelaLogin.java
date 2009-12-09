@@ -156,12 +156,12 @@ public class TelaLogin extends javax.swing.JFrame {
        for(Funcionario f: list){
            if ((f.getLogin().equals(log))&&(f.getSenha().equals(sen))){
                if(f.isIsAdm()){
-                    TelaPrincipalAdministrador tpa = new TelaPrincipalAdministrador();
+                    TelaPrincipalAdministrador tpa = new TelaPrincipalAdministrador(f);
                     tpa.setVisible(true);
                     break;
                }
                else{
-                    TelaPrincipalFuncionario tpf = new TelaPrincipalFuncionario();
+                    TelaPrincipalFuncionario tpf = new TelaPrincipalFuncionario(f);
                     tpf.setVisible(true);
                     this.setVisible(false);
                     this.dispose();

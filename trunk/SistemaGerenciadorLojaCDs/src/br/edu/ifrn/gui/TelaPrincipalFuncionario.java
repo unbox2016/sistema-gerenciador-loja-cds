@@ -12,6 +12,7 @@
 package br.edu.ifrn.gui;
 
 
+import br.edu.ifrn.dominio.Funcionario;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -26,11 +27,15 @@ import java.util.GregorianCalendar;
 public class TelaPrincipalFuncionario extends javax.swing.JFrame {
 
     /** Creates new form TelaPrincipal */
-    public TelaPrincipalFuncionario() {
+    public TelaPrincipalFuncionario(Funcionario f) {
+        func = f;
         initComponents();
 	    iniciaRelogio();//inicia o relógio
     }
 
+    Funcionario func;
+
+    
     
 
     // Código para alterar o ícone da janela
@@ -361,7 +366,7 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         cadcd.setVisible(true);
     }//GEN-LAST:event_cadastrarcdActionPerformed
 
-    CadastroCliente cadcli = new CadastroCliente();
+    CadastroCliente cadcli = new CadastroCliente(func);
     private void cadastrarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarclienteActionPerformed
         cadcli.setVisible(true);
     }//GEN-LAST:event_cadastrarclienteActionPerformed

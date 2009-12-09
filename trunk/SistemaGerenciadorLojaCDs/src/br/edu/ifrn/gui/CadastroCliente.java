@@ -1,5 +1,11 @@
 package br.edu.ifrn.gui;
 
+import br.edu.ifrn.dao.ClienteDAO;
+import br.edu.ifrn.dominio.Cliente;
+import br.edu.ifrn.dominio.Funcionario;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -18,9 +24,12 @@ package br.edu.ifrn.gui;
 public class CadastroCliente extends javax.swing.JFrame {
 
     /** Creates new form NewJFrame */
-    public CadastroCliente() {
+    public CadastroCliente(Funcionario f) {
+        func = f;
         initComponents();
     }
+
+    Funcionario func;
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -116,9 +125,14 @@ public class CadastroCliente extends javax.swing.JFrame {
         feminino.setFont(new java.awt.Font("Tahoma", 0, 12));
         feminino.setText("Feminino");
 
-        cadastrar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cadastrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cadastrar.setForeground(new java.awt.Color(0, 102, 0));
         cadastrar.setText("Cadastrar");
+        cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarActionPerformed(evt);
+            }
+        });
 
         limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setForeground(new java.awt.Color(255, 0, 0));
@@ -263,6 +277,48 @@ public class CadastroCliente extends javax.swing.JFrame {
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_cancelarActionPerformed
+
+    String nom,sex,est;
+    String cp,r,tel;
+    int d,m,a;
+    Date dat;
+    Cliente cli;
+    ClienteDAO cdao = new ClienteDAO();
+    br.edu.ifrn.dominio.Conta c;
+    private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+        boolean corretos = true;
+        c = new br.edu.ifrn.dominio.Conta();
+       
+        nom = nome.getText();
+        d = dia.getSelectedIndex() + 1;
+        m = mes.getSelectedIndex();
+        a = ano.getSelectedIndex();
+        dat = new Date(a,m,d);
+        sex = masculino.isSelected()?"Masculino":"Feminino";
+        est = solteiro.isSelected()?"Solteiro(a)":"Casado(a)";
+        cp = cpf.getText();
+        r = rg.getText();
+        tel = telefone.getText();
+
+        try {
+            Long.parseLong(cp);
+            Long.parseLong(r);
+            Long.parseLong(tel);
+            
+        } catch(NumberFormatException ex){
+            corretos = false;
+            JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para CPF, RG ou Telefone.");
+        }
+
+        if(corretos){
+            cli = new Cliente(cp,func,r,nom,sex,tel,est,dat,c);
+            cdao.addCliente(cli);
+        } else {
+            JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para CPF, RG ou Telefone.");
+        }
+
+        
+    }//GEN-LAST:event_cadastrarActionPerformed
 
     /**
     * @param args the command line arguments
