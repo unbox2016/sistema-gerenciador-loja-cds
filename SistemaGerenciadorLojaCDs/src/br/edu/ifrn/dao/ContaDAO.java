@@ -34,8 +34,9 @@ public class ContaDAO {
             PreparedStatement stm = conexao.prepareStatement(ins);
 
             stm.setInt(1, cont.getCodigo());
-            stm.setFloat(2, cont.getSaldoTotal());
-            stm.setInt(3, cont.getCDID());
+            stm.setInt(2, cont.getCDID());
+            stm.setFloat(3, cont.getSaldoTotal());
+            
 
             stm.executeUpdate();
             stm.close();
@@ -49,12 +50,12 @@ public class ContaDAO {
     public void updateConta(Conta cont){
         try {
             
-            String ins = "UPDATE conta SET codigo=?, saldototal=?, cd_id=? WHERE codigo=?;";
+            String ins = "UPDATE conta SET codigo=?, cd_id=?, saldototal=? WHERE codigo=?;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
             stm.setInt(1, cont.getCodigo());
-            stm.setFloat(2, cont.getSaldoTotal());
-            stm.setInt(3, cont.getCDID());
+            stm.setInt(2, cont.getCDID());
+            stm.setFloat(3, cont.getSaldoTotal());
             stm.setInt(4, cont.getCodigo());
 
             stm.executeUpdate();
@@ -97,7 +98,7 @@ public class ContaDAO {
 
             while(rs.next()){
                 for(CD cd: listaCD){
-                    if(cd.getId() == rs.getInt(3)){
+                    if(cd.getId() == rs.getInt(2)){
                         Conta c = new Conta(cd, new Date());
                         listaCon.add(c);
                         break;
