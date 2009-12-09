@@ -11,7 +11,13 @@
 
 package br.edu.ifrn.gui;
 
+import br.edu.ifrn.dao.VendedorDAO;
+import br.edu.ifrn.dominio.Administrador;
+import br.edu.ifrn.dominio.Funcionario;
+import br.edu.ifrn.dominio.Vendedor;
 import java.awt.Image;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,7 +26,10 @@ import java.awt.Image;
 public class CadastroVendedor extends javax.swing.JFrame {
 
     /** Creates new form CadastroAdministrador */
-    public CadastroVendedor() {
+    Administrador adm;
+    
+    public CadastroVendedor(Funcionario f) {
+        adm = (Administrador) f;
         initComponents();
     }
 
@@ -121,17 +130,17 @@ public class CadastroVendedor extends javax.swing.JFrame {
 
         senhaConf.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        dia.setFont(new java.awt.Font("Tahoma", 0, 12));
+        dia.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        mes.setFont(new java.awt.Font("Tahoma", 0, 12));
+        mes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março ", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
 
-        ano.setFont(new java.awt.Font("Tahoma", 0, 12));
+        ano.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1900", "1901", "1902", "1903", "1904", "1905", "1906", "1907", "1908", "1909", "1910", "1911", "1912", "1913", "1914", "1915", "1916", "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009" }));
 
         sexo.add(masc);
-        masc.setFont(new java.awt.Font("Tahoma", 0, 12));
+        masc.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         masc.setSelected(true);
         masc.setText("Masculino");
 
@@ -144,15 +153,20 @@ public class CadastroVendedor extends javax.swing.JFrame {
         casado.setText("Casado(a)");
 
         estCiv.add(solteiro);
-        solteiro.setFont(new java.awt.Font("Tahoma", 0, 12));
+        solteiro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         solteiro.setSelected(true);
         solteiro.setText("Solteiro(a)");
 
-        cadastrar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cadastrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cadastrar.setForeground(new java.awt.Color(0, 102, 0));
         cadastrar.setText("Cadastrar");
+        cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarActionPerformed(evt);
+            }
+        });
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         limpar.setText("Limpar");
         limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -334,6 +348,48 @@ public class CadastroVendedor extends javax.swing.JFrame {
        solteiro.setSelected(true);
        casado.setSelected(false);
     }//GEN-LAST:event_limparActionPerformed
+
+    private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+        // TODO add your handling code here:
+       String log = login.getText();
+        String sen = senha.getText();
+        String senConf = senhaConf.getText();
+        String nom = nome.getText();
+
+        int di = dia.getSelectedIndex() + 1;
+        int me = mes.getSelectedIndex() + 1;
+        int an = ano.getSelectedIndex() + 1900;
+        Date datan = new Date(an, me, di);
+        String sex = masc.isSelected()?"Masculino":"Feminino";
+        String estadciv = solteiro.isSelected()?"Solteiro(a)":"Casado(a)";
+        String cp = cpf.getText();
+        String r = rg.getText();
+        String telef = telefone.getText();
+
+        boolean corretos = true;
+
+        try{
+            Float.parseFloat(cp);
+            Float.parseFloat(r);
+            Float.parseFloat(telef);
+
+        }catch(NumberFormatException ex){
+            corretos = false;
+            JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para CPF, RG ou Telefone.");
+        }
+
+
+        if(sen.equals(senConf)){
+            if(corretos){
+                VendedorDAO vdao = new VendedorDAO();
+                Vendedor vend = new Vendedor(log, sen, nom, sex, telef, estadciv, cp, r, datan, false, adm );
+                vdao.addVendedor(vend);
+            }
+
+        } else{
+            JOptionPane.showMessageDialog(null, "As senhas não correspondem. Por favor, digite-as novamente.");
+        }
+    }//GEN-LAST:event_cadastrarActionPerformed
 
     /**
     * @param args the command line arguments
