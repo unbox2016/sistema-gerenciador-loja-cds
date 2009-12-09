@@ -13,6 +13,7 @@ package br.edu.ifrn.gui;
 
 
 import br.edu.ifrn.dao.ConnectionFactory;
+import br.edu.ifrn.dominio.Funcionario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.awt.Image;
@@ -32,10 +33,13 @@ import java.util.logging.Logger;
 public class TelaPrincipalAdministrador extends javax.swing.JFrame {
 
     /** Creates new form TelaPrincipalAdministrador */
-    public TelaPrincipalAdministrador() {
+    public TelaPrincipalAdministrador(Funcionario f) {
+        func = f;
         initComponents();
 	    iniciaRelogio();//inicia o relógio
     }
+
+    Funcionario func;
 
     
 
@@ -399,7 +403,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         cadcd.setVisible(true);
     }//GEN-LAST:event_cadastrarcdActionPerformed
 
-    CadastroCliente cadcli = new CadastroCliente();
+    CadastroCliente cadcli = new CadastroCliente(func);
     private void cadastrarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarclienteActionPerformed
         cadcli.setVisible(true);
     }//GEN-LAST:event_cadastrarclienteActionPerformed
