@@ -1,4 +1,4 @@
-CREATE TABLE Conta (
+﻿CREATE TABLE Conta (
   codigo INTEGER UNSIGNED NOT NULL,
   saldoTotal BIGINT NOT NULL,
   PRIMARY KEY(codigo)
@@ -18,7 +18,7 @@ CREATE TABLE Funcionario (
   PRIMARY KEY(Login)
 );
 
-CREATE TABLE Genero (
+CREATE TABLE Gênero (
   Nome VARCHAR(20) NOT NULL,
   PRIMARY KEY(Nome)
 );
@@ -49,7 +49,7 @@ CREATE TABLE Vendedor (
 CREATE TABLE CD (
   ID INTEGER UNSIGNED NOT NULL,
   Funcionario_Login VARCHAR(20) NOT NULL,
-  Genero_Nome VARCHAR(20) NOT NULL,
+  Gênero_Nome VARCHAR(20) NOT NULL,
   Titulo VARCHAR(45) NOT NULL,
   Ano INTEGER UNSIGNED NOT NULL,
   Artista VARCHAR(45) NOT NULL,
@@ -57,11 +57,11 @@ CREATE TABLE CD (
   NFaixas INTEGER UNSIGNED NOT NULL,
   Quantidade INTEGER UNSIGNED NOT NULL,
   Disponibilidade BOOL NOT NULL,
-  Lancamento BOOL NOT NULL,
+  Lançamento BOOL NOT NULL,
   Preco FLOAT NOT NULL,
   PRIMARY KEY(ID),
-  FOREIGN KEY(Genero_Nome)
-    REFERENCES Genero(Nome)
+  FOREIGN KEY(Gênero_Nome)
+    REFERENCES Gênero(Nome)
       ON DELETE NO ACTION
       ON UPDATE NO ACTION,
   FOREIGN KEY(Funcionario_Login)
@@ -164,5 +164,4 @@ CREATE TABLE Relatorio (
       ON DELETE NO ACTION
       ON UPDATE NO ACTION
 );
-
 
