@@ -10,6 +10,7 @@ import br.edu.ifrn.dominio.Administrador;
 import br.edu.ifrn.gui.CadastroAdministrador;
 import br.edu.ifrn.gui.TelaLogin;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,6 +41,7 @@ public class Executor {
         }
 
         else {
+            JOptionPane.showMessageDialog(null, "Ainda não existe nenhum funcionário cadastrado. Cadastre o administrador.");
             new CadastroAdministrador().setVisible(true);
         }
 
