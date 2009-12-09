@@ -313,6 +313,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         if(corretos){
             cli = new Cliente(cp,func,r,nom,sex,tel,est,dat,c);
             cdao.addCliente(cli);
+            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso");
         } else {
             JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para CPF, RG ou Telefone.");
         }

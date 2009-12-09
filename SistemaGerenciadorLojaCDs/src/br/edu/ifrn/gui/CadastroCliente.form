@@ -81,7 +81,7 @@
                   </Group>
                   <Component id="jSeparator1" alignment="0" max="32767" attributes="1"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="229" max="32767" attributes="0"/>

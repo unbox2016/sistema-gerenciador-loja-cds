@@ -401,7 +401,9 @@ public class CadastroCD extends javax.swing.JFrame {
             CDDAO cddao = new CDDAO();
             CD cd = new CD(cod, year, g,func,titulo,art,dur,faixas,quant,disp,lancamento,prc);//Fica faltando aqui como passar o funcionário e quantidade como parâmetro
             cddao.addCD(cd);
+            JOptionPane.showMessageDialog(null, "CD cadastrado com sucesso");
         }
+
 
     }//GEN-LAST:event_cadastrarActionPerformed
 
