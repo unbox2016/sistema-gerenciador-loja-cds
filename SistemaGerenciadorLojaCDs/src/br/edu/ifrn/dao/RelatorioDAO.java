@@ -16,8 +16,11 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
+
+
 
 /**
  *
@@ -39,8 +42,10 @@ public class RelatorioDAO {
             java.util.Date data = r.getData();
             java.sql.Date datasql = new java.sql.Date(data.getTime());
 
+            Time horasql = new Time(r.getHora().getTime());
+
             stm.setDate(1, datasql);
-            stm.setTime(2, r.getHora());
+            stm.setTime(2, horasql);
             stm.setString(3, r.getAdm());
             stm.setString(4, r.getVen());
             stm.setString(5, r.getCli());
