@@ -376,11 +376,11 @@ public class CadastroCD extends javax.swing.JFrame {
     }//GEN-LAST:event_limparActionPerformed
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
-        String cod = codigoCD.getText();
+        int cod = Integer.parseInt(codigoCD.getText());
         String titulo = tituloCD.getText();
         int year = ano.getSelectedIndex() + 1900;
         String gen = (String) genero.getSelectedItem();
-            Genero g = new Genero(gen);
+        Genero g = new Genero(gen);
         double prc = Double.parseDouble(precoCD.getText());
         String art = artista.getText();
         int dur = Integer.parseInt(duracao.getText());
@@ -392,14 +392,14 @@ public class CadastroCD extends javax.swing.JFrame {
 
 
         try{
-            Integer.parseInt(cod);
+            Integer.parseInt(codigoCD.getText());
         }catch(NumberFormatException ex){
             corretos = false;
             JOptionPane.showMessageDialog(null, "O código do cd deve ser composto apenas por números");
         }
-        if(corretos = true){
+        if(corretos){
             CDDAO cddao = new CDDAO();
-            CD cd = new CD(cod, year, gen,func,titulo,art,dur,faixas,quant,disp,lancamento,prc);//Fica faltando aqui como passar o funcionário e quantidade como parâmetro
+            CD cd = new CD(cod, year, g,func,titulo,art,dur,faixas,quant,disp,lancamento,prc);//Fica faltando aqui como passar o funcionário e quantidade como parâmetro
             cddao.addCD(cd);
         }
 
