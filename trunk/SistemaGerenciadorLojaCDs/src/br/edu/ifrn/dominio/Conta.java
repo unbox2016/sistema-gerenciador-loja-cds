@@ -20,16 +20,17 @@ public class Conta {
     private double preco;
     private Date data;
 
-    public Conta(){
-        
-    }
-
     public Conta(CD cd, Date data ){
         this.cd = cd;
         this.cdComprado = cd.getTitulo();
         this.preco = cd.getPreco();
         this.saldoTotal++;
         this.data = data;
+    }
+
+    public Conta(){
+        this.codigo = 0;
+        this.saldoTotal = 0;
     }
     
     public int getCDID(){
