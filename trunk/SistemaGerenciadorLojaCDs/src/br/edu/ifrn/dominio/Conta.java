@@ -20,6 +20,10 @@ public class Conta {
     private double preco;
     private Date data;
 
+    public Conta(){
+        
+    }
+
     public Conta(CD cd, Date data ){
         this.cd = cd;
         this.cdComprado = cd.getTitulo();
