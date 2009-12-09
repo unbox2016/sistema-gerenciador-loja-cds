@@ -16,7 +16,7 @@ public class Vendedor extends Funcionario {
     private Administrador adm;
 
     public Vendedor(String log, String sen, String nom, String sex, String tel, String estciv, String cpf, String rg, Date nasc, boolean isAdm, Administrador adm){
-        super(log,sen,nom,sex,tel,estciv,cpf,rg,nasc, false);
+        super(log,sen,nom, cpf,rg,nasc,sex,tel,estciv, false);
         this.adm = adm;
    }
 
