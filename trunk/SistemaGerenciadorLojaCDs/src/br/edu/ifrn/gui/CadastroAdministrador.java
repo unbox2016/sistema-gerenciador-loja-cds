@@ -28,6 +28,8 @@ public class CadastroAdministrador extends javax.swing.JFrame {
         initComponents();
     }
 
+
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -378,6 +380,9 @@ public class CadastroAdministrador extends javax.swing.JFrame {
                 AdministradorDAO adao = new AdministradorDAO();
                 Administrador adm = new Administrador(log, sen, nom, sex, telef, estadciv, cp, r, datan);
                 adao.addAdministrador(adm);
+                JOptionPane.showMessageDialog(null, "Administrador cadastrado com sucesso.");
+                this.setVisible(false);
+                TelaLogin tl = new TelaLogin();
             }
 
         } else{
