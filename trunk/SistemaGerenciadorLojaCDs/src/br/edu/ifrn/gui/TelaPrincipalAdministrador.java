@@ -436,7 +436,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         cadm.setVisible(true);
     }//GEN-LAST:event_subOpcaoAdminActionPerformed
 
-    CadastroVendedor cvend = new CadastroVendedor();
+    CadastroVendedor cvend = new CadastroVendedor(func);
     private void subOpcaoVendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subOpcaoVendActionPerformed
         cvend.setVisible(true);
     }//GEN-LAST:event_subOpcaoVendActionPerformed
