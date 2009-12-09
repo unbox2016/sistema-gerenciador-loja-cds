@@ -383,6 +383,7 @@ public class CadastroAdministrador extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Administrador cadastrado com sucesso.");
                 this.setVisible(false);
                 TelaLogin tl = new TelaLogin();
+                tl.setVisible(true);
             }
 
         } else{

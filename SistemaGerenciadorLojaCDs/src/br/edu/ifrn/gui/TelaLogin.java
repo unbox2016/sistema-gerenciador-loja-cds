@@ -157,7 +157,9 @@ public class TelaLogin extends javax.swing.JFrame {
            if ((f.getLogin().equals(log))&&(f.getSenha().equals(sen))){
                if(f.isIsAdm()){
                     TelaPrincipalAdministrador tpa = new TelaPrincipalAdministrador(f);
+                    this.setVisible(false);
                     tpa.setVisible(true);
+                    this.dispose();
                     break;
                }
                else{
@@ -186,7 +188,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_limparActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        this.setVisible(false);
+        System.exit(0);
     }//GEN-LAST:event_cancelarActionPerformed
 
     /**

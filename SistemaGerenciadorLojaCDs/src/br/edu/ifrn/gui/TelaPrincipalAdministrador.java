@@ -420,7 +420,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_opcaoTrocarActionPerformed
 
     private void opcaoFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoFinalizarActionPerformed
-        this.setDefaultCloseOperation(1);
+        System.exit(0);
     }//GEN-LAST:event_opcaoFinalizarActionPerformed
 
     private void opcaoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcaoClienteActionPerformed
