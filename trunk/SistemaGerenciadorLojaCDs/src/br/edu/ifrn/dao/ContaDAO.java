@@ -99,7 +99,7 @@ public class ContaDAO {
             while(rs.next()){
                 for(CD cd: listaCD){
                     if(cd.getId() == rs.getInt(2)){
-                        Conta c = new Conta(cd, new Date());
+                        Conta c = new Conta(cd, rs.getFloat(3));
                         listaCon.add(c);
                         break;
                     }
