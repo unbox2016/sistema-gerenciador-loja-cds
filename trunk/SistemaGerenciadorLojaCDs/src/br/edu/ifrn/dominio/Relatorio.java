@@ -7,6 +7,7 @@ package br.edu.ifrn.dominio;
 
 import java.sql.Time;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.Date;
  */
 public class Relatorio {
     Date data;
-    Time hora;
+    Date hora;
     CD cd;
     Cliente cli;
     Administrador adm;
@@ -71,7 +72,7 @@ public class Relatorio {
         this.data = data;
     }
 
-    public Time getHora() {
+    public Date getHora() {
         return hora;
     }
 
