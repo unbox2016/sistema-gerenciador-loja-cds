@@ -46,9 +46,7 @@ public class Venda extends javax.swing.JFrame {
         aVista = new javax.swing.JRadioButton();
         fiado = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel1.setText("Preencha todos os campos abaixo para efetuar a venda:");
 
         confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
@@ -79,13 +77,13 @@ public class Venda extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel2.setText("Modo de pagamento");
 
-        aVista.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        aVista.setFont(new java.awt.Font("Tahoma", 0, 12));
         aVista.setText("À vista");
 
-        fiado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        fiado.setFont(new java.awt.Font("Tahoma", 0, 12));
         fiado.setText("Fiado");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

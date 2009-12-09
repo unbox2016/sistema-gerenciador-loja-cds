@@ -36,8 +36,6 @@ public class Conta extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         divida = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         contas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -66,7 +64,7 @@ public class Conta extends javax.swing.JFrame {
         });
         scrollPane.setViewportView(contas);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14));
         jLabel1.setText("Dívida Total:");
 
         divida.setEditable(false);

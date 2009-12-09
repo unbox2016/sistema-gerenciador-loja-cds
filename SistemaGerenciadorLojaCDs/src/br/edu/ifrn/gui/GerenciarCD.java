@@ -36,13 +36,12 @@ public class GerenciarCD extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         codigoCliente = new javax.swing.JTextField();
-        pesquisarCliente = new javax.swing.JButton();
+        pesquisarCD = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         confirmar = new javax.swing.JButton();
         limpar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        deletarCD = new javax.swing.JButton();
 
         editarCD.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,8 +79,8 @@ public class GerenciarCD extends javax.swing.JFrame {
 
         codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        pesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
-        pesquisarCliente.setText("Pesquisar CD...");
+        pesquisarCD.setFont(new java.awt.Font("Tahoma", 0, 12));
+        pesquisarCD.setText("Pesquisar CD...");
 
         confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
@@ -93,6 +92,10 @@ public class GerenciarCD extends javax.swing.JFrame {
         cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
+
+        deletarCD.setFont(new java.awt.Font("Tahoma", 0, 12));
+        deletarCD.setForeground(new java.awt.Color(255, 0, 0));
+        deletarCD.setText("Deletar CD");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +111,9 @@ public class GerenciarCD extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(codigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pesquisarCliente))
+                        .addComponent(pesquisarCD)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deletarCD))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 669, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(confirmar)
@@ -129,7 +134,8 @@ public class GerenciarCD extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(codigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(pesquisarCliente))
+                    .addComponent(pesquisarCD)
+                    .addComponent(deletarCD))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -152,13 +158,14 @@ public class GerenciarCD extends javax.swing.JFrame {
     private javax.swing.JButton cancelar;
     private javax.swing.JTextField codigoCliente;
     private javax.swing.JButton confirmar;
+    private javax.swing.JButton deletarCD;
     private javax.swing.JTable editarCD;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton limpar;
-    private javax.swing.JButton pesquisarCliente;
+    private javax.swing.JButton pesquisarCD;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -34,7 +34,6 @@ public class ListaVendas extends javax.swing.JFrame {
         scrollPane = new javax.swing.JScrollPane();
         listaDeVendas = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lista de Vendas");
         setResizable(false);
 

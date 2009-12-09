@@ -69,7 +69,6 @@ public class CadastroVendedor extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         separador = new javax.swing.JSeparator();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Vendedor");
         setResizable(false);
 
@@ -103,7 +102,7 @@ public class CadastroVendedor extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel10.setText("Estado Civil:");
 
-        login.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        login.setFont(new java.awt.Font("Tahoma", 0, 12));
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
@@ -153,7 +152,7 @@ public class CadastroVendedor extends javax.swing.JFrame {
         cadastrar.setForeground(new java.awt.Color(0, 102, 0));
         cadastrar.setText("Cadastrar");
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Limpar");
         limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,7 +160,7 @@ public class CadastroVendedor extends javax.swing.JFrame {
             }
         });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {

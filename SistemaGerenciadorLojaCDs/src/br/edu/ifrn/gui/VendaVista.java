@@ -45,44 +45,42 @@ public class VendaVista extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         codigoCliente = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel5.setText("Preço total(R$):");
 
         precoTotal.setEditable(false);
-        precoTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        precoTotal.setFont(new java.awt.Font("Tahoma", 0, 12));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel4.setText("Preço pago(R$):");
 
         precoPago.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel3.setText("Troco(R$):");
 
         troco.setEditable(false);
         troco.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
         confirmar.setText("Confirmar");
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Limpar");
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel1.setText("Efetuar venda à vista");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel6.setText("Cliente(código):");
 
         codigoCliente.setEditable(false);
-        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
