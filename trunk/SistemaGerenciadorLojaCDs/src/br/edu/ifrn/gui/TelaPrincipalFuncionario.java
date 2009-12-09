@@ -361,7 +361,7 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         pcli.setVisible(true);
     }//GEN-LAST:event_pesquisaclienteActionPerformed
     
-    CadastroCD cadcd = new CadastroCD();
+    CadastroCD cadcd = new CadastroCD(func);
     private void cadastrarcdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarcdActionPerformed
         cadcd.setVisible(true);
     }//GEN-LAST:event_cadastrarcdActionPerformed
