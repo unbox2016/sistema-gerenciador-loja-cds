@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author 2007134010475
  */
-public class Funcionario {
+public class Funcionario implements Cloneable {
 
     protected String login;
     protected String senha;
@@ -23,6 +23,18 @@ public class Funcionario {
     protected String rg;
     protected Date DNascimento;
     protected boolean isAdm;
+
+    @Override
+    public Funcionario clone() {
+        try {
+            Funcionario funci = (Funcionario) super.clone();
+            //Aqui você incializa as suas propriedades.
+            return funci;
+        } catch (CloneNotSupportedException e) {
+        return null; // nunca chamado
+        }
+      }
+    
 
     public Funcionario(String login, String senha, String nome, String cpf, String rg, Date DNascimento, String sexo, String telefone, String estCivil,  boolean isAdm) {
         this.login = login;

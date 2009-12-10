@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Cliente {
     private String cpf;
-    private Funcionario func;
+    private String func;
     private String rg;
     private String nome;
     private String sexo;
@@ -26,7 +26,7 @@ public class Cliente {
 
     public Cliente(String cpf, Funcionario func, String rg, String nome, String sexo, String telefone, String estCivil, Date dataNasc, Conta conta) {
         this.cpf = cpf;
-        this.func = func;
+        this.func = func.getLogin();
         this.rg = rg;
         this.nome = nome;
         this.sexo = sexo;
@@ -68,12 +68,12 @@ public class Cliente {
         this.estCivil = estCivil;
     }
 
-    public Funcionario getFunc() {
+    public String getFunc() {
         return func;
     }
 
     public void setFunc(Funcionario func) {
-        this.func = func;
+        this.func = func.getNome();
     }
 
     public String getNome() {

@@ -29,12 +29,11 @@ public class ContaDAO {
     public void addConta(Conta cont){
         try {
             
-            String ins = "INSERT INTO conta VALUES(?,?,?);";
+            String ins = "INSERT INTO conta VALUES(?,?);";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
             stm.setInt(1, cont.getCodigo());
-            stm.setInt(2, cont.getCDID());
-            stm.setFloat(3, cont.getSaldoTotal());
+            stm.setFloat(2, cont.getSaldoTotal());
             
 
             stm.executeUpdate();
@@ -49,13 +48,12 @@ public class ContaDAO {
     public void updateConta(Conta cont){
         try {
             
-            String ins = "UPDATE conta SET codigo=?, cd_id=?, saldototal=? WHERE codigo=?;";
+            String ins = "UPDATE conta SET codigo=?, saldototal=? WHERE codigo=?;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
             stm.setInt(1, cont.getCodigo());
-            stm.setInt(2, cont.getCDID());
-            stm.setFloat(3, cont.getSaldoTotal());
-            stm.setInt(4, cont.getCodigo());
+            stm.setFloat(2, cont.getSaldoTotal());
+            stm.setInt(3, cont.getCodigo());
 
             stm.executeUpdate();
             stm.close();
@@ -96,14 +94,12 @@ public class ContaDAO {
            
 
             while(rs.next()){
-                for(CD cd: listaCD){
-                    if(cd.getId() == rs.getInt(2)){
-                        Conta c = new Conta(cd, rs.getFloat(3));
+                        Conta c = new Conta(rs.getInt(1),rs.getFloat(2));
                         listaCon.add(c);
                         break;
                     }
-                }
-            }
+                
+            
 
 
             rs.close();

@@ -39,7 +39,7 @@ public class ClienteDAO {
             
             stm.setString(1, c.getCpf());
             stm.setInt(2, c.getConta().getCodigo());
-            stm.setString(3, c.getFunc().getLogin());
+            stm.setString(3, c.getFunc());
             stm.setString(4, c.getRg());
             stm.setString(5, c.getNome());
             stm.setString(6, c.getSexo());
@@ -64,7 +64,7 @@ public class ClienteDAO {
 
             stm.setString(1, c.getCpf());
             stm.setInt(2, c.getConta().getCodigo());
-            stm.setString(3, c.getFunc().getLogin());
+            stm.setString(3, c.getFunc());
             stm.setString(4, c.getRg());
             stm.setString(5, c.getNome());
             stm.setString(6, c.getSexo());
