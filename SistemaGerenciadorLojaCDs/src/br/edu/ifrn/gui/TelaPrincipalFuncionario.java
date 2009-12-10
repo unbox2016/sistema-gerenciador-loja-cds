@@ -85,7 +85,7 @@ public class TelaPrincipalFuncionario extends javax.swing.JFrame {
         menuAjuda = new javax.swing.JMenu();
         opcaoSobre = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerenciador de Loja de CDs");
         setIconImage(icone());
         setResizable(false);
