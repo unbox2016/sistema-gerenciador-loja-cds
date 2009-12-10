@@ -369,6 +369,7 @@ public class CadastroCD extends javax.swing.JFrame {
         nFaixas.setText("");
         sim.setSelected(true);
         nao.setSelected(false);
+        quantidade.setText("");
         disponivel.setSelected(true);
         naoDisponivel.setSelected(false);
         genero.setSelectedItem("Axé");
