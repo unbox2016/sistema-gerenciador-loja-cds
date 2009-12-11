@@ -133,8 +133,8 @@ public class GerenciarCliente extends javax.swing.JFrame {
 
     private void generateTable(){
         LinkedList<Cliente> listaClientes;
-        ClienteDAO cdao = new ClienteDAO();
-        listaClientes = cdao.selectCliente();
+        ClienteDAO clidao = new ClienteDAO();
+        listaClientes = clidao.selectCliente();
 
         Object[][] tableCli = new Object[listaClientes.size()][9];
         int pos = 0;
