@@ -136,22 +136,22 @@ public class GerenciarCD extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-GerenciarCD g = new GerenciarCD();
-    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        g.setVisible(false);
-    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        this.setVisible(false);
+    }                                        
 
     private void deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarActionPerformed
         // TODO add your handling code here:
       int index = editarCD.getSelectedRow();
       editarCD.remove(index);
     }//GEN-LAST:event_deletarActionPerformed
-
+/*
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_cancelarActionPerformed
-
+*/
     private void confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarActionPerformed
         // TODO add your handling code here:
         LinkedList<CD> cds = new LinkedList();
