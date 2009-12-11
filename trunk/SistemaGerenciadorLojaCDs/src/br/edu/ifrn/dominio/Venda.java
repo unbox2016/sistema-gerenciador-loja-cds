@@ -23,6 +23,14 @@ public class Venda {
         return cli.getCpf();
     }
 
+    public double getPreco(){
+        return cd.getPreco();
+    }
+
+
+    public String getCDName(){
+        return cd.getTitulo();
+    }
 
     public int getQuantCdsVendidos() {
         return quantCdsVendidos;
