@@ -12,18 +12,13 @@
 package br.edu.ifrn.gui;
 
 
-import br.edu.ifrn.dao.ConnectionFactory;
 import br.edu.ifrn.dominio.Funcionario;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.awt.Image;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 
 /**
@@ -34,7 +29,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
 
     /** Creates new form TelaPrincipalAdministrador */
     public TelaPrincipalAdministrador(Funcionario f) {
-        func = new Funcionario(f.getLogin(),f.getSenha(),f.getNome(),f.getCpf(),f.getRg(),f.getDNascimento(),f.getSexo(),f.getTelefone(),f.getEstCivil(),f.isIsAdm());
+        func = f;
         initComponents();
 	    iniciaRelogio();//inicia o relógio
     }

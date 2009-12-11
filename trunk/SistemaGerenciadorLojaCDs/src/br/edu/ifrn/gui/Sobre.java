@@ -142,9 +142,8 @@ public class Sobre extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-Sobre s = new Sobre();
+
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
-        s.setVisible(false);
         this.setVisible(false);
 }//GEN-LAST:event_okActionPerformed
 
