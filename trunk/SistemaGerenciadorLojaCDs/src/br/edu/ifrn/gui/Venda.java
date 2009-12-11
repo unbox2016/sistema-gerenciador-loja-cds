@@ -53,22 +53,37 @@ public class Venda extends javax.swing.JFrame {
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
         confirmar.setText("Confirmar");
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         limpar.setText("Limpar");
+        limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparActionPerformed(evt);
+            }
+        });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel6.setText("Cliente(código):");
 
-        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
+        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        pesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
+        pesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         pesquisarCliente.setText("Pesquisar cliente...");
+        pesquisarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarClienteActionPerformed(evt);
+            }
+        });
 
-        adicionar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        adicionar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         adicionar.setForeground(new java.awt.Color(0, 102, 0));
         adicionar.setText("Adicionar produtos à sacola");
         adicionar.addActionListener(new java.awt.event.ActionListener() {
@@ -80,10 +95,10 @@ public class Venda extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel2.setText("Modo de pagamento");
 
-        aVista.setFont(new java.awt.Font("Tahoma", 0, 12));
+        aVista.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         aVista.setText("À vista");
 
-        fiado.setFont(new java.awt.Font("Tahoma", 0, 12));
+        fiado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         fiado.setText("Fiado");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -104,10 +119,10 @@ public class Venda extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
-                                    .addComponent(separador2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+                                    .addComponent(separador2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE))
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(separador, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                                .addComponent(separador, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
                                 .addGap(177, 177, 177))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(confirmar)
@@ -128,7 +143,7 @@ public class Venda extends javax.swing.JFrame {
                                 .addContainerGap(209, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addContainerGap(262, Short.MAX_VALUE))))))
+                                .addContainerGap(264, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,6 +181,21 @@ public class Venda extends javax.swing.JFrame {
     private void adicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_adicionarActionPerformed
+
+    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
+      codigoCliente.setText("");
+      aVista.setSelected(true);
+      fiado.setSelected(false);
+    }//GEN-LAST:event_limparActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+       this.setVisible(false);
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void pesquisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarClienteActionPerformed
+        PesquisaCD p = new PesquisaCD();
+        p.setVisible(true);
+    }//GEN-LAST:event_pesquisarClienteActionPerformed
 
     /**
     * @param args the command line arguments

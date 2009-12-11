@@ -38,7 +38,6 @@ public class VendaFiado extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         codigoCliente = new javax.swing.JTextField();
         confirmar = new javax.swing.JButton();
-        limpar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12));
@@ -56,12 +55,9 @@ public class VendaFiado extends javax.swing.JFrame {
         codigoCliente.setEditable(false);
         codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
         confirmar.setText("Confirmar débito");
-
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
-        limpar.setText("Limpar");
 
         cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
@@ -95,8 +91,6 @@ public class VendaFiado extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(confirmar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(limpar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cancelar)
                         .addContainerGap())))
         );
@@ -118,7 +112,6 @@ public class VendaFiado extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelar)
-                    .addComponent(limpar)
                     .addComponent(confirmar))
                 .addContainerGap())
         );
@@ -138,7 +131,6 @@ public class VendaFiado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JButton limpar;
     private javax.swing.JTextField precoTotal;
     private javax.swing.JSeparator separador2;
     // End of variables declaration//GEN-END:variables
