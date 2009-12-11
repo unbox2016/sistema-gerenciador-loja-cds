@@ -12,11 +12,9 @@
 package br.edu.ifrn.gui;
 
 import br.edu.ifrn.dao.RelatorioDAO;
-import br.edu.ifrn.dominio.Funcionario;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
-import br.edu.ifrn.dominio.Relatorio;
 import java.util.Iterator;
 import javax.swing.table.DefaultTableModel;
 
@@ -33,22 +31,22 @@ public class Relatorio extends javax.swing.JFrame {
     }
 
     public void listarRelatorios(){
-        LinkedList<Relatorio> rel = new LinkedList();
-        rel = rdao.selectRelatorio();
+        LinkedList<br.edu.ifrn.dominio.Relatorio> rel = new LinkedList();
         RelatorioDAO rdao = new RelatorioDAO();
+        rel = rdao.selectRelatorio();
         Object[][] relV = new Object[rel.size()][7];
         int pos = 0;
         String descricaoT[] = {"Data","Hora","Cd","Cliente","Administrador","Vendedor","Faturamento"};
-        Iterator<Relatorio> it = rdao.iterator();
+        Iterator<br.edu.ifrn.dominio.Relatorio> it = rel.iterator();
 
         while(it.hasNext()){
-            Relatorio r = it.next();
+            br.edu.ifrn.dominio.Relatorio r = it.next();
             relV[pos][0] = r.getData();
             relV[pos][1] = r.getHora();
             relV[pos][2] = r.getCd();
             relV[pos][3] = r.getCli();
             relV[pos][4] = r.getAdm();
-            relV[pos][5] = r.getVend();
+            relV[pos][5] = r.getVen();
             relV[pos][6] = r.getFat();
             pos++;
         }
