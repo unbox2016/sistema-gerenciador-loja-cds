@@ -145,6 +145,7 @@ public class Sobre extends javax.swing.JFrame {
 
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
 }//GEN-LAST:event_okActionPerformed
 
     /**
