@@ -11,8 +11,11 @@
 
 package br.edu.ifrn.gui;
 
+import br.edu.ifrn.dao.ClienteDAO;
 import br.edu.ifrn.dominio.Cliente;
+import java.util.Iterator;
 import java.util.LinkedList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,6 +26,7 @@ public class GerenciarCliente extends javax.swing.JFrame {
     /** Creates new form UpdateCliente */
     public GerenciarCliente() {
         initComponents();
+        generateTable();
     }
 
     /** This method is called from within the constructor to
@@ -126,19 +130,78 @@ public class GerenciarCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+    private void generateTable(){
+        LinkedList<Cliente> listaClientes;
+        ClienteDAO cdao = new ClienteDAO();
+        listaClientes = cdao.selectCliente();
+
+        Object[][] tableCli = new Object[listaClientes.size()][9];
+        int pos = 0;
+        String colunas[] = {"CPF", "RG","Nome","Sexo","Telefone","Estado Civil","Data de Nascimento","Conta","Cadastrado por:"};
+        Iterator<Cliente> it = listaClientes.iterator();
+
+        while(it.hasNext()){
+            Cliente cli = it.next();
+
+            tableCli[pos][0] = cli.getCpf();
+            tableCli[pos][1] = cli.getRg();
+            tableCli[pos][2] = cli.getNome();
+            tableCli[pos][3] = cli.getSexo();
+            tableCli[pos][4] = cli.getTelefone();
+            tableCli[pos][5] = cli.getEstCivil();
+            tableCli[pos][6] = cli.getDataNasc();
+            tableCli[pos][7] = cli.getConta().getCodigo();
+            tableCli[pos][8] = cli.getFunc();
+            
+            pos++;   
+        }
+        editarCliente.setModel(new DefaultTableModel(tableCli, colunas));
+    }
+
+
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_cancelarActionPerformed
 
+    ClienteDAO cdao = new ClienteDAO();
     private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
         int index = editarCliente.getSelectedRow();
+        Cliente cliDel = (Cliente) editarCliente.getValueAt(index, editarCliente.getSelectedColumn());
         editarCliente.remove(index);
+        cdao.deleteCliente(cliDel);
     }//GEN-LAST:event_limparActionPerformed
 
-    LinkedList<Cliente> listCli;
+    
     private void confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarActionPerformed
-        
+        Cliente cliAdd;
+        for(int i=0;i<editarCliente.getRowCount();i++){
+            for(int j=0;i<editarCliente.getColumnCount();j++){
+                cliAdd = (Cliente) editarCliente.getValueAt(i, j);
+                addOuEditar(cliAdd);
+            }
+        }        
     }//GEN-LAST:event_confirmarActionPerformed
+
+    
+    LinkedList<Cliente> cliList;
+    private void addOuEditar(Cliente c){
+        boolean existe = false;
+        cliList = cdao.selectCliente();
+
+        for(Cliente cli:cliList){
+            if(cli.getRg().equals(cli.getRg()))
+                existe = true;
+            else
+                existe = false;
+        }
+
+        if(existe)
+            cdao.updateCliente(c);
+        else
+            cdao.addCliente(c);
+    }
+
 
     /**
     * @param args the command line arguments
