@@ -83,6 +83,10 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         subOpcaoAdmin = new javax.swing.JMenuItem();
         subOpcaoVend = new javax.swing.JMenuItem();
         opcaoCD = new javax.swing.JMenuItem();
+        gerenciar = new javax.swing.JMenu();
+        gerenciarCD = new javax.swing.JMenuItem();
+        gerenciarFunc = new javax.swing.JMenuItem();
+        gerenciarCliente = new javax.swing.JMenuItem();
         menuVenda = new javax.swing.JMenu();
         opcaoRealizar = new javax.swing.JMenuItem();
         opcaoConsultar = new javax.swing.JMenuItem();
@@ -181,7 +185,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
                 .addComponent(cadastrarcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(sac, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         dataehora.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -221,6 +225,11 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ifrn/imagens/telainicial.jpg"))); // NOI18N
 
         menuUsuario.setText("Usuário");
+        menuUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuUsuarioActionPerformed(evt);
+            }
+        });
 
         opcaoTrocar.setText("Trocar");
         opcaoTrocar.addActionListener(new java.awt.event.ActionListener() {
@@ -279,6 +288,34 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         menuCadastrar.add(opcaoCD);
 
         menu.add(menuCadastrar);
+
+        gerenciar.setText("Gerenciar");
+
+        gerenciarCD.setText("CD");
+        gerenciarCD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerenciarCDActionPerformed(evt);
+            }
+        });
+        gerenciar.add(gerenciarCD);
+
+        gerenciarFunc.setText("Funcionário");
+        gerenciarFunc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerenciarFuncActionPerformed(evt);
+            }
+        });
+        gerenciar.add(gerenciarFunc);
+
+        gerenciarCliente.setText("Cliente");
+        gerenciarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerenciarClienteActionPerformed(evt);
+            }
+        });
+        gerenciar.add(gerenciarCliente);
+
+        menu.add(gerenciar);
 
         menuVenda.setText("Venda");
 
@@ -374,7 +411,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(logotipo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(dataehora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(menurapido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -469,6 +506,22 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         s.setVisible(true);
     }//GEN-LAST:event_opcaoSobreActionPerformed
 
+    private void menuUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuUsuarioActionPerformed
+GerenciarCD g = new GerenciarCD();
+    private void gerenciarCDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarCDActionPerformed
+        g.setVisible(true);
+}//GEN-LAST:event_gerenciarCDActionPerformed
+GerenciarFuncionario g2 = new GerenciarFuncionario();
+    private void gerenciarFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarFuncActionPerformed
+        g2.setVisible(true);
+    }//GEN-LAST:event_gerenciarFuncActionPerformed
+GerenciarCliente g3 = new GerenciarCliente();
+    private void gerenciarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarClienteActionPerformed
+        g3.setVisible(true);
+    }//GEN-LAST:event_gerenciarClienteActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -491,6 +544,10 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton cadastrarcliente;
     private javax.swing.JLabel dataHora;
     private javax.swing.JPanel dataehora;
+    private javax.swing.JMenu gerenciar;
+    private javax.swing.JMenuItem gerenciarCD;
+    private javax.swing.JMenuItem gerenciarCliente;
+    private javax.swing.JMenuItem gerenciarFunc;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel logotipo;
