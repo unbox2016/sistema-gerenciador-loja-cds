@@ -66,12 +66,22 @@ public class VendaVista extends javax.swing.JFrame {
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
         confirmar.setText("Confirmar");
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         limpar.setText("Limpar");
+        limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparActionPerformed(evt);
+            }
+        });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel1.setText("Efetuar venda à vista");
@@ -155,6 +165,14 @@ public class VendaVista extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
+        precoPago.setText("");
+    }//GEN-LAST:event_limparActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_cancelarActionPerformed
 
     /**
     * @param args the command line arguments
