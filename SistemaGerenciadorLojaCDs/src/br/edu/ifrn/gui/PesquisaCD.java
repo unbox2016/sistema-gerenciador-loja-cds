@@ -69,9 +69,14 @@ public class PesquisaCD extends javax.swing.JFrame {
         limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Limpar");
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         pesquisar.setFont(new java.awt.Font("Tahoma", 0, 12));
         pesquisar.setForeground(new java.awt.Color(0, 102, 0));
@@ -176,6 +181,13 @@ public class PesquisaCD extends javax.swing.JFrame {
     private void pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_pesquisarActionPerformed
+PesquisaCD p = new PesquisaCD();
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        p.setVisible(false);
+        codigoCD.setText("");
+        tituloCD.setText("");
+        artista.setText("");
+    }//GEN-LAST:event_cancelarActionPerformed
 
     /**
     * @param args the command line arguments

@@ -89,9 +89,14 @@ public class GerenciarCD extends javax.swing.JFrame {
         limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Desfazer");
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         deletarCD.setFont(new java.awt.Font("Tahoma", 0, 12));
         deletarCD.setForeground(new java.awt.Color(255, 0, 0));
@@ -148,6 +153,10 @@ public class GerenciarCD extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+GerenciarCD g = new GerenciarCD();
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        g.setVisible(false);
+    }//GEN-LAST:event_cancelarActionPerformed
 
     /**
     * @param args the command line arguments
