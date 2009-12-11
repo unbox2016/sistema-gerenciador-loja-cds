@@ -50,6 +50,29 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="gerenciar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gerenciar"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="gerenciarCD">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CD"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gerenciarCDActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="gerenciarCliente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cliente"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gerenciarClienteActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
         <Menu class="javax.swing.JMenu" name="menuVenda">
           <Properties>
             <Property name="text" type="java.lang.String" value="Venda"/>
