@@ -11,8 +11,14 @@
 
 package br.edu.ifrn.gui;
 
+import br.edu.ifrn.dao.RelatorioDAO;
+import br.edu.ifrn.dominio.Funcionario;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedList;
+import br.edu.ifrn.dominio.Relatorio;
+import java.util.Iterator;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,6 +29,31 @@ public class Relatorio extends javax.swing.JFrame {
     /** Creates new form Relatorio */
     public Relatorio() {
         initComponents();
+        listarRelatorios();
+    }
+
+    public void listarRelatorios(){
+        LinkedList<Relatorio> rel = new LinkedList();
+        rel = rdao.selectRelatorio();
+        RelatorioDAO rdao = new RelatorioDAO();
+        Object[][] relV = new Object[rel.size()][7];
+        int pos = 0;
+        String descricaoT[] = {"Data","Hora","Cd","Cliente","Administrador","Vendedor","Faturamento"};
+        Iterator<Relatorio> it = rdao.iterator();
+
+        while(it.hasNext()){
+            Relatorio r = it.next();
+            relV[pos][0] = r.getData();
+            relV[pos][1] = r.getHora();
+            relV[pos][2] = r.getCd();
+            relV[pos][3] = r.getCli();
+            relV[pos][4] = r.getAdm();
+            relV[pos][5] = r.getVend();
+            relV[pos][6] = r.getFat();
+            pos++;
+        }
+        
+        listaRel.setModel(new DefaultTableModel(relV, descricaoT));
     }
 
     /** This method is called from within the constructor to
@@ -35,12 +66,12 @@ public class Relatorio extends javax.swing.JFrame {
     private void initComponents() {
 
         scrollPane = new javax.swing.JScrollPane();
-        tabela = new javax.swing.JTable();
+        listaRel = new javax.swing.JTable();
 
         setTitle("Relatorio do dia " + title);
         setResizable(false);
 
-        tabela.setModel(new javax.swing.table.DefaultTableModel(
+        listaRel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null}
             },
@@ -48,7 +79,7 @@ public class Relatorio extends javax.swing.JFrame {
                 "Quantidade de CDs vendidos", "Gastos totais", "Saldo final"
             }
         ));
-        scrollPane.setViewportView(tabela);
+        scrollPane.setViewportView(listaRel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,8 +113,8 @@ public class Relatorio extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable listaRel;
     private javax.swing.JScrollPane scrollPane;
-    private javax.swing.JTable tabela;
     // End of variables declaration//GEN-END:variables
     
 }
