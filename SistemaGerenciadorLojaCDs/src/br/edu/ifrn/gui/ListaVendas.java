@@ -11,6 +11,12 @@
 
 package br.edu.ifrn.gui;
 
+import br.edu.ifrn.dao.VendaDAO;
+import br.edu.ifrn.dominio.Venda;
+import java.util.Iterator;
+import java.util.LinkedList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author 2007134010556
@@ -20,6 +26,31 @@ public class ListaVendas extends javax.swing.JFrame {
     /** Creates new form ListaVendas */
     public ListaVendas() {
         initComponents();
+        listarVendas();
+    }
+
+    public void listarVendas(){
+        LinkedList<Venda> vendas = new LinkedList();
+        VendaDAO vdao = new VendaDAO();
+        vendas = vdao.selectVenda();
+        Object[][] vendasV = new Object[vendas.size()][5];
+        int pos = 0;
+        String descricaoT[] = {"CDs","Quantidade total","Cliente","Vendedor","Preço total"};
+        Iterator<Venda> it = vendas.iterator();
+
+        while(it.hasNext()){
+            Venda v = it.next();
+            vendasV[pos][0] = v.getCDName();
+            vendasV[pos][1] = v.getQuantCdsVendidos();
+            vendasV[pos][2] = v.getCli();
+            vendasV[pos][3] = v.getVend();
+            vendasV[pos][4] = v.getPreco() * v.getQuantCdsVendidos();
+            pos++;
+        }
+
+        listaDeVendas.setModel(new DefaultTableModel(vendasV, descricaoT));
+
+
     }
 
     /** This method is called from within the constructor to
@@ -39,12 +70,20 @@ public class ListaVendas extends javax.swing.JFrame {
 
         listaDeVendas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null}
+                {null, null, null, null, null}
             },
             new String [] {
-                "Data", "CDs", "Quantidade total", "Cliente", "Preço total", "Preço pago"
+                "CDs", "Quantidade total", "Cliente", "Vendedor", "Preço total"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         scrollPane.setViewportView(listaDeVendas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -54,7 +93,7 @@ public class ListaVendas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -47,10 +47,10 @@ public class VendaDAO {
        
     }
 
-    LinkedList<Venda> listaVen = new LinkedList();
+    
     public LinkedList<Venda> selectVenda(){
+        LinkedList<Venda> listaVen = new LinkedList();
         try {
-            
 
             String ins = "SELECT * FROM venda;";
             PreparedStatement stm = conexao.prepareStatement(ins);
