@@ -42,7 +42,7 @@ public class SacolaCDs extends javax.swing.JFrame {
         scrollPane = new javax.swing.JScrollPane();
         sacola = new javax.swing.JTable();
         precoTotal = new javax.swing.JLabel();
-        continuarComprando = new javax.swing.JButton();
+        cancelar = new javax.swing.JButton();
         concluirCompra = new javax.swing.JButton();
         pesquisarCodigo = new javax.swing.JButton();
         precoTotal1 = new javax.swing.JTextField();
@@ -64,9 +64,14 @@ public class SacolaCDs extends javax.swing.JFrame {
         precoTotal.setFont(new java.awt.Font("Tahoma", 0, 12));
         precoTotal.setText("Preço Total: ");
 
-        continuarComprando.setFont(new java.awt.Font("Tahoma", 0, 12));
-        continuarComprando.setForeground(new java.awt.Color(255, 0, 0));
-        continuarComprando.setText("Cancelar");
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cancelar.setForeground(new java.awt.Color(255, 0, 0));
+        cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         concluirCompra.setFont(new java.awt.Font("Tahoma", 0, 12));
         concluirCompra.setForeground(new java.awt.Color(0, 102, 0));
@@ -77,8 +82,13 @@ public class SacolaCDs extends javax.swing.JFrame {
             }
         });
 
-        pesquisarCodigo.setFont(new java.awt.Font("Tahoma", 0, 12));
+        pesquisarCodigo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         pesquisarCodigo.setText("Pesquisar CD");
+        pesquisarCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesquisarCodigoActionPerformed(evt);
+            }
+        });
 
         precoTotal1.setEditable(false);
         precoTotal1.setFont(new java.awt.Font("Tahoma", 0, 12));
@@ -101,7 +111,7 @@ public class SacolaCDs extends javax.swing.JFrame {
                                 .addComponent(precoTotal1, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
                             .addComponent(concluirCompra))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(continuarComprando)))
+                        .addComponent(cancelar)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -117,7 +127,7 @@ public class SacolaCDs extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(concluirCompra)
-                    .addComponent(continuarComprando))
+                    .addComponent(cancelar))
                 .addContainerGap())
         );
 
@@ -128,14 +138,23 @@ public class SacolaCDs extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_concluirCompraActionPerformed
 
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        this.setVisible(false);
+}//GEN-LAST:event_cancelarActionPerformed
+
+    private void pesquisarCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarCodigoActionPerformed
+       PesquisaCD p = new PesquisaCD();
+       p.setVisible(true);
+    }//GEN-LAST:event_pesquisarCodigoActionPerformed
+
     /**
     * @param args the command line arguments
     */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cancelar;
     private javax.swing.JButton concluirCompra;
-    private javax.swing.JButton continuarComprando;
     private javax.swing.JButton pesquisarCodigo;
     private javax.swing.JLabel precoTotal;
     private javax.swing.JTextField precoTotal1;
