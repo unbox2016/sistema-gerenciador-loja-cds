@@ -103,8 +103,8 @@ public class DataRelatorio extends javax.swing.JFrame {
         mesPedido = mes.getSelectedIndex();
         anoPedido = ano.getSelectedIndex();
 
-        RelatorioPedido rp = new RelatorioPedido(mesPedido,anoPedido);
-        rp.setVisible(true);
+        Relatorio r = new Relatorio();
+        r.setVisible(true);
     }//GEN-LAST:event_exibirRelatorioActionPerformed
 
     GregorianCalendar gc = new GregorianCalendar();
