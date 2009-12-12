@@ -291,8 +291,8 @@ public class CadastroCliente extends javax.swing.JFrame {
        
         nom = nome.getText();
         d = dia.getSelectedIndex() + 1;
-        m = mes.getSelectedIndex();
-        a = ano.getSelectedIndex();
+        m = mes.getSelectedIndex() + 1;
+        a = ano.getSelectedIndex() + 1900;
         dat = new Date(a,m,d);
         sex = masculino.isSelected()?"Masculino":"Feminino";
         est = solteiro.isSelected()?"Solteiro(a)":"Casado(a)";
@@ -301,9 +301,9 @@ public class CadastroCliente extends javax.swing.JFrame {
         tel = telefone.getText();
 
         try {
-            Long.parseLong(cp);
-            Long.parseLong(r);
-            Long.parseLong(tel);
+            Float.parseFloat(cp);
+            Float.parseFloat(r);
+            Float.parseFloat(tel);
             
         } catch(NumberFormatException ex){
             corretos = false;
