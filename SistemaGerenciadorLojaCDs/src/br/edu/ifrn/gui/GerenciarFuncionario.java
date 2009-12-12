@@ -34,14 +34,10 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         editarFuncionarios = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        codigoCliente = new javax.swing.JTextField();
-        pesquisarFunc = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         confirmar = new javax.swing.JButton();
         limpar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
-        deletarFuncionario = new javax.swing.JButton();
 
         editarFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -67,28 +63,16 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel1.setText("Edição de funcionários");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
-        jLabel6.setText("Funcionário(login):");
-
-        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
-
-        pesquisarFunc.setFont(new java.awt.Font("Tahoma", 0, 12));
-        pesquisarFunc.setText("Pesquisar funcionário...");
-
         confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
         confirmar.setText("Confirmar alterações");
 
         limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
-        limpar.setText("Desfazer");
+        limpar.setText("Deletar");
 
         cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
-
-        deletarFuncionario.setFont(new java.awt.Font("Tahoma", 0, 12));
-        deletarFuncionario.setForeground(new java.awt.Color(255, 0, 0));
-        deletarFuncionario.setText("Deletar funcionário");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,23 +81,16 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 669, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(codigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pesquisarFunc)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deletarFuncionario))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(confirmar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(limpar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cancelar)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 669, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(confirmar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(limpar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cancelar)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -124,14 +101,8 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(codigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(pesquisarFunc)
-                    .addComponent(deletarFuncionario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelar)
                     .addComponent(limpar)
@@ -149,16 +120,12 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelar;
-    private javax.swing.JTextField codigoCliente;
     private javax.swing.JButton confirmar;
-    private javax.swing.JButton deletarFuncionario;
     private javax.swing.JTable editarFuncionarios;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton limpar;
-    private javax.swing.JButton pesquisarFunc;
     // End of variables declaration//GEN-END:variables
 
 }

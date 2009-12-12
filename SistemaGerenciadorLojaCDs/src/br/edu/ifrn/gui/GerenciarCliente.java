@@ -46,6 +46,8 @@ public class GerenciarCliente extends javax.swing.JFrame {
         confirmar = new javax.swing.JButton();
         limpar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         editarCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -75,7 +77,7 @@ public class GerenciarCliente extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(editarCliente);
 
-        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
         confirmar.setText("Confirmar alterações");
         confirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +86,7 @@ public class GerenciarCliente extends javax.swing.JFrame {
             }
         });
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Deletar");
         limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,7 +94,7 @@ public class GerenciarCliente extends javax.swing.JFrame {
             }
         });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +102,9 @@ public class GerenciarCliente extends javax.swing.JFrame {
                 cancelarActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel1.setText("Edição de Clientes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,15 +119,21 @@ public class GerenciarCliente extends javax.swing.JFrame {
                         .addComponent(limpar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cancelar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 669, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelar)
                     .addComponent(limpar)
@@ -237,7 +248,9 @@ public class GerenciarCliente extends javax.swing.JFrame {
     private javax.swing.JButton cancelar;
     private javax.swing.JButton confirmar;
     private javax.swing.JTable editarCliente;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton limpar;
     // End of variables declaration//GEN-END:variables
 
