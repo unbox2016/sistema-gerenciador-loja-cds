@@ -87,7 +87,7 @@ public class ContaDAO {
         
             String ins = "SELECT * FROM conta;";
             PreparedStatement stm = conexao.prepareStatement(ins);
-            ResultSet rs = (ResultSet) stm.executeQuery();
+            ResultSet rs = stm.executeQuery();
 
             CDDAO cdDAO = new CDDAO();
             LinkedList<CD> listaCD = cdDAO.selectCD();

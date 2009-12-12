@@ -111,7 +111,7 @@ public class CDDAO {
             String ins = "SELECT * FROM cd;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
-            ResultSet rs = (ResultSet) stm.executeQuery();
+            ResultSet rs = stm.executeQuery();
 
             FuncionarioDAO fdao = new FuncionarioDAO();
             LinkedList<Funcionario> listaFunc = fdao.selectFuncionario();

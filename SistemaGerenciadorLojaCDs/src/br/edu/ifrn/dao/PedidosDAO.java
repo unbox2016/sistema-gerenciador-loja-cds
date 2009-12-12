@@ -92,7 +92,7 @@ public class PedidosDAO {
             String ins = "SELECT * FROM pedidos;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
-            ResultSet rs = (ResultSet) stm.executeQuery();
+            ResultSet rs = stm.executeQuery();
             
             ClienteDAO cdao = new ClienteDAO();
             LinkedList<Cliente> listaCli = cdao.selectCliente();

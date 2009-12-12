@@ -96,7 +96,7 @@ public class FaturamentoDAO {
          
             String ins = "SELECT * FROM faturamento;";
             PreparedStatement stm = conexao.prepareStatement(ins);
-            ResultSet rs = (ResultSet) stm.executeQuery();
+            ResultSet rs =  stm.executeQuery();
 
             Vendedor vend;
             VendedorDAO vdao = new VendedorDAO();
