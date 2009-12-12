@@ -53,7 +53,7 @@ public class Venda extends javax.swing.JFrame {
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
         confirmar.setText("Confirmar");
 
-        limpar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Limpar");
         limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +61,7 @@ public class Venda extends javax.swing.JFrame {
             }
         });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -73,9 +73,9 @@ public class Venda extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel6.setText("Cliente(código):");
 
-        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        codigoCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
 
-        pesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        pesquisarCliente.setFont(new java.awt.Font("Tahoma", 0, 12));
         pesquisarCliente.setText("Pesquisar cliente...");
         pesquisarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +83,7 @@ public class Venda extends javax.swing.JFrame {
             }
         });
 
-        adicionar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        adicionar.setFont(new java.awt.Font("Tahoma", 0, 12));
         adicionar.setForeground(new java.awt.Color(0, 102, 0));
         adicionar.setText("Adicionar produtos à sacola");
         adicionar.addActionListener(new java.awt.event.ActionListener() {
@@ -95,9 +95,11 @@ public class Venda extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel2.setText("Modo de pagamento");
 
+        modoPagamento.add(aVista);
         aVista.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         aVista.setText("À vista");
 
+        modoPagamento.add(fiado);
         fiado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         fiado.setText("Fiado");
 
@@ -140,7 +142,7 @@ public class Venda extends javax.swing.JFrame {
                                 .addContainerGap())
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(adicionar)
-                                .addContainerGap(209, Short.MAX_VALUE))
+                                .addContainerGap(211, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addContainerGap(264, Short.MAX_VALUE))))))

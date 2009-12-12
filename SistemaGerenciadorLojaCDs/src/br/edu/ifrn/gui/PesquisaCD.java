@@ -68,8 +68,13 @@ public class PesquisaCD extends javax.swing.JFrame {
 
         limpar.setFont(new java.awt.Font("Tahoma", 0, 12));
         limpar.setText("Limpar");
+        limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparActionPerformed(evt);
+            }
+        });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -181,13 +186,17 @@ public class PesquisaCD extends javax.swing.JFrame {
     private void pesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisarActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_pesquisarActionPerformed
-PesquisaCD p = new PesquisaCD();
+
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        p.setVisible(false);
+        this.setVisible(false);
+       
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
         codigoCD.setText("");
         tituloCD.setText("");
         artista.setText("");
-    }//GEN-LAST:event_cancelarActionPerformed
+    }//GEN-LAST:event_limparActionPerformed
 
     /**
     * @param args the command line arguments
