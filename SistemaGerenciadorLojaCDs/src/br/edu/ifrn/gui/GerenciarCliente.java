@@ -12,7 +12,10 @@
 package br.edu.ifrn.gui;
 
 import br.edu.ifrn.dao.ClienteDAO;
+import br.edu.ifrn.dao.FuncionarioDAO;
 import br.edu.ifrn.dominio.Cliente;
+import br.edu.ifrn.dominio.Funcionario;
+import br.edu.ifrn.dominio.Conta;
 import java.util.Iterator;
 import java.util.LinkedList;
 import javax.swing.table.DefaultTableModel;
@@ -167,7 +170,7 @@ public class GerenciarCliente extends javax.swing.JFrame {
     ClienteDAO cdao = new ClienteDAO();
     private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
         int index = editarCliente.getSelectedRow();
-        Cliente cliDel = (Cliente) editarCliente.getValueAt(index, editarCliente.getSelectedColumn());
+        Cliente cliDel = getCliente(index);
         editarCliente.remove(index);
         cdao.deleteCliente(cliDel);
     }//GEN-LAST:event_limparActionPerformed
@@ -176,21 +179,43 @@ public class GerenciarCliente extends javax.swing.JFrame {
     private void confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarActionPerformed
         Cliente cliAdd;
         for(int i=0;i<editarCliente.getRowCount();i++){
-            for(int j=0;i<editarCliente.getColumnCount();j++){
-                cliAdd = (Cliente) editarCliente.getValueAt(i, j);
+                cliAdd = getCliente(editarCliente.getSelectedRow());
                 addOuEditar(cliAdd);
             }
-        }        
     }//GEN-LAST:event_confirmarActionPerformed
 
-    
+    private Cliente getCliente(int linha){
+        String cpf = (String) editarCliente.getValueAt(linha, 0);
+        String rg = (String) editarCliente.getValueAt(linha, 1);
+        String nome = (String) editarCliente.getValueAt(linha, 2);
+        String sexo = (String) editarCliente.getValueAt(linha, 3);
+        String tel = (String) editarCliente.getValueAt(linha, 4);
+        String est = (String) editarCliente.getValueAt(linha, 5);
+        java.util.Date dnasc = (java.util.Date) editarCliente.getValueAt(linha, 6);
+        Conta cont = (Conta) editarCliente.getValueAt(linha, 7);
+        Funcionario fun = null;
+
+        LinkedList<Funcionario> lf = new FuncionarioDAO().selectFuncionario();
+
+        for(Funcionario funcio:lf){
+            if(funcio.getLogin().equals((String) editarCliente.getValueAt(linha, 8))){
+                fun = funcio;
+                break;
+            }
+        }
+
+        return new Cliente(cpf,fun,rg,nome,sexo,tel,est,dnasc,cont);
+
+    }
+
+
     LinkedList<Cliente> cliList;
     private void addOuEditar(Cliente c){
         boolean existe = false;
         cliList = cdao.selectCliente();
 
         for(Cliente cli:cliList){
-            if(cli.getRg().equals(cli.getRg()))
+            if(cli.getFunc().equals(cli.getFunc()))
                 existe = true;
             else
                 existe = false;
