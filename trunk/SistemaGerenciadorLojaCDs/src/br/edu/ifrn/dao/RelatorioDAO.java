@@ -43,6 +43,7 @@ public class RelatorioDAO {
             java.sql.Date datasql = new java.sql.Date(data.getTime());
 
             Time horasql = new Time(r.getHora().getTime());
+            
 
             stm.setDate(1, datasql);
             stm.setTime(2, horasql);
@@ -140,7 +141,9 @@ public class RelatorioDAO {
 
             }
 
-        }finally{
+        } catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
+        } finally{
             return listaRel;
         }
     }

@@ -53,7 +53,7 @@ public class GeneroDAO {
             String ins = "SELECT * FROM genero;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
-            ResultSet rs = (ResultSet) stm.executeQuery();
+            ResultSet rs = stm.executeQuery();
 
             while(rs.next()){
                 Genero g = new Genero(rs.getString(1));

@@ -60,9 +60,13 @@ public class VendaDAO {
             CD cd = null;
             Vendedor vend = null;
 
-            LinkedList<Cliente> listaCli = new LinkedList();
-            LinkedList<CD> listaCD = new LinkedList();
-            LinkedList<Vendedor> listaVend = new LinkedList();
+            ClienteDAO cdao = new ClienteDAO();
+            CDDAO cddao = new CDDAO();
+            VendedorDAO vdao = new VendedorDAO();
+
+            LinkedList<Cliente> listaCli = cdao.selectCliente();
+            LinkedList<CD> listaCD = cddao.selectCD();
+            LinkedList<Vendedor> listaVend = vdao.selectVendedor();
 
             while(rs.next()){
 

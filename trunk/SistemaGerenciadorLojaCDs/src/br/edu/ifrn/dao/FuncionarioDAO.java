@@ -62,12 +62,15 @@ public class FuncionarioDAO {
             String ins = "UPDATE funcionario SET login='?', senha='?', nome='?', cpf='?', rg='?', dnascimento=?, sexo='?', telefone='?', estado_civil='?', isadm=? WHERE login='?';";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
+            java.util.Date data = f.getDNascimento();
+            java.sql.Date datasql = new java.sql.Date(data.getTime());
+            
             stm.setString(1, f.getLogin());
             stm.setString(2, f.getSenha());
             stm.setString(3, f.getNome());
             stm.setString(4, f.getCpf());
             stm.setString(5, f.getRg());
-            stm.setDate(6, (Date) f.getDNascimento());
+            stm.setDate(6, datasql);
             stm.setString(7, f.getSexo());
             stm.setString(8, f.getTelefone());
             stm.setString(9, f.getEstCivil());
@@ -110,7 +113,7 @@ public class FuncionarioDAO {
             String ins = "SELECT * FROM funcionario;";
             PreparedStatement stm = conexao.prepareStatement(ins);
 
-            ResultSet rs = (ResultSet) stm.executeQuery();
+            ResultSet rs = stm.executeQuery();
 
             while(rs.next()){
 
