@@ -143,8 +143,6 @@ public class GerenciarCD extends javax.swing.JFrame {
 
     private void deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarActionPerformed
         // TODO add your handling code here:
-      int index = editarCD.getSelectedRow();
-      editarCD.remove(index);
     }//GEN-LAST:event_deletarActionPerformed
 /*
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
@@ -154,13 +152,6 @@ public class GerenciarCD extends javax.swing.JFrame {
 */
     private void confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarActionPerformed
         // TODO add your handling code here:
-        LinkedList<CD> cds = new LinkedList();
-        int a = editarCD.getRowCount();
-        for (int i = 0; i <= a; i++){
-
-
-        }
-
     }//GEN-LAST:event_confirmarActionPerformed
 
     /**
