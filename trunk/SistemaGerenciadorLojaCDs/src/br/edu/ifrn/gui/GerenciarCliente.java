@@ -13,6 +13,7 @@ package br.edu.ifrn.gui;
 
 import br.edu.ifrn.dao.ClienteDAO;
 import br.edu.ifrn.dao.FuncionarioDAO;
+import br.edu.ifrn.dao.ContaDAO;
 import br.edu.ifrn.dominio.Cliente;
 import br.edu.ifrn.dominio.Funcionario;
 import br.edu.ifrn.dominio.Conta;
@@ -203,10 +204,19 @@ public class GerenciarCliente extends javax.swing.JFrame {
         String tel = (String) editarCliente.getValueAt(linha, 4);
         String est = (String) editarCliente.getValueAt(linha, 5);
         java.util.Date dnasc = (java.util.Date) editarCliente.getValueAt(linha, 6);
-        Conta cont = (Conta) editarCliente.getValueAt(linha, 7);
+        int contNum = (Integer) editarCliente.getValueAt(linha, 7);
         Funcionario fun = null;
+        Conta cont = null;
 
         LinkedList<Funcionario> lf = new FuncionarioDAO().selectFuncionario();
+        LinkedList<Conta> lc = new ContaDAO().selectConta();
+
+        for(Conta conta:lc){
+            if(conta.getCodigo() == contNum){
+                cont = conta;
+                break;
+            }
+        }
 
         for(Funcionario funcio:lf){
             if(funcio.getLogin().equals((String) editarCliente.getValueAt(linha, 8))){
