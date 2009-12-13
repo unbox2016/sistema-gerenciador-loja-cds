@@ -11,8 +11,14 @@
 
 package br.edu.ifrn.gui;
 
+import br.edu.ifrn.dao.CDDAO;
+import br.edu.ifrn.dao.FuncionarioDAO;
+import br.edu.ifrn.dao.GeneroDAO;
 import br.edu.ifrn.dominio.CD;
+import br.edu.ifrn.dominio.Funcionario;
+import br.edu.ifrn.dominio.Genero;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -73,7 +79,7 @@ public class GerenciarCD extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12));
         jLabel1.setText("Edição de CDs");
 
-        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        confirmar.setFont(new java.awt.Font("Tahoma", 0, 12));
         confirmar.setForeground(new java.awt.Color(0, 102, 0));
         confirmar.setText("Confirmar alterações");
         confirmar.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +96,7 @@ public class GerenciarCD extends javax.swing.JFrame {
             }
         });
 
-        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cancelar.setFont(new java.awt.Font("Tahoma", 0, 12));
         cancelar.setForeground(new java.awt.Color(255, 0, 0));
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -105,16 +111,19 @@ public class GerenciarCD extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(confirmar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deletar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cancelar)))
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(confirmar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(deletar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cancelar))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -141,8 +150,12 @@ public class GerenciarCD extends javax.swing.JFrame {
         this.setVisible(false);
     }                                        
 
+    CDDAO cddao = new CDDAO();
     private void deletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarActionPerformed
-        // TODO add your handling code here:
+        int index = editarCD.getSelectedRow();
+        CD cdDel = null;
+        editarCD.remove(index);
+        cddao.deleteCD(cdDel);
     }//GEN-LAST:event_deletarActionPerformed
 /*
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
@@ -157,6 +170,60 @@ public class GerenciarCD extends javax.swing.JFrame {
     /**
     * @param args the command line arguments
     */
+
+    LinkedList<Funcionario> funcLista;
+    LinkedList<Genero> genList;
+    public CD getCD(int linha){
+        boolean existeNoBD = true;
+
+        int id = (Integer) editarCD.getValueAt(linha, 0);
+        int ano = (Integer) editarCD.getValueAt(linha, 1);
+
+        String genero = (String) editarCD.getValueAt(linha, 2);
+        Genero gen = null;
+
+        String tit = (String) editarCD.getValueAt(linha, 3);
+        double preco = (Double) editarCD.getValueAt(linha, 4);
+        String art = (String) editarCD.getValueAt(linha, 5);
+        int dur = (Integer) editarCD.getValueAt(linha, 6);
+        int numF = (Integer) editarCD.getValueAt(linha, 7);
+        int quant = (Integer) editarCD.getValueAt(linha, 8);
+        boolean disp = (Boolean) editarCD.getValueAt(linha, 9);
+        boolean lanc = (Boolean) editarCD.getValueAt(linha, 10);
+
+        String funcLog = (String) editarCD.getValueAt(linha, 11);
+        Funcionario func = null;
+               
+        funcLista = new FuncionarioDAO().selectFuncionario();
+        genList = new GeneroDAO().selectGenero();
+
+        for(Funcionario f:funcLista){
+            if(f.getLogin().equals(funcLog)){
+                func = f;
+                break;
+            }
+        }
+
+        for(Genero g:genList){
+            if(g.getNome().equals(genero)){
+                existeNoBD = true;
+                gen = new Genero(genero);
+                break;
+            }
+            else {
+              existeNoBD = false;
+            }
+        }
+
+        if(!existeNoBD){
+            JOptionPane.showMessageDialog(null, "O gênero digitado não consta no banco de dados. Por favor, insira outro");
+            return null;
+        }
+        else {
+            return new CD(id,ano,gen,func,tit,art,dur,numF,quant,disp,lanc,preco);
+        }
+        
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
