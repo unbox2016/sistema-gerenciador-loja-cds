@@ -76,7 +76,7 @@ public class AdministradorDAO {
         LinkedList<Administrador> listaAdm = new LinkedList();
          try {
             
-            String ins = "SELECT * FROM funcionario;";
+            String ins = "SELECT * FROM funcionario, administrador WHERE funcionario.login = administrador.login;";
             PreparedStatement stm = conexao.prepareStatement(ins);
             ResultSet rs = stm.executeQuery();
             while(rs.next()){
