@@ -34,6 +34,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
         fdao = new FuncionarioDAO();
         listaFunc = fdao.selectFuncionario();
         initComponents();
+        generateTable();
     }
 
     LinkedList<Funcionario> listaFunc;
