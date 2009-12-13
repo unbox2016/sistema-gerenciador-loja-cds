@@ -19,6 +19,7 @@ import br.edu.ifrn.dominio.Funcionario;
 import br.edu.ifrn.dominio.Conta;
 import java.util.Iterator;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -189,10 +190,10 @@ public class GerenciarCliente extends javax.swing.JFrame {
 
     
     private void confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarActionPerformed
-        Cliente cliAdd;
+        Cliente cliEdit;
         for(int i=0;i<editarCliente.getRowCount();i++){
-                cliAdd = getCliente(editarCliente.getSelectedRow());
-                addOuEditar(cliAdd);
+                cliEdit = getCliente(editarCliente.getSelectedRow());
+                editarCli(cliEdit);
             }
     }//GEN-LAST:event_confirmarActionPerformed
 
@@ -230,22 +231,25 @@ public class GerenciarCliente extends javax.swing.JFrame {
     }
 
 
-    LinkedList<Cliente> cliList;
-    private void addOuEditar(Cliente c){
-        boolean existe = false;
-        cliList = cdao.selectCliente();
+    
+    private void editarCli(Cliente c){
+        boolean corretos = true;
 
-        for(Cliente cli:cliList){
-            if(cli.getFunc().equals(cli.getFunc()))
-                existe = true;
-            else
-                existe = false;
+        try {
+            Float.parseFloat(c.getCpf());
+            Float.parseFloat(c.getRg());
+            Float.parseFloat(c.getTelefone());
+
+        } catch(NumberFormatException nfx){
+            JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para CPF, RG ou Telefone.");
+            corretos = false;
         }
-
-        if(existe)
+        
+        if(corretos)
             cdao.updateCliente(c);
         else
-            cdao.addCliente(c);
+            JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para CPF, RG ou Telefone.");
+            
     }
 
 
