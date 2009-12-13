@@ -17,6 +17,7 @@ import br.edu.ifrn.dao.VendedorDAO;
 import br.edu.ifrn.dominio.Administrador;
 import br.edu.ifrn.dominio.Funcionario;
 import br.edu.ifrn.dominio.Vendedor;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -217,6 +218,9 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
         String colunas[] = {"Login", "Senha","Nome","Sexo","CPF","RG","Telefone","Estado civil","Data de nascimento","Administrador"};
         Iterator<Funcionario> it = listaFunc.iterator();
 
+        String formato = "dd/MM/yyyy";
+        SimpleDateFormat formatter = new SimpleDateFormat(formato);
+
         while(it.hasNext()){
             Funcionario func = it.next();
 
@@ -228,7 +232,7 @@ public class GerenciarFuncionario extends javax.swing.JFrame {
             tableFunc[pos][5] = func.getRg();
             tableFunc[pos][6] = func.getTelefone();
             tableFunc[pos][7] = func.getEstCivil();
-            tableFunc[pos][8] = func.getDNascimento();
+            tableFunc[pos][8] = formatter.format(func.getDNascimento());
             tableFunc[pos][9] = func.isIsAdm();
 
             pos++;
