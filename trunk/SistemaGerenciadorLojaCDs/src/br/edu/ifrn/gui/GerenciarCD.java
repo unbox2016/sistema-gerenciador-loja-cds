@@ -17,8 +17,11 @@ import br.edu.ifrn.dao.GeneroDAO;
 import br.edu.ifrn.dominio.CD;
 import br.edu.ifrn.dominio.Funcionario;
 import br.edu.ifrn.dominio.Genero;
+import java.util.Iterator;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -29,6 +32,41 @@ public class GerenciarCD extends javax.swing.JFrame {
     /** Creates new form UpdateCD */
     public GerenciarCD() {
         initComponents();
+        generateTable();
+    }
+
+    public void generateTable(){
+        LinkedList<CD> listaCD;
+        CDDAO dao = new CDDAO();
+        listaCD = dao.selectCD();
+
+        Object[][] tableCD = new Object[listaCD.size()][12];
+        int pos = 0;
+        String[] colunas = {"ID","Ano","Genero","Titulo","Preco","Artista","Duração","Número de faixas","Quantidade","Disponível","Lançamento","Cadastrado por:"};
+        Iterator<CD> it = listaCD.iterator();
+
+        while(it.hasNext()){
+            CD cd = it.next();
+
+            tableCD[pos][0] = cd.getId();
+            tableCD[pos][1] = cd.getAno();
+            tableCD[pos][2] = cd.getGen();
+            tableCD[pos][3] = cd.getTitulo();
+            tableCD[pos][4] = cd.getPreco();
+            tableCD[pos][5] = cd.getArtista();
+            tableCD[pos][6] = cd.getDuracao();
+            tableCD[pos][7] = cd.getNumFaixas();
+            tableCD[pos][8] = cd.getQuantidade();
+            tableCD[pos][9] = cd.isDisponivel();
+            tableCD[pos][10] = cd.isLancamento();
+            tableCD[pos][11] = cd.getFunc();
+
+            pos++;
+
+        }
+
+        editarCD.setModel(new DefaultTableModel(tableCD,colunas));
+
     }
 
     /** This method is called from within the constructor to
@@ -164,12 +202,41 @@ public class GerenciarCD extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarActionPerformed
 */
     private void confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarActionPerformed
-        // TODO add your handling code here:
+        CD cdEdit;
+        for(int i=0;i<editarCD.getRowCount();i++){
+            cdEdit = getCD(editarCD.getSelectedRow());
+            editarCD(cdEdit,editarCD.getSelectedRow());
+        }
     }//GEN-LAST:event_confirmarActionPerformed
 
     /**
     * @param args the command line arguments
     */
+
+    public void editarCD(CD cd, int linha){
+        boolean corretos = true;
+
+        try {
+            int id = (Integer) editarCD.getValueAt(linha, 0);
+            int ano = (Integer) editarCD.getValueAt(linha, 1);
+            int dur = (Integer) editarCD.getValueAt(linha, 6);
+            int numF = (Integer) editarCD.getValueAt(linha, 7);
+            int quant = (Integer) editarCD.getValueAt(linha, 8);
+            double preco = (Double) editarCD.getValueAt(linha, 4);
+            
+        } catch(NumberFormatException nfx){
+            JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para CPF, RG ou Telefone.");
+            corretos = false;
+        }
+
+        if(corretos){
+            cddao.updateCD(cd);
+            JOptionPane.showMessageDialog(null, "Edição realizada com sucesso");
+        } else {
+            JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para ID, Ano, Duração, Número de faixas, Quantidade ou Preço.");
+        }
+
+    }
 
     LinkedList<Funcionario> funcLista;
     LinkedList<Genero> genList;

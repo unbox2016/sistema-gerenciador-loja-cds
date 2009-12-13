@@ -17,6 +17,7 @@ import br.edu.ifrn.dao.ContaDAO;
 import br.edu.ifrn.dominio.Cliente;
 import br.edu.ifrn.dominio.Funcionario;
 import br.edu.ifrn.dominio.Conta;
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
@@ -157,6 +158,10 @@ public class GerenciarCliente extends javax.swing.JFrame {
         String colunas[] = {"CPF", "RG","Nome","Sexo","Telefone","Estado Civil","Data de Nascimento","Conta","Cadastrado por:"};
         Iterator<Cliente> it = listaClientes.iterator();
 
+        String formato = "dd/MM/yyyy";
+        SimpleDateFormat formatter = new SimpleDateFormat(formato);
+        
+
         while(it.hasNext()){
             Cliente cli = it.next();
 
@@ -165,7 +170,7 @@ public class GerenciarCliente extends javax.swing.JFrame {
             tableCli[pos][2] = cli.getNome();
             tableCli[pos][3] = cli.getSexo();
             tableCli[pos][4] = cli.getTelefone();
-            tableCli[pos][5] = cli.getEstCivil();
+            tableCli[pos][5] = formatter.format(cli.getEstCivil());
             tableCli[pos][6] = cli.getDataNasc();
             tableCli[pos][7] = cli.getConta().getCodigo();
             tableCli[pos][8] = cli.getFunc();
@@ -245,8 +250,10 @@ public class GerenciarCliente extends javax.swing.JFrame {
             corretos = false;
         }
         
-        if(corretos)
+        if(corretos){
             cdao.updateCliente(c);
+            JOptionPane.showMessageDialog(null, "Edição realizada com sucesso");
+        }
         else
             JOptionPane.showMessageDialog(null, "Por favor, digite apenas números para CPF, RG ou Telefone.");
             
