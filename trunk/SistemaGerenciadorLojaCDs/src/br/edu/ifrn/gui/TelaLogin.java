@@ -145,7 +145,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void efeturarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_efeturarLoginActionPerformed
-        boolean aux = false; // variavel auxiliar p/ verificar se o login e a senha não correspondem a nenhum funcionario
+        boolean dadosCorretos = false; // variavel auxiliar p/ verificar se o login e a senha não correspondem a nenhum funcionario
         Funcionario funcionario = null;
         FuncionarioDAO funcdao = new FuncionarioDAO();
 
@@ -154,12 +154,12 @@ public class TelaLogin extends javax.swing.JFrame {
         funcionario = funcdao.selectRestrictFuncionario(log);
         
         if(funcionario == null)
-            aux = true;
+            dadosCorretos = true;
         else 
-            aux = false;
+            dadosCorretos = false;
        
 
-       if(aux) // Se o login e a senha digitados não correspondem a algum funcionário
+       if(dadosCorretos) // Se o login e a senha digitados não correspondem a algum funcionário
           JOptionPane.showMessageDialog(null,"O login ou a senha estão incorretos. Tente novamente");
        else {
            if(funcionario.isIsAdm()){
@@ -169,8 +169,7 @@ public class TelaLogin extends javax.swing.JFrame {
                new TelaPrincipalFuncionario(funcionario).setVisible(true);
            }
        }
-
-
+        
     }//GEN-LAST:event_efeturarLoginActionPerformed
 
     private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
