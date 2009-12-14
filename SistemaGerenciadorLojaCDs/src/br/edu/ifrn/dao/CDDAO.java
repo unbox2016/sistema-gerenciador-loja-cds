@@ -148,4 +148,50 @@ public class CDDAO {
         }
 
     }
+
+    public LinkedList<CD> selectStrictCD(String dado){
+        LinkedList<CD> listaCD = new LinkedList();
+        try {
+
+            String ins = "SELECT * FROM cd WHERE id = " + dado + ";";
+            PreparedStatement stm = conexao.prepareStatement(ins);
+
+            ResultSet rs = stm.executeQuery();
+
+            FuncionarioDAO fdao = new FuncionarioDAO();
+            LinkedList<Funcionario> listaFunc = fdao.selectFuncionario();
+
+            GeneroDAO gdao = new GeneroDAO();
+            LinkedList<Genero> listaGen = gdao.selectGenero();
+
+            while(rs.next()){
+
+                Funcionario func = null;
+                for (Funcionario f:listaFunc){
+                    if(rs.getString(2).equals(f.getLogin()))
+                        func = f;
+                }
+
+                Genero gen = null;
+                for (Genero g:listaGen){
+                    if(rs.getString(3).equals(g.getNome()))
+                        gen = g;
+                }
+
+                CD cd = new CD(rs.getInt(1), rs.getInt(5), gen, func, rs.getString(4), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getBoolean(10), rs.getBoolean(11), rs.getDouble(12));
+                listaCD.add(cd);
+            }
+
+            rs.close();
+            stm.close();
+            conexao.close();
+
+        } catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
+        } finally{
+            return listaCD;
+        }
+
+    }
+
 }
