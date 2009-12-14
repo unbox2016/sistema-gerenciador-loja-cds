@@ -144,4 +144,49 @@ public class ClienteDAO {
         return listaCli;
     }
 
+    public LinkedList<Cliente> selectStrictCliente(String dado){
+        LinkedList<Cliente> listaCli = new LinkedList();
+        try {
+
+            String ins = "SELECT * FROM cliente WHERE cpf = " + dado + " OR nome = " + dado + " OR rg = " + dado + ";";
+            PreparedStatement stm = conexao.prepareStatement(ins);
+
+            ResultSet rs = stm.executeQuery();
+
+            FuncionarioDAO fdao = new FuncionarioDAO();
+            LinkedList<Funcionario> listaFunc = fdao.selectFuncionario();
+
+            ContaDAO cdao = new ContaDAO();
+            LinkedList<Conta> listaConta = cdao.selectConta();
+
+            Conta conta = null;
+
+            while(rs.next()){
+                for(Conta cont: listaConta){
+                    if(cont.getCodigo() == rs.getInt(2)){
+                        conta = cont;
+                        break; // sai do loop
+                    }
+                }
+
+                for(Funcionario f: listaFunc){
+                    if(f.getCpf().equals(rs.getString(3))){
+                        Cliente c = new Cliente(rs.getString(1), f, rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getDate(9), conta);
+                        listaCli.add(c);
+                        break;
+                    }
+                }
+            }
+
+            rs.close();
+            stm.close();
+            conexao.close();
+
+        } catch(SQLException ex){
+             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
+        }
+
+        return listaCli;
+    }
+
 }

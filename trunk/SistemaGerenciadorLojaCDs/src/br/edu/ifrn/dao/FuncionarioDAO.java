@@ -132,4 +132,30 @@ public class FuncionarioDAO {
         return listaFunc;
     }
 
+    public LinkedList<Funcionario> selectStrictFuncionario(String dado){
+        LinkedList<Funcionario> listaFunc = new LinkedList();
+        try {
+
+            String ins = "SELECT * FROM funcionario WHERE login = " + dado + ";";
+            PreparedStatement stm = conexao.prepareStatement(ins);
+
+            ResultSet rs = stm.executeQuery();
+
+            while(rs.next()){
+
+                Funcionario f = new Funcionario(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(6),rs.getString(7),rs.getString(8),rs.getString(9), rs.getBoolean(10));
+                listaFunc.add(f);
+            }
+
+            rs.close();
+            stm.close();
+            conexao.close();
+
+        } catch(SQLException ex){
+             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
+        }
+
+        return listaFunc;
+    }
+
 }
