@@ -149,7 +149,7 @@ public class CDDAO {
 
     }
 
-    public LinkedList<CD> selectStrictCD(String dado){
+    public LinkedList<CD> selectRestrictCD(String dado){
         LinkedList<CD> listaCD = new LinkedList();
         try {
 

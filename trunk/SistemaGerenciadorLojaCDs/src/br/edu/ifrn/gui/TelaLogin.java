@@ -146,39 +146,30 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void efeturarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_efeturarLoginActionPerformed
         boolean aux = false; // variavel auxiliar p/ verificar se o login e a senha não correspondem a nenhum funcionario
-        LinkedList<Funcionario> list;
+        Funcionario funcionario = null;
         FuncionarioDAO funcdao = new FuncionarioDAO();
 
-        list = funcdao.selectFuncionario();
         String log = login.getText();
         String sen = senha.getText();
+        funcionario = funcdao.selectRestrictFuncionario(log);
+        
+        if(funcionario == null)
+            aux = true;
+        else 
+            aux = false;
+       
 
-       for(Funcionario f: list){
-           if ((f.getLogin().equals(log))&&(f.getSenha().equals(sen))){
-               if(f.isIsAdm()){
-                    TelaPrincipalAdministrador tpa = new TelaPrincipalAdministrador(f);
-                    this.setVisible(false);
-                    tpa.setVisible(true);
-                    this.dispose();
-                    break;
-               }
-               else{
-                    TelaPrincipalFuncionario tpf = new TelaPrincipalFuncionario(f);
-                    tpf.setVisible(true);
-                    this.setVisible(false);
-                    this.dispose();
-                    break;
-               }
-           }
-
-           else {
-               aux = true;
-           }
-        }
-
-       if(aux){ // Se o login e a senha digitados não correspondem a algum funcionário
+       if(aux) // Se o login e a senha digitados não correspondem a algum funcionário
           JOptionPane.showMessageDialog(null,"O login ou a senha estão incorretos. Tente novamente");
+       else {
+           if(funcionario.isIsAdm()){
+               new TelaPrincipalAdministrador(funcionario).setVisible(true);
+           }
+           else {
+               new TelaPrincipalFuncionario(funcionario).setVisible(true);
+           }
        }
+
 
     }//GEN-LAST:event_efeturarLoginActionPerformed
 

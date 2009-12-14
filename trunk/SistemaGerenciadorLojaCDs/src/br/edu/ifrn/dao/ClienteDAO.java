@@ -144,7 +144,7 @@ public class ClienteDAO {
         return listaCli;
     }
 
-    public LinkedList<Cliente> selectStrictCliente(String dado){
+    public LinkedList<Cliente> selectRestrictCliente(String dado){
         LinkedList<Cliente> listaCli = new LinkedList();
         try {
 
