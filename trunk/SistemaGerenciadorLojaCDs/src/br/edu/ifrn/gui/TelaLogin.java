@@ -148,18 +148,25 @@ public class TelaLogin extends javax.swing.JFrame {
         boolean dadosCorretos = false; // variavel auxiliar p/ verificar se o login e a senha não correspondem a nenhum funcionario
         Funcionario funcionario = null;
         FuncionarioDAO funcdao = new FuncionarioDAO();
+        LinkedList<Funcionario> listFunc = funcdao.selectFuncionario();
 
         String log = login.getText();
         String sen = senha.getText();
-        funcionario = funcdao.selectRestrictFuncionario(log);
-        
-        if(funcionario == null)
-            dadosCorretos = false;
-        else 
-            dadosCorretos = true;
-       
 
+        for(Funcionario f: listFunc){
+            if((f.getLogin().equals(log)) && (f.getSenha().equals(sen))){
+                dadosCorretos = true;
+                funcionario = f;
+                break;
+            }
+
+            else {
+                dadosCorretos = false;
+            }
+        }
+        
        if(dadosCorretos){// Se o login e a senha digitados não correspondem a algum funcionário
+           this.setVisible(false);
            if(funcionario.isIsAdm())
                new TelaPrincipalAdministrador(funcionario).setVisible(true);
            else
