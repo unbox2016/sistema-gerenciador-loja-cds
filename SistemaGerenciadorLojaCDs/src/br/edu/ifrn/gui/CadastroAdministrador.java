@@ -321,10 +321,12 @@ public class CadastroAdministrador extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
 }//GEN-LAST:event_loginActionPerformed
-
+    TelaLogin tl = new TelaLogin();
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        tl.setVisible(true);
+
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
