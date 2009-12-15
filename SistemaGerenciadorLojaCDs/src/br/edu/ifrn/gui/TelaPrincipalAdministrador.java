@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
 
 
 
@@ -29,12 +30,13 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
 
     /** Creates new form TelaPrincipalAdministrador */
     public TelaPrincipalAdministrador(Funcionario f) {
-        func = f;
+        func = new Funcionario(f.getLogin(),f.getSenha(),f.getNome(),f.getCpf(),f.getRg(),f.getDNascimento(),f.getSexo(),f.getTelefone(),f.getEstCivil(),f.isIsAdm());
         initComponents();
 	    iniciaRelogio();//inicia o relógio
+        JOptionPane.showMessageDialog(null, func);
     }
 
-    Funcionario func;
+    Funcionario func = null;
 
     
 

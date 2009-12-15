@@ -29,8 +29,10 @@ public class CadastroVendedor extends javax.swing.JFrame {
     Administrador adm;
     
     public CadastroVendedor(Funcionario f) {
-        adm = (Administrador) f;
+        Funcionario func = new Funcionario(f.getLogin(),f.getSenha(),f.getNome(),f.getCpf(),f.getRg(),f.getDNascimento(),f.getSexo(),f.getTelefone(),f.getEstCivil(),f.isIsAdm());
         initComponents();
+        adm = (Administrador) func;
+        JOptionPane.showMessageDialog(null, func);
     }
 
     private Image icone() {

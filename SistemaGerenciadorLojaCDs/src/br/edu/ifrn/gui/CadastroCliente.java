@@ -25,8 +25,9 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     /** Creates new form NewJFrame */
     public CadastroCliente(Funcionario f) {
-        func = f;
+        func = new Funcionario(f.getLogin(),f.getSenha(),f.getNome(),f.getCpf(),f.getRg(),f.getDNascimento(),f.getSexo(),f.getTelefone(),f.getEstCivil(),f.isIsAdm());
         initComponents();
+        JOptionPane.showMessageDialog(null, func);
     }
 
     Funcionario func;
