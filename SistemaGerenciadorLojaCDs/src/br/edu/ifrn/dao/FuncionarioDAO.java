@@ -132,28 +132,4 @@ public class FuncionarioDAO {
         return listaFunc;
     }
 
-    public Funcionario selectRestrictFuncionario(String dado){
-        Funcionario f = null;
-        try {
-
-            String ins = "SELECT * FROM funcionario WHERE login = " + dado + ";";
-            PreparedStatement stm = conexao.prepareStatement(ins);
-
-            ResultSet rs = stm.executeQuery();
-
-            f = new Funcionario(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(6),rs.getString(7),rs.getString(8),rs.getString(9), rs.getBoolean(10));
-                
-            
-
-            rs.close();
-            stm.close();
-            conexao.close();
-
-        } catch(SQLException ex){
-             JOptionPane.showMessageDialog(null, "Não foi possível conectar ao banco de dados. \n" + ex.getMessage());
-        }
-
-        return f;
-    }
-
 }
