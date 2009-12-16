@@ -26,7 +26,7 @@ public class CadastroCD extends javax.swing.JFrame {
 
     /** Creates new form CadastroCD */
     public CadastroCD(Funcionario f) {
-        func = new Funcionario(f.getLogin(),f.getSenha(),f.getNome(),f.getCpf(),f.getRg(),f.getDNascimento(),f.getSexo(),f.getTelefone(),f.getEstCivil(),f.isIsAdm());
+        func = f;
         initComponents();
         JOptionPane.showMessageDialog(null, func);
     }
