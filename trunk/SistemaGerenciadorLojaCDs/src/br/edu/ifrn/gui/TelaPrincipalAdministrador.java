@@ -13,10 +13,12 @@ package br.edu.ifrn.gui;
 
 
 import br.edu.ifrn.dominio.Funcionario;
+import br.edu.ifrn.dao.FuncionarioDAO;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
@@ -29,8 +31,9 @@ import javax.swing.JOptionPane;
 public class TelaPrincipalAdministrador extends javax.swing.JFrame {
 
     /** Creates new form TelaPrincipalAdministrador */
-    public TelaPrincipalAdministrador(Funcionario f) {
-        func = new Funcionario(f.getLogin(),f.getSenha(),f.getNome(),f.getCpf(),f.getRg(),f.getDNascimento(),f.getSexo(),f.getTelefone(),f.getEstCivil(),f.isIsAdm());
+    LinkedList<Funcionario> lf = new FuncionarioDAO().selectFuncionario();
+    public TelaPrincipalAdministrador(int pos) {
+        func = lf.get(pos);
         initComponents();
 	    iniciaRelogio();//inicia o relógio
         JOptionPane.showMessageDialog(null, func);
@@ -220,6 +223,7 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/edu/ifrn/imagens/telainicial.jpg"))); // NOI18N
+
 
         menuUsuario.setText("Usuário");
         menuUsuario.addActionListener(new java.awt.event.ActionListener() {

@@ -27,9 +27,10 @@ public class CadastroVendedor extends javax.swing.JFrame {
 
     /** Creates new form CadastroAdministrador */
     Administrador adm;
+    Funcionario func;
     
     public CadastroVendedor(Funcionario f) {
-        Funcionario func = new Funcionario(f.getLogin(),f.getSenha(),f.getNome(),f.getCpf(),f.getRg(),f.getDNascimento(),f.getSexo(),f.getTelefone(),f.getEstCivil(),f.isIsAdm());
+        func = f;
         initComponents();
         adm = (Administrador) func;
         JOptionPane.showMessageDialog(null, func);

@@ -145,18 +145,22 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     Funcionario funcionario = null;
+    int listPos;
+    FuncionarioDAO funcdao = new FuncionarioDAO();
+    LinkedList<Funcionario> listFunc = funcdao.selectFuncionario();
     private void efeturarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_efeturarLoginActionPerformed
         boolean dadosCorretos = false; // variavel auxiliar p/ verificar se o login e a senha não correspondem a nenhum funcionario
-        FuncionarioDAO funcdao = new FuncionarioDAO();
-        LinkedList<Funcionario> listFunc = funcdao.selectFuncionario();
+        
 
         String log = login.getText();
         String sen = senha.getText();
 
         for(Funcionario f: listFunc){
             if((f.getLogin().equals(log)) && (f.getSenha().equals(sen))){
+                listPos = listFunc.indexOf(f);
+                funcionario = f;
                 dadosCorretos = true;
-                funcionario = new Funcionario(f.getLogin(),f.getSenha(),f.getNome(),f.getCpf(),f.getRg(),f.getDNascimento(),f.getSexo(),f.getTelefone(),f.getEstCivil(),f.isIsAdm());
+                // funcionario = new Funcionario(f.getLogin(),f.getSenha(),f.getNome(),f.getCpf(),f.getRg(),f.getDNascimento(),f.getSexo(),f.getTelefone(),f.getEstCivil(),f.isIsAdm());
                 break;
             }
 
@@ -169,9 +173,9 @@ public class TelaLogin extends javax.swing.JFrame {
            this.setVisible(false);
            JOptionPane.showMessageDialog(null, funcionario);
            if(funcionario.isIsAdm())
-               new TelaPrincipalAdministrador(funcionario).setVisible(true);
+               new TelaPrincipalAdministrador(listPos).setVisible(true);
            else
-               new TelaPrincipalFuncionario(funcionario).setVisible(true);
+               new TelaPrincipalFuncionario(listPos).setVisible(true);
         }
 
        else

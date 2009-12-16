@@ -18,6 +18,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import br.edu.ifrn.dao.FuncionarioDAO;
+import java.util.LinkedList;
 
 
 /**
@@ -27,14 +29,16 @@ import java.util.GregorianCalendar;
 public class TelaPrincipalFuncionario extends javax.swing.JFrame {
 
     /** Creates new form TelaPrincipal */
-    public TelaPrincipalFuncionario(Funcionario f) {
-        func = f;
+    LinkedList<Funcionario> lf = new FuncionarioDAO().selectFuncionario();
+    public TelaPrincipalFuncionario(int pos) {
+        func = lf.get(pos);
+        posFunc = pos;
         initComponents();
 	    iniciaRelogio();//inicia o relógio
     }
 
     Funcionario func;
-
+    int posFunc;
     
     
 
